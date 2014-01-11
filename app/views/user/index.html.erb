@@ -1,8 +1,9 @@
 <html>
-<%= form_for(:user, :url => reg_path , method: "post") do |f| %>
-    <p> Your Name:  <%= f.text_field :name, :class=> "name" %></p>
-    <p>  Password:  <%= f.text_field :password %></p>
-    <p>  Email:     <%= f.email_field :email %></p>
+    <%= form_for(:user, :url => reg_path, method: "post") do |f| %>
+        <p> Your Name:  <%= f.text_field :name, :class => "name" %></p>
+        <p> Contact No.:  <%= f.text_field :mobile_no %></p>
+        <p> Email:     <%= f.email_field :email %></p>
+
     <p><%= submit_tag "Create Account" %></p>
 <% end %>
 </html>
