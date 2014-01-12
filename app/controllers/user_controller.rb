@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   def index
+    @users = User.order(:name)
   end
   def create
     @user = User.new(user_params)
