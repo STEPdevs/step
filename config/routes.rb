@@ -3,5 +3,5 @@ Step::Application.routes.draw do
   ActiveAdmin.routes(self)
   resources :posts
   root to: "user#index"
-  match '/reg' => 'user#create' , via: [:get, :post]
+  post 'user' => "user#create"
 end

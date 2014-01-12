@@ -1,13 +1,58 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
-
+body{
+	background-color: lightgrey;
+}
+.form-for{
+	margin-left: 100px;
+	margin-top: 50px;
+}
+.row{
+}
+.label:after{
+	content: ' *';
+	color: red;
+}
+.address-label{
+	position: absolute;
+	width: 120px;
+	height: 25px;
+}
+.label{
+	position: absolute;
+	width: 120px;
+	height: 25px;
+}
+.text-field{
+	padding-left: 10px;
+	border: 1px solid black;
+	outline: none;
+	border-radius: 10px;	
+	margin-left: 120px;
+	position: absolute;
+	width: 210px;
+	height: 25px;
+}
+input[type='submit'].submit-button{
+	height: 30px;
+	width: 120px;
+	border-radius: 10px;
+	background-color: grey;
+	color: white;
+	font-family: bold;
+	font-size: 20px;
+	outline: none;
+	line-height: 2px;	
+}
+select#user_date_of_birth_3i {
+	margin-left: 120px;
+	height: 20px;
+	border: 1px solid black;
+}
+select#user_date_of_birth_2i {	
+	height: 20px;
+	border: 1px solid black;
+}
+select#user_date_of_birth_1i {
+	
+	height: 20px;
+	border: 1px solid black;
+}

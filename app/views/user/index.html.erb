@@ -1,10 +1,42 @@
 <html>
-    <%= form_for(:user, :url => reg_path, method: "post") do |f| %>
-        <p> Your Name:  <%= f.text_field :name, :class => "name" %></p>
-        <p> Contact No.:  <%= f.text_field :mobile_no %></p>
-        <p> Email:     <%= f.email_field :email %></p>
-
-    <p><%= submit_tag "Create Account" %></p>
-<% end %>
-<%= link_to "Excel", root_path(format: "xls") %>
+<div class='form-for'>
+    <%= form_for :user, :url=>user_path, :method=>'post'  do |f| %>
+        <div class='row'>
+        <%=f.label :name, :class=>'label'%>        
+        <%=f.text_field :name,:class=>'text-field'%>
+        </div>
+        <br>
+        <br>        
+        <div class='row'>
+        <%=f.label :email, :class=>'label'%> 
+        <%=f.text_field :email,:class=>'text-field'%>
+        </div>
+        <br>
+        <br>        
+        <div class='row'>
+        <%=f.label :date_of_birth, :class=>'label'%>
+        <%=f.date_select :date_of_birth, {:order => [ :day,:month,:year],:prompt => true, :start_year => 2003 , :end_year => 1930} %>
+        </div>
+        <br>        
+        <br>        
+        <div class='row'>
+        <%=f.label :address, :class=>'address-label'%>
+        <%=f.text_field :address,:class=>'text-field'%>
+        </div>
+        <br>        
+        <br>        
+        <div class='row'>
+        <%=f.label :mobile_number, :class=>'label'%>
+        <%=f.text_field :mobile_number,:class=>'text-field'%>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class='row'>
+            <%=f.submit :submit, :class=>"submit-button"%>
+        </div>
+    <%end%>
+    <br>
+    <%= link_to "Excel", root_path(format: "xls") %>
+</div>
 </html>

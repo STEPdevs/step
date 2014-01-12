@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 20140110153515) do
 
   create_table "users", force: true do |t|
     t.string   "name"
+    t.date     "date_of_birth"
     t.string   "email"
-    t.string   "mobile_no"
+    t.string   "address"
+    t.string   "mobile_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
