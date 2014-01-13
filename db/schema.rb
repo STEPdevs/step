@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20140110153515) do
     t.date     "date_of_birth"
     t.string   "email"
     t.string   "address"
+    t.string   "city"
     t.string   "mobile_number"
     t.datetime "created_at"
     t.datetime "updated_at"
