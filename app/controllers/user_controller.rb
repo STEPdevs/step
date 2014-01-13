@@ -8,6 +8,15 @@ class UserController < ApplicationController
     redirect_to root_path
   end
 
+  def validate
+    email = params[:email]
+    if  User.exists?(:email => email)
+      render :json =>  [false]
+    else
+      render :json =>  [true]
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :date_of_birth, :address, :mobile_number)

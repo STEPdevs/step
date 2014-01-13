@@ -4,4 +4,5 @@ Step::Application.routes.draw do
   resources :posts
   root to: "user#index"
   post 'user' => "user#create"
+  get 'validate' => "user#validate"
 end

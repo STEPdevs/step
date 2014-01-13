@@ -1,6 +1,9 @@
 body{
 	background-color: lightgrey;
 }
+.error{
+    padding-left: 350px;
+}
 .form-for{
 	margin-left: 100px;
 	margin-top: 50px;
