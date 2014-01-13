@@ -19,13 +19,11 @@
         <%=f.label :date_of_birth, :class=>'label'%>
         <%=f.date_select :date_of_birth, {:order => [ :day,:month,:year],:prompt => true, :start_year => 2000 , :end_year => 1990} %>
         </div>
-        <br>        
-        <br>        
+        <br>
         <div class='row'>
         <%=f.label :address, :class=>'address-label'%>
-        <%=f.text_field :address,:class=>'text-field'%>
+        <%=f.text_area :address,:class=>'address-text-field'%>
         </div>
-        <br>        
         <br>
         <div class='row'>
         <%=f.label :city, :class=>'label'%>

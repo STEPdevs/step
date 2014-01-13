@@ -24,6 +24,15 @@ body{
 	width: 120px;
 	height: 25px;
 }
+.address-text-field{
+    padding-left: 10px;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 10px;
+    margin-left: 120px;
+    width: 210px;
+    padding-bottom: 50px;
+}
 .text-field{
 	padding-left: 10px;
 	border: 1px solid black;
