@@ -3,12 +3,12 @@
     <%= form_for :user, :url=>user_path, :method=>'post'  do |f| %>
         <div class='row'>
         <%=f.label :name, :class=>'label'%>        
-        <%=f.text_field :name,:class=>'text-field'%>
+        <%=f.text_field :name,:class=>'text-field', :required => true%>
         </div>
         <br>
         <br>        
         <div class='row'>
-        <%=f.label :email, :class=>'label'%> 
+        <%=f.label :email, :class=>'label', :required => true%>
         <%=f.text_field :email,:class=>'text-field'%>
           <div id="user-validation"  class="error"></div>
           </div>
@@ -17,7 +17,7 @@
         <br>        
         <div class='row'>
         <%=f.label :date_of_birth, :class=>'label'%>
-        <%=f.date_select :date_of_birth, {:order => [ :day,:month,:year],:prompt => true, :start_year => 2000 , :end_year => 1990} %>
+        <%=f.date_select :date_of_birth, {:order => [ :day,:month,:year],:prompt => true, :start_year => 2000 , :end_year => 1990} , :required => true%>
         </div>
         <br>
         <div class='row'>
@@ -27,13 +27,13 @@
         <br>
         <div class='row'>
         <%=f.label :city, :class=>'label'%>
-        <%=f.text_field :city,:class=>'text-field'%>
+        <%=f.text_field :city,:class=>'text-field', :required => true%>
         </div>
       <br>
       <br>
       <div class='row'>
         <%=f.label :mobile_number, :class=>'label'%>
-        <%=f.text_field :mobile_number,:class=>'text-field'%>
+        <%=f.text_field :mobile_number,:class=>'text-field', :required => true%>
         </div>
         <br>
         <br>

@@ -11,10 +11,13 @@ $(document).ready(function(){
                 emailNotExist = "<div id=user-validation> <img src='yes.jpeg' width='16' height='10' alt='Edit Entry' /></div>" ;
                 if(data == "false") {
                     $('#user-validation').html(emailExist).css("color","red");
+                    $('#user_email').css('border-color','red');
 
                 }
                 else{
                     $('#user-validation').html(emailNotExist)
+                    $('#user_email').css('border-color','black');
+
 
                 }
         })
