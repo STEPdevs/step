@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    $('#date').datepicker({
+        minDate: new Date("/11/12/12"), maxDate: new Date("/12/12/12")
+    });
+
     $("#user_email").change(function(){
         var email= $(this).val();
         var data= {email: email};
@@ -26,3 +30,4 @@ $(document).ready(function(){
         })
     });
 });
+

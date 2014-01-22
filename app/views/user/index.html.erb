@@ -17,7 +17,7 @@
         <br>        
         <div class='row'>
         <%=f.label :date_of_birth, :class=>'label'%>
-        <%=f.date_select :date_of_birth, {:order => [ :day,:month,:year],:prompt => true, :start_year => 2000 , :end_year => 1990} , :required => true%>
+          <%= f.text_field :date_of_birth,:id => "date", :size => "8" %>
         </div>
         <br>
         <div class='row'>
@@ -43,6 +43,5 @@
         </div>
     <%end%>
     <br>
-    <%= link_to "Excel", root_path(format: "xls") %>
 </div>
 </html>

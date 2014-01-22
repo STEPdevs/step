@@ -1,6 +1,18 @@
 body{
 	background-color: lightgrey;
 }
+
+.hasDatepicker{
+    margin-left: 120px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+    color: #666;
+    padding: 5px 27px 5px 10px;
+    width: 165px;
+    outline: none;
+}
+
 .error{
     padding-left: 350px;
 }
@@ -25,23 +37,26 @@ body{
 	height: 25px;
 }
 .address-text-field{
-    padding-left: 10px;
-    border: 1px solid black;
-    outline: none;
-    border-radius: 10px;
     margin-left: 120px;
-    width: 210px;
     padding-bottom: 50px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+    color: #666;
+    padding: 50px 27px 5px 20px;
 }
 .text-field{
 	padding-left: 10px;
-	border: 1px solid black;
-	outline: none;
-	border-radius: 10px;	
 	margin-left: 120px;
 	position: absolute;
-	width: 210px;
-	height: 25px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+    color: #666;
+    float: left;
+    padding: 5px 27px 5px 10px;
+    width: 165px;
+    outline: none;
 }
 input[type='submit'].submit-button{
 	height: 30px;
