@@ -1,5 +1,4 @@
 body{
-	background-color: lightgrey;
 }
 
 .hasDatepicker{
@@ -17,24 +16,25 @@ body{
     padding-left: 350px;
 }
 .form-for{
-	margin-left: 100px;
-	margin-top: 50px;
+    margin-left: 100px;
+    margin-top: 50px;
 }
 .row{
+
 }
 .label:after{
-	content: ' *';
-	color: red;
+    content: ' *';
+    color: red;
 }
 .address-label{
-	position: absolute;
-	width: 120px;
-	height: 25px;
+    position: absolute;
+    width: 120px;
+    height: 25px;
 }
 .label{
-	position: absolute;
-	width: 120px;
-	height: 25px;
+    position: absolute;
+    width: 120px;
+    height: 25px;
 }
 .address-text-field{
     margin-left: 120px;
@@ -43,12 +43,17 @@ body{
     border-radius: 5px;
     box-shadow: 0 0 5px #888;
     color: #666;
-    padding: 50px 27px 5px 20px;
+    padding: 6px 6px 20px 6px;
+    width: 190px;
+    height: 36px;
+    /* padding-top: 6px; */
+    /* padding-left: 8px; */
 }
 .text-field{
-	padding-left: 10px;
-	margin-left: 120px;
-	position: absolute;
+    background-image:url('user.png');
+    padding-left: 10px;
+    margin-left: 120px;
+    position: absolute;
     border: 1px solid #DDD;
     border-radius: 5px;
     box-shadow: 0 0 5px #888;
@@ -59,27 +64,44 @@ body{
     outline: none;
 }
 input[type='submit'].submit-button{
-	height: 30px;
-	width: 120px;
-	border-radius: 10px;
-	background-color: grey;
-	color: white;
-	font-family: bold;
-	font-size: 20px;
-	outline: none;
-	line-height: 2px;	
+    height: 30px;
+    width: 120px;
+    border-radius: 10px;
+    background-color: grey;
+    color: white;
+    font-family: bold;
+    font-size: 20px;
+    outline: none;
+    line-height: 2px;
 }
-select#user_date_of_birth_3i {
-	margin-left: 120px;
-	height: 20px;
-	border: 1px solid black;
+
+.ui-datepicker {
+    width: 12em ! important;
+    height: 199px;
+    padding: .2em .2em 0;
+    display: none;
+    margin-top: -29px;
 }
-select#user_date_of_birth_2i {	
-	height: 20px;
-	border: 1px solid black;
+
+.ui-state-default{
+    font-size: 12px;
 }
-select#user_date_of_birth_1i {
-	
-	height: 20px;
-	border: 1px solid black;
+
+.ui-datepicker th {
+    font-size: 11px;
 }
+
+.ui-datepicker-title {
+    font-size: 13px;
+}
+
+
+/*Datepicker*/
+
+/*.ui-datepicker-calendar{*/
+/*background-color: white;*/
+/*border: 2px;*/
+/*border-color: black;*/
+/*}*/
+/*Datepicker*/
+

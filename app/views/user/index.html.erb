@@ -1,46 +1,39 @@
 <html>
+<head>
+  <link href="jquery-ui-1.10.4.custom.css" rel="stylesheet" type="text/css">
+</head>
 <div class='form-for'>
     <%= form_for :user, :url=>user_path, :method=>'post'  do |f| %>
         <div class='row'>
         <%=f.label :name, :class=>'label'%>        
-        <%=f.text_field :name,:class=>'text-field', :required => true%>
+        <%=f.text_field :name,:class=>'text-field',:id => "name", :required => true%>
         </div>
         <br>
         <br>        
-        <div class='row'>
-        <%=f.label :email, :class=>'label', :required => true%>
-        <%=f.text_field :email,:class=>'text-field'%>
+        <%=f.label :email, :class=>'label'%>
+        <%=f.text_field :email,:class=>'text-field',:id => "email",:required => true%>
           <div id="user-validation"  class="error"></div>
-          </div>
         <br>
 
         <br>        
         <div class='row'>
         <%=f.label :date_of_birth, :class=>'label'%>
-          <%= f.text_field :date_of_birth,:id => "date", :size => "8" %>
+          <%= f.text_field :date_of_birth,:id => "date", :size => "8",:id => "dob",:class => "input-selection-block", :required => true  %>
         </div>
         <br>
-        <div class='row'>
         <%=f.label :address, :class=>'address-label'%>
-        <%=f.text_area :address,:class=>'address-text-field'%>
-        </div>
+        <%=f.text_area :address,:class=>'address-text-field',:id => "address"%>
         <br>
-        <div class='row'>
         <%=f.label :city, :class=>'label'%>
-        <%=f.text_field :city,:class=>'text-field', :required => true%>
-        </div>
+        <%=f.text_field :city,:class=>'text-field',:id => "city",:required => true%>
       <br>
       <br>
-      <div class='row'>
         <%=f.label :mobile_number, :class=>'label'%>
-        <%=f.text_field :mobile_number,:class=>'text-field', :required => true%>
-        </div>
+        <%=f.text_field :mobile_number,:class=>'text-field',:id => "number", :required => true%>
         <br>
         <br>
         <br>
-        <div class='row'>
-            <%=f.submit :submit, :class=>"submit-button"%>
-        </div>
+            <%=f.submit :submit, :id => "submit",:class=>"submit-button"%>
     <%end%>
     <br>
 </div>
