@@ -8,7 +8,8 @@ $(document).ready(function(){
     }
 
     $('#dob').datepicker({
-        minDate: new Date("/11/12/12"), maxDate: new Date("/12/12/12")
+        dateFormat: "dd/mm/yy",
+        minDate: (new Date("/7/12/1993")), maxDate: (new Date("/7/12/1996"))
     });
 
     $('#submit').click(function(){
