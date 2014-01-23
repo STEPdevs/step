@@ -5,10 +5,13 @@
 <header>
   <h2>STEP - ThoughtWorks</h2>
 </header>
+
 <div class='form-for'>
-    <%= form_for :user, :url=>user_path, :method=>'post'  do |f| %>
+  <div id="upleft">
+
+  <%= form_for :user, :url=>user_path, :method=>'post'  do |f| %>
         <div class='row'>
-        <%=f.label :name, :class=>'label'%>        
+        <%=f.label :name, :class=>'label'%>
         <%=f.text_field :name,:class=>'text-field',:id => "name", :required => true%>
         </div>
         <br>
@@ -40,5 +43,10 @@
             <%=f.submit :submit, :id => "submit",:class=>"submit-button"%>
     <%end%>
     <br>
+  </div>
+  <div id="upright">
+
+  <img src="/images/step-brochure.png" alt="rss feed" />
+  </div>
 </div>
 </html>
