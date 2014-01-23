@@ -20,7 +20,7 @@ $(document).ready(function(){
 
     })
 
-    $("#user_email").change(function(){
+    $("#email").change(function(){
         var email= $(this).val();
         var data= {email: email};
         $.ajax({
@@ -34,13 +34,13 @@ $(document).ready(function(){
                 {
                     if(data == "false") {
                         $('#user-validation').html(emailExist).css("color","red");
-                        $('#user_email').css('border-color','red');
-
+                        $('#email').css('border-color','red');
+                        document.getElementById("submit").disabled = true;
                     }
                     else{
                         $('#user-validation').html(emailNotExist)
-                        $('#user_email').css('border-color','grey');
-
+                        $('#email').css('border-color','grey');
+                        document.getElementById("submit").disabled = false;
 
                     }
                 }
