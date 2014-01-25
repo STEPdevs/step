@@ -1,136 +1,136 @@
-body{
+select{
+    width: 218px;
 }
+/*.hasDatepicker{*/
+    /*margin-left: 120px;*/
+    /*border: 1px solid #DDD;*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 0 5px #888;*/
+    /*color: #666;*/
+    /*padding: 5px 27px 5px 10px;*/
+    /*width: 165px;*/
+    /*outline: none;*/
+/*}*/
 
-.hasDatepicker{
-    margin-left: 120px;
-    border: 1px solid #DDD;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #888;
-    color: #666;
-    padding: 5px 27px 5px 10px;
-    width: 165px;
-    outline: none;
-}
+/*.error{*/
+    /*padding-left: 340px;*/
+/*}*/
+/*.form-for{*/
+    /*margin-left: 100px;*/
+    /*margin-top: 50px;*/
+/*}*/
+/*.row{*/
 
-.error{
-    padding-left: 340px;
-}
-.form-for{
-    margin-left: 100px;
-    margin-top: 50px;
-}
-.row{
+/*}*/
+/*.label:after{*/
+    /*content: ' *';*/
+    /*color: red;*/
+/*}*/
+/*.address-label{*/
+    /*position: absolute;*/
+    /*width: 120px;*/
+    /*height: 25px;*/
+/*}*/
+/*.label{*/
+    /*position: absolute;*/
+    /*width: 120px;*/
+    /*height: 25px;*/
+/*}*/
+/*.address-text-field{*/
+    /*margin-left: 120px;*/
+    /*padding-bottom: 50px;*/
+    /*border: 1px solid #DDD;*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 0 5px #888;*/
+    /*color: #666;*/
+    /*padding: 6px 6px 20px 6px;*/
+    /*width: 190px;*/
+    /*height: 36px;*/
+     /*padding-top: 6px;*/
+     /*padding-left: 8px;*/
+/*}*/
+/*.text-field{*/
+    /*padding-left: 10px;*/
+    /*margin-left: 120px;*/
+    /*position: absolute;*/
+    /*border: 1px solid #DDD;*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 0 5px #888;*/
+    /*color: #666;*/
+    /*float: left;*/
+    /*padding: 5px 27px 5px 10px;*/
+    /*width: 165px;*/
+    /*outline: none;*/
+/*}*/
+/*input[type='submit'].submit-button{*/
+    /*height: 30px;*/
+    /*width: 120px;*/
+    /*border-radius: 10px;*/
+    /*background-color: grey;*/
+    /*color: white;*/
+    /*font-family: bold;*/
+    /*font-size: 20px;*/
+    /*outline: none;*/
+    /*line-height: 2px;*/
+/*}*/
 
-}
-.label:after{
-    content: ' *';
-    color: red;
-}
-.address-label{
-    position: absolute;
-    width: 120px;
-    height: 25px;
-}
-.label{
-    position: absolute;
-    width: 120px;
-    height: 25px;
-}
-.address-text-field{
-    margin-left: 120px;
-    padding-bottom: 50px;
-    border: 1px solid #DDD;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #888;
-    color: #666;
-    padding: 6px 6px 20px 6px;
-    width: 190px;
-    height: 36px;
-    /* padding-top: 6px; */
-    /* padding-left: 8px; */
-}
-.text-field{
-    padding-left: 10px;
-    margin-left: 120px;
-    position: absolute;
-    border: 1px solid #DDD;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #888;
-    color: #666;
-    float: left;
-    padding: 5px 27px 5px 10px;
-    width: 165px;
-    outline: none;
-}
-input[type='submit'].submit-button{
-    height: 30px;
-    width: 120px;
-    border-radius: 10px;
-    background-color: grey;
-    color: white;
-    font-family: bold;
-    font-size: 20px;
-    outline: none;
-    line-height: 2px;
-}
+/*.ui-datepicker {*/
+    /*width: 12em ! important;*/
+    /*height: 199px;*/
+    /*padding: .2em .2em 0;*/
+    /*display: none;*/
+    /*margin-top: -29px;*/
+/*}*/
 
-.ui-datepicker {
-    width: 12em ! important;
-    height: 199px;
-    padding: .2em .2em 0;
-    display: none;
-    margin-top: -29px;
-}
+/*.ui-state-default{*/
+    /*font-size: 12px;*/
+/*}*/
 
-.ui-state-default{
-    font-size: 12px;
-}
+/*.ui-datepicker th {*/
+    /*font-size: 11px;*/
+/*}*/
 
-.ui-datepicker th {
-    font-size: 11px;
-}
-
-.ui-datepicker-title {
-    font-size: 13px;
-}
+/*.ui-datepicker-title {*/
+    /*font-size: 13px;*/
+/*}*/
 
 /*header*/
 
-*{
-    margin:0;
-    padding:0;
-}
+/**{*/
+    /*margin:0;*/
+    /*padding:0;*/
+/*}*/
 
-header {
-    background-color:#212121;
-    box-shadow: 0 -1px 2px #111111;
-    color:#fff;
-    display:block;
-    height:50px;
-    position:relative;
-    width:100%;
-    z-index:100;
-}
-header h2{
-    font-size:22px;
-    font-weight:normal;
-    left:50%;
-    margin-left:-400px;
-    padding:15px 0;
-    position:absolute;
-    width:540px;
-}
+/*header {*/
+    /*background-color:#212121;*/
+    /*box-shadow: 0 -1px 2px #111111;*/
+    /*color:#fff;*/
+    /*display:block;*/
+    /*height:50px;*/
+    /*position:relative;*/
+    /*width:100%;*/
+    /*z-index:100;*/
+/*}*/
+/*header h2{*/
+    /*font-size:22px;*/
+    /*font-weight:normal;*/
+    /*left:50%;*/
+    /*margin-left:-400px;*/
+    /*padding:15px 0;*/
+    /*position:absolute;*/
+    /*width:540px;*/
+/*}*/
 /*header*/
 
 
-#upleft {
-    width:60%;
-    height: 100%;
-    float:left;
-}
+/*#upleft {*/
+    /*width:60%;*/
+    /*height: 100%;*/
+    /*float:left;*/
+/*}*/
 
-#upright {
-    width:40%;
-    height:100%;
-    float:left
-}
+/*#upright {*/
+    /*width:40%;*/
+    /*height:100%;*/
+    /*float:left*/
+/*}*/
