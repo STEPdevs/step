@@ -1,307 +1,132 @@
-select{
-    width: 218px;
+body{
 }
-.ex-form {
-    position:relative;
-    margin:0 auto;
-    width:440px;
-    min-height: 400px;
-    font-family:Arial, sans-serif;
-    font-size:12px;
-    padding:30px;
-    background:none;
-    background: rgba(150, 150, 150, 0.2);
-    zoom: 1;
-    }
-h1, h2 {
-    margin-top:0;
-    font-family:Arial, sans-serif;
-    font-size:18px;
-    color: #6e6a65;
-    text-transform: uppercase;
-    text-align: center;
-}
-h2 {
-    margin:30px 0 10px;
-    font-size:14px;
-}
-.ui-progressbar {
-    background: #e5e4e3!important;
-    border: medium none;
-    border-radius: 15px;
-    box-shadow: 0 1px 2px #aaa inset;
-}
-.ui-progressbar .ui-progressbar-value {
-    background: none;
-    background: -moz-linear-gradient( left, #98c8a9, #e9e1a8 );
-    background: -webkit-linear-gradient( left, #98c8a9, #e9e1a8 );
-    background: -o-linear-gradient( left, #98c8a9, #e9e1a8 );
-    background: -khtml-linear-gradient( left, #98c8a9, #e9e1a8 );
-    background: linear-gradient( to right, #98c8a9, #e9e1a8 );
 
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 1px 2px #999 inset;
+.hasDatepicker{
+    margin-left: 120px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+    color: #666;
+    padding: 5px 27px 5px 10px;
+    width: 165px;
+    outline: none;
 }
-#amount {
+
+.error{
+    padding-left: 340px;
+}
+.form-for{
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.row{
+
+}
+.label:after{
+    content: ' *';
+    color: red;
+}
+.address-label{
     position: absolute;
-    margin: -19px 0 0 -30px;
-    width: 100%;
-    font-size: 10px;
-    font-weight: bold;
-    color: #677764;
-    text-align: center;
+    width: 120px;
+    height: 25px;
 }
-.form-panel fieldset {
-    width:430px;
-    height:170px;
-    margin:0 auto 20px;
-    padding:20px 0;
-    border: none;
-    background:none;
-    background: rgba(255, 255, 255, 0.2);
+.label{
+    position: absolute;
+    width: 120px;
+    height: 25px;
 }
-.form-panel label, .form-panel .label {
-    width: 100%;
-    clear: left;
-    cursor: pointer;
+.address-text-field{
+    margin-left: 120px;
+    padding-bottom: 50px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+    color: #666;
+    width: 190px;
 }
-.form-panel .title {
-    float:left;
-    padding-top:5px;
-    margin-right:10px;
-    width:130px;
-    text-align:right;
-    color: #6E6A65;
-}
-.form-panel .input {
+.text-field{
+    padding-left: 10px;
+    margin-left: 120px;
+    position: absolute;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+    color: #666;
     float: left;
-    padding: 3px;
-    margin-bottom: 13px;
-    border-radius: 12px;
-    width: 218px;
-
-    background: none;
-    }
-.form-panel input, .form-panel textarea {
-    float: left;
-    padding: 8px 13px;
-    margin: -3px;
-    width: 240px;
-    height: 12px;
-    line-height: 12px;
-    font-size: 12px;
-    color: #9A9895;
-    border: 1px solid #D7D6D5;
-    cursor: text;
-    border-radius: 12px;
-    box-shadow: 0 1px 2px #999 inset;
+    padding: 5px 27px 5px 10px;
+    width: 165px;
+    outline: none;
 }
-.form-panel input:focus, .form-panel textarea:focus {
-    padding: 5px 10px;
-    margin: 0;
-    border-color: #fff;
-    box-shadow: none ;
-}
-.form-panel textarea {
-    height: 60px;
-}
-#thanks {
-    text-align:center;
-}
-#thanks p {
-    margin-top:58px;
-    font-size:18px;
-    color: #6e6a65;
-}
-.ex-form button {
-    float:right;
-    padding: 15px 20px 14px;
-    margin-left: 30px;
-    color: #9ca1a2;
-    text-transform: uppercase;
-    font-size: 10px;
-    font-weight: bold;
-    border: 1px solid #fff;
-    background: #fff;
-
-    background: -moz-linear-gradient( top, #ffffff, #eaeced );
-    background: -webkit-linear-gradient( top, #ffffff, #eaeced );
-    background: -o-linear-gradient( top, #ffffff, #eaeced );
-    background: -khtml-linear-gradient( top, #ffffff, #eaeced );
-    background: linear-gradient( to bottom, #ffffff, #eaeced );
-
-    border-radius: 25px;
-    box-shadow: 0 1px 2px #787878;
-
-    cursor: pointer;
-}
-.ex-form button:hover {
-    opacity: 0.8;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-    filter: alpha(opacity=80);
-}
-.ex-form button:disabled {
-    cursor: default;
-    opacity: 0.6;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-    filter: alpha(opacity=60);
-}
-#back {
-    padding-left: 15px;
-}
-#back span{
-    left: -5px
-}
-#next {
-    padding-right: 15px;
-}
-#next span{
-    right: -5px
-}
-.ex-form button span {
-    position: relative;
-    padding: 2px 5px;
-    top: -1px;
-    background: #FBF9F7;
-    border: 1px solid #d9dee0;
-    border-radius: 10px;
-}
-/*.hasDatepicker{*/
-    /*margin-left: 120px;*/
-    /*border: 1px solid #DDD;*/
-    /*border-radius: 5px;*/
-    /*box-shadow: 0 0 5px #888;*/
-    /*color: #666;*/
-    /*padding: 5px 27px 5px 10px;*/
-    /*width: 165px;*/
-    /*outline: none;*/
-/*}*/
-
-/*.error{*/
-    /*padding-left: 340px;*/
-/*}*/
-/*.form-for{*/
-    /*margin-left: 100px;*/
-    /*margin-top: 50px;*/
-/*}*/
-/*.row{*/
-
-/*}*/
-/*.label:after{*/
-    /*content: ' *';*/
-    /*color: red;*/
-/*}*/
-/*.address-label{*/
-    /*position: absolute;*/
-    /*width: 120px;*/
-    /*height: 25px;*/
-/*}*/
-/*.label{*/
-    /*position: absolute;*/
-    /*width: 120px;*/
-    /*height: 25px;*/
-/*}*/
-/*.address-text-field{*/
-    /*margin-left: 120px;*/
-    /*padding-bottom: 50px;*/
-    /*border: 1px solid #DDD;*/
-    /*border-radius: 5px;*/
-    /*box-shadow: 0 0 5px #888;*/
-    /*color: #666;*/
-    /*padding: 6px 6px 20px 6px;*/
-    /*width: 190px;*/
-    /*height: 36px;*/
-     /*padding-top: 6px;*/
-     /*padding-left: 8px;*/
-/*}*/
-/*.text-field{*/
-    /*padding-left: 10px;*/
-    /*margin-left: 120px;*/
-    /*position: absolute;*/
-    /*border: 1px solid #DDD;*/
-    /*border-radius: 5px;*/
-    /*box-shadow: 0 0 5px #888;*/
-    /*color: #666;*/
-    /*float: left;*/
-    /*padding: 5px 27px 5px 10px;*/
-    /*width: 165px;*/
-    /*outline: none;*/
-/*}*/
 input[type='submit'].submit-button{
-    float:right;
-    padding: 15px 20px 14px;
-    margin-left: 30px;
-    color: #9ca1a2;
-    text-transform: uppercase;
-    font-size: 10px;
-    font-weight: bold;
-    border: 1px solid #fff;
-    background: #fff;
-    border-radius: 25px;
-    box-shadow: 0 1px 2px #787878;
-    height: 40px;
-    width: 100px;
-    cursor: pointer;
+    height: 30px;
+    width: 120px;
+    border-radius: 10px;
+    background-color: grey;
+    color: white;
+    font-family: bold;
+    font-size: 20px;
+    outline: none;
+    line-height: 2px;
 }
 
-/*.ui-datepicker {*/
-    /*width: 12em ! important;*/
-    /*height: 199px;*/
-    /*padding: .2em .2em 0;*/
-    /*display: none;*/
-    /*margin-top: -29px;*/
-/*}*/
+.ui-datepicker {
+    width: 12em ! important;
+    height: 199px;
+    padding: .2em .2em 0;
+    display: none;
+    margin-top: -29px;
+}
 
-/*.ui-state-default{*/
-    /*font-size: 12px;*/
-/*}*/
+.ui-state-default{
+        font-size: 12px;
+}
 
-/*.ui-datepicker th {*/
-    /*font-size: 11px;*/
-/*}*/
+.ui-datepicker th {
+    font-size: 11px;
+}
 
-/*.ui-datepicker-title {*/
-    /*font-size: 13px;*/
-/*}*/
+.ui-datepicker-title {
+    font-size: 13px;
+}
 
 /*header*/
 
-/**{*/
-    /*margin:0;*/
-    /*padding:0;*/
-/*}*/
+*{
+    margin:0;
+    padding:0;
+}
 
-/*header {*/
-    /*background-color:#212121;*/
-    /*box-shadow: 0 -1px 2px #111111;*/
-    /*color:#fff;*/
-    /*display:block;*/
-    /*height:50px;*/
-    /*position:relative;*/
-    /*width:100%;*/
-    /*z-index:100;*/
-/*}*/
-/*header h2{*/
-    /*font-size:22px;*/
-    /*font-weight:normal;*/
-    /*left:50%;*/
-    /*margin-left:-400px;*/
-    /*padding:15px 0;*/
-    /*position:absolute;*/
-    /*width:540px;*/
-/*}*/
+header {
+    background-color:#212121;
+    box-shadow: 0 -1px 2px #111111;
+    color:#fff;
+    display:block;
+    height:50px;
+    position:relative;
+    width:100%;
+    z-index:100;
+}
+header h2{
+    font-size:22px;
+    font-weight:normal;
+    left:50%;
+    margin-left:-400px;
+    padding:15px 0;
+    position:absolute;
+    width:540px;
+}
 /*header*/
 
 
-/*#upleft {*/
-    /*width:60%;*/
-    /*height: 100%;*/
-    /*float:left;*/
-/*}*/
+#upleft {
+    width:60%;
+    height: 100%;
+    float:left;
+}
 
-/*#upright {*/
-    /*width:40%;*/
-    /*height:100%;*/
-    /*float:left*/
-/*}*/
+#upright {
+    width:40%;
+    height:100%;
+    float:left
+}

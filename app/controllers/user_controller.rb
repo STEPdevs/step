@@ -4,6 +4,7 @@ class UserController < ApplicationController
   end
   def create
     @user = User.new(user_params)
+    #UserMailer.welcome_email(@user).deliver
     @user.save
     redirect_to root_path
   end
