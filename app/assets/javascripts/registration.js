@@ -29,6 +29,7 @@ $(document).ready(function(){
             data: data
         })
         .success(function(data){
+                alert("ello")
                 emailExist = "<div id=user-validation>This User is already taken </div>";
                 emailNotExist = "<div id=user-validation> <img src='yes.jpeg' width='16' height='10' alt='Edit Entry' /></div>" ;
                 if(email != '')
