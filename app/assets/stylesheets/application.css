@@ -1,3 +1,7 @@
+*{
+    margin:0;
+    padding:0;
+}
 select{
     width: 218px;
 }
@@ -244,27 +248,6 @@ input[type='submit'].submit-button{
     width: 100px;
     cursor: pointer;
 }
-
-    .ui-datepicker {
-        width: 12em ! important;
-        height: 199px;
-        padding: .2em .2em 0;
-        display: none;
-        margin-top: -29px;
-    }
-
-    .ui-state-default{
-        font-size: 12px;
-    }
-
-    .ui-datepicker th {
-        font-size: 11px;
-    }
-
-    .ui-datepicker-title {
-        font-size: 13px;
-    }
-
 header
 
 *{
@@ -291,7 +274,6 @@ header h2{
     position:absolute;
     width:540px;
 }
-header
 
 
 /*#upleft {*/
