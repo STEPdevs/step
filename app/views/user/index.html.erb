@@ -4,7 +4,6 @@
   <link rel="stylesheet" type="text/css" href="jquery.ui.core.css">
   <link rel="stylesheet" type="text/css" href="jquery.ui.theme.css">
   <link rel="stylesheet" type="text/css" href="jquery.ui.progressbar.css">
-  <link rel="stylesheet" type="text/css" href="custom.css">
   <!--[if IE 9]>
   <style type="text/css">
       .form-panel .input, .form-panel input, .form-panel textarea {
@@ -41,6 +40,8 @@
             <span class="input"><%=f.text_field :mobile_number, :required => true%></span>
           </label>
         </fieldset>
+        <button id="next">Next <span>&#9654;</span></button><button id="back" disabled="disabled"><span>&#9664;</span> Back</button>
+
       </div>
 
       <div id="panel2" class="form-panel ui-helper-hidden">
@@ -66,9 +67,13 @@
             <span class="input"><%= f.select :preferredGDCenter, ["Bangalore","Chennai","Gurgaon","Pune"]%></span>
           </label>
 
-
         </fieldset>
+        <button id="next">Next <span>&#9654;</span></button><button id="back" disabled="disabled"><span>&#9664;</span>
+        </button>
+        <!--<%=f.submit :submit, :id => "submit",:class=>"submit-button"%>-->
+
       </div>
+
       <div id="thanks" class="form-panel ui-helper-hidden">
         <h2>Registration Complete</h2>
         <fieldset class="ui-corner-all">
@@ -78,7 +83,6 @@
 
 
 <% end %>
-    <button id="next">Next <span>&#9654;</span></button><button id="back" disabled="disabled"><span>&#9664;</span> Back</button>
 </div>
 
 
