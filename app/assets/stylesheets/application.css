@@ -1,11 +1,17 @@
 /*
 *= require jquery-ui
 *= require jquery-progressbar
+*= require date-picker
 */
 *{
     margin:0;
     padding:0;
 }
+body{
+    background: -webkit-radial-gradient(29% -1%, circle,white, black 140%);
+    padding-bottom: 50%;
+}
+
 header {
     background-color:#212121;
     box-shadow: 0 -1px 2px #111111;
@@ -13,8 +19,7 @@ header {
     display:block;
     height:50px;
     position:relative;
-    width:100%;
-    z-index:100;
+    width: 100%;
 }
 header h2{
     font-size:22px;
@@ -24,6 +29,14 @@ header h2{
     padding:15px 0;
     position:absolute;
     width:540px;
+    padding-top: 17px;
+
+}
+
+h2{
+    padding-top: 17px;
+    padding-left: 10px;
+    padding-bottom: 4px;
 }
 
 select{
@@ -32,7 +45,7 @@ select{
 .ex-form {
     position:relative;
     width:440px;
-    min-height: 320px;
+    height: 365px;
     font-family:Arial, sans-serif;
     font-size:12px;
     padding:30px;
@@ -41,17 +54,17 @@ select{
     zoom: 1;
     }
 .upper-left {
-    width:60%;
+    width:50%;
     float:left;
     padding-top: 40px ;
-    /*background-color: red;*/
+    margin-left: 40px;
 }
 
 .upper-right {
     width:40%;
     float:left;
-    /*background-color: green;*/
-
+    padding-top: 40px ;
+    margin-left: 40px;
 }
 
 .ui-progressbar {
@@ -83,7 +96,7 @@ select{
 }
 .form-panel fieldset {
     width:430px;
-    height:170px;
+    height:201px;
     margin:0 auto 20px;
     padding:20px 0;
     border: none;
@@ -135,14 +148,9 @@ select{
 .form-panel textarea {
     height: 60px;
 }
-/*#thanks {*/
-    /*text-align:center;*/
-/*}*/
-/*#thanks p {*/
-    /*margin-top:58px;*/
-    /*font-size:18px;*/
-    /*color: #6e6a65;*/
-/*}*/
+.ex-form.ui-helper-clearfix.ui-corner-all{
+    background: -webkit-radial-gradient(20% 13%, circle,white, black 124%);
+}
 .ex-form button {
     float:right;
     padding: 15px 20px 14px;
@@ -213,98 +221,3 @@ input[type='submit'].submit-button{
     width: 100px;
     cursor: pointer;
 }
-/*header*/
-
-/**{*/
-    /*margin:0;*/
-    /*padding:0;*/
-/*}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*.hasDatepicker{*/
-/*margin-left: 120px;*/
-/*border: 1px solid #DDD;*/
-/*border-radius: 5px;*/
-/*box-shadow: 0 0 5px #888;*/
-/*color: #666;*/
-/*padding: 5px 27px 5px 10px;*/
-/*width: 165px;*/
-/*outline: none;*/
-/*}*/
-
-/*.error{*/
-/*padding-left: 340px;*/
-/*}*/
-/*.form-for{*/
-/*margin-left: 100px;*/
-/*margin-top: 50px;*/
-/*}*/
-/*.row{*/
-
-/*}*/
-/*.label:after{*/
-/*content: ' *';*/
-/*color: red;*/
-/*}*/
-/*.address-label{*/
-/*position: absolute;*/
-/*width: 120px;*/
-/*height: 25px;*/
-/*}*/
-/*.label{*/
-/*position: absolute;*/
-/*width: 120px;*/
-/*height: 25px;*/
-/*}*/
-/*.address-text-field{*/
-/*margin-left: 120px;*/
-/*padding-bottom: 50px;*/
-/*border: 1px solid #DDD;*/
-/*border-radius: 5px;*/
-/*box-shadow: 0 0 5px #888;*/
-/*color: #666;*/
-/*padding: 6px 6px 20px 6px;*/
-/*width: 190px;*/
-/*height: 36px;*/
-/*padding-top: 6px;*/
-/*padding-left: 8px;*/
-/*}*/
-/*.text-field{*/
-/*padding-left: 10px;*/
-/*margin-left: 120px;*/
-/*position: absolute;*/
-/*border: 1px solid #DDD;*/
-/*border-radius: 5px;*/
-/*box-shadow: 0 0 5px #888;*/
-/*color: #666;*/
-/*float: left;*/
-/*padding: 5px 27px 5px 10px;*/
-/*width: 165px;*/
-/*outline: none;*/
-/*}*/
-
-
-

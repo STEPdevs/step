@@ -1,0 +1,23 @@
+.ui-widget-header {
+    border: 1px solid #000000;
+    background: grey 50% 50% repeat-x;
+}
+
+.ui-widget {
+    font-size: 14px;
+}
+
+.ui-state-default {
+    font-size: 11px;
+    width: 14px;
+}
+
+.ui-datepicker th {
+    padding-right: 10px;
+}
+
+
+.ui-datepicker td {
+    padding: 0px 0px 0px 0px;
+}
+

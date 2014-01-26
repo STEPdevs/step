@@ -14,7 +14,10 @@ $(document).ready(function(){
         return false;
     }
 
-//    $('#dob').datepicker();
+    $('#dob').datepicker({
+        dateFormat: "dd/mm/yy",
+        minDate: (new Date("/7/12/1993")), maxDate: (new Date("/7/12/1996"))
+    });
 
     $('#submit').click(function(){
         var allFields=[$('#name').val(),$('#email').val(),$('#city').val(),$('#number').val()];

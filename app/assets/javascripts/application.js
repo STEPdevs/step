@@ -11,5 +11,5 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
+//= require jquery-ui-v1.10.4
 //= require registration
