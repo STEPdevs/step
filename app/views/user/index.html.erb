@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="jquery.ui.core.css">
-  <link rel="stylesheet" type="text/css" href="jquery.ui.theme.css">
-  <link rel="stylesheet" type="text/css" href="jquery.ui.progressbar.css">
   <!--[if IE 9]>
   <style type="text/css">
       .form-panel .input, .form-panel input, .form-panel textarea {
@@ -16,72 +13,78 @@
   </header>
 </head>
 <body>
-<div class="ex-form ui-helper-clearfix ui-corner-all">
-  <div id="progress"></div><label id="amount">0%</label>
-  <%= form_for :user, :url=>user_path, :method=>'post'  do |f| %>
-      <div id="panel1" class="form-panel">
-        <h2>Personal Details</h2>
-        <fieldset>
-          <label>
-            <span class="title">Name:</span>
-            <span class="input"><%=f.text_field :name, :required => true%></span>
-          </label>
-          <label>
-            <span class="title">Email:</span>
-            <span class="input"><%=f.text_field :email,:id => "email",:required => true%></span>
-            <div id="user-validation"  class="error"></div>
-          </label>
-          <label>
-            <span class="title">Date Of Birth</span>
-            <span class="input"><%= f.text_field :date_of_birth, :size => "8",:id => "dob", :required => true%></span>
-          </label>
-          <label>
-            <span class="title">City</span>
-            <span class="input"><%=f.text_field :city,:required => true%></span>
-          </label>
-          <label>
-            <span class="title">Contact No.</span>
-            <span class="input"><%=f.text_field :mobile_number, :required => true%></span>
-          </label>
-        </fieldset>
-        <button id="next">Next <span>&#9654;</span></button><button id="back" disabled="disabled"><span>&#9664;</span> Back</button>
+<div class="upper-left">
+    <div class="ex-form ui-helper-clearfix ui-corner-all">
+      <div id="progress"></div><label id="amount">0%</label>
+        <%= form_for :user, :url=>user_path, :method=>'post'  do |f| %>
+          <div id="panel1" class="form-panel">
+            <h2>Personal Details</h2>
+            <fieldset>
+              <label>
+                <span class="title">Name:</span>
+                <span class="input"><%=f.text_field :name,:id=>"name", :required => true%></span>
+              </label>
+              <label>
+                <span class="title">Email:</span>
+                <span class="input"><%=f.text_field :email,:id => "email",:required => true%></span>
+                <div id="user-validation"  class="error"></div>
+              </label>
+              <label>
+                <span class="title">Date Of Birth</span>
+                <br>
+                <span class="input"><%= f.text_field :date_of_birth, :size => "8",:id => "dob", :required => true%></span>
+              </label>
+              <label>
+                <span class="title">City</span>
+                <span class="input"><%=f.text_field :city,:id => "city",:required => true%></span>
+              </label>
+              <label>
+                <span class="title">Contact No.</span>
+                <span class="input"><%=f.text_field :mobile_number,:id => "number", :required => true%></span>
+              </label>
+            </fieldset>
+            <button id="next">Next <span>&#9654;</span></button><button id="back" disabled="disabled"><span>&#9664;</span> Back</button>
 
-      </div>
+          </div>
 
-      <div id="panel2" class="form-panel ui-helper-hidden">
-        <h2>Social Data</h2>
-        <fieldset class="ui-corner-all">
-          <label>
-            <span class="title">Diploma in</span>
-            <span class="input"><%= f.select :diploma, ["Diploma in Computer Science","Diploma in Computer Engineering", "Diploma in Computer Technology","Diploma in Information Technology","Diploma in Information Systems"]%>
-            </span>
-          </label>
-          <label>
-            <span class="title">Passing Year</span>
-            <span class="input"><%= f.select :year, ["2012", "2013","2014"]%></span>
-          </label>
-          <br>
-          <label>
-            <span class="title">Preferred Aptitude Test Centre</span>
-            <span class="input"><%= f.select :preferredAptitudeCenter, ["Vijayawada", "Bangalore","Chennai"]%></span>
-          </label>
+          <div id="panel2" class="form-panel ui-helper-hidden">
+            <h2>Social Data</h2>
+            <fieldset class="ui-corner-all">
+              <label>
+                <span class="title">Diploma in</span>
+                <span class="input"><%= f.select :diploma, ["Diploma in Computer Science","Diploma in Computer Engineering", "Diploma in Computer Technology","Diploma in Information Technology","Diploma in Information Systems"]%>
+                </span>
+              </label>
+              <label>
+                <span class="title">Passing Year</span>
+                <span class="input"><%= f.select :year, ["2012", "2013","2014"]%></span>
+              </label>
+              <br>
+              <label>
+                <span class="title">Preferred Aptitude Test Centre</span>
+                <span class="input"><%= f.select :preferredAptitudeCenter, ["Vijayawada", "Bangalore","Chennai"]%></span>
+              </label>
 
-          <label>
-            <span class="title">Preferred GDPI Centre</span>
-            <span class="input"><%= f.select :preferredGDCenter, ["Bangalore","Chennai","Gurgaon","Pune"]%></span>
-          </label>
+              <label>
+                <span class="title">Preferred GDPI Centre</span>
+                <span class="input"><%= f.select :preferredGDCenter, ["Bangalore","Chennai","Gurgaon","Pune"]%></span>
+              </label>
 
-        </fieldset>
-        </button>
-        <%=f.submit :submit, :id => "submit",:class=>"submit-button"%>
-      </div>
-      <div id="thanks" class="form-panel ui-helper-hidden">
-        <h2>Registration Complete</h2>
-        <fieldset class="ui-corner-all">
-          <p>Thanks for registering!</p>
-        </fieldset>
-      </div>
-<% end %>
+            </fieldset>
+            </button>
+            <%=f.submit :submit, :id => "submit",:class=>"submit-button"%>
+          </div>
+          <div id="thanks" class="form-panel ui-helper-hidden">
+            <h2>Registration Complete</h2>
+            <fieldset class="ui-corner-all">
+              <p>Thanks for registering!</p>
+            </fieldset>
+          </div>
+    <% end %>
+    </div>
+  </div>
+<div class="upper-right">
+    hello
 </div>
 </body>
 </html>
