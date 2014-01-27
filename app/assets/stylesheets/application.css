@@ -97,7 +97,7 @@ select{
 }
 .form-panel fieldset {
     width:430px;
-    height:201px;
+    height:225px;
     margin:0 auto 20px;
     padding:20px 0;
     border: none;
@@ -126,7 +126,8 @@ select{
 
     background: none;
     }
-.form-panel input, .form-panel textarea {
+
+input[type='text']{
     float: left;
     padding: 8px 13px;
     margin: -3px;
@@ -140,6 +141,7 @@ select{
     border-radius: 12px;
     box-shadow: 0 1px 2px #999 inset;
 }
+
 .form-panel input:focus, .form-panel textarea:focus {
     padding: 5px 10px;
     margin: 0;

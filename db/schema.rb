@@ -56,6 +56,10 @@ ActiveRecord::Schema.define(version: 20140110153515) do
     t.text     "address"
     t.string   "city"
     t.string   "mobile_number"
+    t.string   "course"
+    t.string   "yearOfPass"
+    t.string   "preferredAptitudeCenter"
+    t.string   "preferredGDCenter"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

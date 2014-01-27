@@ -20,34 +20,28 @@
           <div id="panel1" class="form-panel">
             <h2>Personal Details</h2>
             <fieldset>
-              <label>
                 <span class="title">Name</span>
                 <span class="input"><%=f.text_field :name,:id=>"name", :required => true%></span>
-              </label>
 
-                <span class="title">Gender</span>
-                  <%=f.radio_button :gender,:Male, :required => true%> Male
-                  <%=f.radio_button :gender,:FeMail,:required => true%>Female
 
-              <label>
                 <span class="title">Email</span>
                 <span class="input"><%=f.text_field :email,:id => "email",:required => true%></span>
+
                 <div id="user-validation"  class="error"></div>
-              </label>
-              <label>
+
                 <span class="title">Date Of Birth</span>
-                <br>
+
                 <span class="input"><%= f.text_field :date_of_birth, :size => "8",:id => "dob", :required => true%></span>
-              </label>
-              <label>
                 <span class="title">City</span>
                 <span class="input"><%=f.text_field :city,:id => "city",:required => true%></span>
-              </label>
-              <label>
                 <span class="title">Contact No.</span>
                 <span class="input"><%=f.text_field :mobile_number,:id => "number", :required => true%></span>
-              </label>
+              <span class="title">Gender</span>
+             <span class="input"> <%=f.radio_button :gender,:Male, :required => true%> Male
+              <%=f.radio_button :gender,:FeMail,:required => true%>Female
+              </span>
             </fieldset>
+
             <button id="next">Next <span>&#9654;</span></button><button id="back" disabled="disabled"><span>&#9664;</span> Back</button>
 
           </div>
@@ -62,7 +56,7 @@
               </label>
               <label>
                 <span class="title">Year of Pass</span>
-                <span class="input"><%= f.select :yearOfPass, ["Select","2012", "2013","2014"],:id => "passedYear"%></span>
+                <span class="input"><%= f.select :yearofPass, ["Select","2012", "2013","2014"],:id => "passedYear"%></span>
               </label>
               <br>
               <label>

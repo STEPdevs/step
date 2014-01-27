@@ -7,6 +7,11 @@ class CreateUsers < ActiveRecord::Migration
       t.text :address
       t.string :city
       t.string :mobile_number
+      t.string :course
+      t.string :yearOfPass
+      t.string :preferredAptitudeCenter
+      t.string :preferredGDCenter
+
       t.timestamps
     end
   end
