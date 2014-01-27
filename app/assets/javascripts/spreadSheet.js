@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     var users;
     var columnsName=["S.No","Name","DOB","Email","Address","City","Mobile Number","Created At","Updated At"]
 

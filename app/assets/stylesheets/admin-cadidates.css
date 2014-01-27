@@ -1,0 +1,10 @@
+.search-box{
+    width: 200px;
+    position: relative;
+    z-index: 800;
+    margin-top: -79px;
+    float: right;
+    margin-right: 23px;
+    height: 22px;
+    padding-left: 6px;
+}

@@ -56,17 +56,17 @@
               </label>
               <label>
                 <span class="title">Year of Pass</span>
-                <span class="input"><%= f.select :yearofPass, ["Select","2012", "2013","2014"],:id => "passedYear"%></span>
+                <span class="input"><%= f.select :year_of_pass, ["Select","2012", "2013","2014"],:id => "year_of_pass"%></span>
               </label>
               <br>
               <label>
                 <span class="title">Preferred Aptitude Test Centre</span>
-                <span class="input"><%= f.select :preferredAptitudeCenter, ["Select","Vijayawada", "Bangalore","Chennai"],:id=>"preferAptitudeCenter"%></span>
+                <span class="input"><%= f.select :preferred_aptitude_center, ["Select","Vijayawada", "Bangalore","Chennai"],:id=>"preferred_aptitude_center"%></span>
               </label>
 
               <label>
                 <span class="title">Preferred GD/PI Centre</span>
-                <span class="input"><%= f.select :preferredGDCenter, ["Select","Bangalore","Chennai","Gurgaon","Pune"],:id => "preferGDPCenter"%></span>
+                <span class="input"><%= f.select :preferred_gd_center, ["Select","Bangalore","Chennai","Gurgaon","Pune"],:id => "preferred_gd_center"%></span>
               </label>
 
             </fieldset>
@@ -84,5 +84,6 @@
     <img src="/images/step-brochure.png" alt="rss feed" />
   </div>
 </div>
+<script type="text/javascript" src="/assets/registration.js"></script>
 </body>
 </html>

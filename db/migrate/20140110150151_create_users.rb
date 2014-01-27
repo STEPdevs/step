@@ -8,10 +8,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :city
       t.string :mobile_number
       t.string :course
-      t.string :yearOfPass
-      t.string :preferredAptitudeCenter
-      t.string :preferredGDCenter
-
+      t.string :year_of_pass
+      t.string :preferred_aptitude_center
+      t.string :preferred_gd_center
       t.timestamps
     end
   end
