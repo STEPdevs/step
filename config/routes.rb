@@ -5,4 +5,6 @@ Step::Application.routes.draw do
   root to: "user#index"
   post 'user' => "user#create"
   get 'validate' => "user#validate"
+  get 'candidates_list' => "candidate#listCandidates"
+  get 'candidates' => "candidate#candidates"
 end
