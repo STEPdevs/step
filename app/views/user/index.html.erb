@@ -21,11 +21,16 @@
             <h2>Personal Details</h2>
             <fieldset>
               <label>
-                <span class="title">Name:</span>
+                <span class="title">Name</span>
                 <span class="input"><%=f.text_field :name,:id=>"name", :required => true%></span>
               </label>
+
+                <span class="title">Gender</span>
+                  <%=f.radio_button :gender,:Male, :required => true%> Male
+                  <%=f.radio_button :gender,:FeMail,:required => true%>Female
+
               <label>
-                <span class="title">Email:</span>
+                <span class="title">Email</span>
                 <span class="input"><%=f.text_field :email,:id => "email",:required => true%></span>
                 <div id="user-validation"  class="error"></div>
               </label>
@@ -52,28 +57,29 @@
             <fieldset class="ui-corner-all">
               <label>
                 <span class="title">Diploma in</span>
-                <span class="input"><%= f.select :diploma, ["Diploma in Computer Science","Diploma in Computer Engineering", "Diploma in Computer Technology","Diploma in Information Technology","Diploma in Information Systems"]%>
+                <span class="input"><%= f.select :course, ["Select","Diploma in Computer Science","Diploma in Computer Engineering", "Diploma in Computer Technology","Diploma in Information Technology","Diploma in Information Systems"],:id=>"course"%>
                 </span>
               </label>
               <label>
-                <span class="title">Passing Year</span>
-                <span class="input"><%= f.select :year, ["2012", "2013","2014"]%></span>
+                <span class="title">Year of Pass</span>
+                <span class="input"><%= f.select :yearOfPass, ["Select","2012", "2013","2014"],:id => "passedYear"%></span>
               </label>
               <br>
               <label>
                 <span class="title">Preferred Aptitude Test Centre</span>
-                <span class="input"><%= f.select :preferredAptitudeCenter, ["Vijayawada", "Bangalore","Chennai"]%></span>
+                <span class="input"><%= f.select :preferredAptitudeCenter, ["Select","Vijayawada", "Bangalore","Chennai"],:id=>"preferAptitudeCenter"%></span>
               </label>
 
               <label>
-                <span class="title">Preferred GDPI Centre</span>
-                <span class="input"><%= f.select :preferredGDCenter, ["Bangalore","Chennai","Gurgaon","Pune"]%></span>
+                <span class="title">Preferred GD/PI Centre</span>
+                <span class="input"><%= f.select :preferredGDCenter, ["Select","Bangalore","Chennai","Gurgaon","Pune"],:id => "preferGDPCenter"%></span>
               </label>
 
             </fieldset>
             </button>
             <%=f.submit :submit, :id => "submit",:class=>"submit-button"%>
             <button id="back" disabled="disabled"><span>&#9664;</span> Back</button>
+
 
           </div>
     <% end %>

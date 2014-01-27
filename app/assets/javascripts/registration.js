@@ -13,20 +13,15 @@ $(document).ready(function(){
         }
         return false;
     }
+    function isComboSelected(fields){
+            return fields[i] === "Select";
+
+    }
 
     $('#dob').datepicker({
         dateFormat: "dd/mm/yy",
         minDate: (new Date("/7/12/1993")), maxDate: (new Date("/7/12/1996"))
     });
-
-    $('#submit').click(function(){
-        var allFields=[$('#name').val(),$('#email').val(),$('#city').val(),$('#number').val()];
-        if(!isAnyFieldEmpty(allFields)) {
-            alert("Successfully completed");
-        }
-
-    })
-
 
     $("#email").change(function(){
         var email= $(this).val();
@@ -43,13 +38,10 @@ $(document).ready(function(){
                     if(data == "false") {
                         $('#user-validation').html(emailExist).css("color","red");
                         $('#email').css('border-color','red');
-                        document.getElementById("submit").disabled = true;
                     }
                     else{
                         $('#user-validation').html(emailNotExist)
                         $('#email').css('border-color','grey');
-                        document.getElementById("submit").disabled = false;
-
                     }
                 }
         })
@@ -64,7 +56,13 @@ $(document).ready(function(){
             progressBar()
             e.preventDefault()
         }
-    })
+    });
+//    $('#submit').click(function(e){
+//        var allFields=[$('#course').val(),$('#passedYear').val(),$('#preferAptitudeCenter').val(),$('#preferGDPCenter').val()];
+//        if(isComboSelected(allFields)) {
+//            e.preventDefault()
+//        }
+//    });
 
     function progressBar(){
             //next or back?
