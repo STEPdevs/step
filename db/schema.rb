@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140110153515) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.date     "date_of_birth"
+    t.string   "gender"
     t.string   "email"
     t.text     "address"
     t.string   "city"

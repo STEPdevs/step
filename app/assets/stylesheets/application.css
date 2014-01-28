@@ -45,11 +45,11 @@ select{
 }
 .ex-form {
     position:relative;
-    width:440px;
-    height: 365px;
+    width:461px;
+    height: 484px;
     font-family:Arial, sans-serif;
-    font-size:12px;
-    padding:30px;
+    font-size:13px;
+    padding:40px;
     background:none;
     background: rgba(150, 150, 150, 0.2);
     zoom: 1;
@@ -96,8 +96,8 @@ select{
     text-align: center;
 }
 .form-panel fieldset {
-    width:430px;
-    height:225px;
+    width:460px;
+    height:392px;
     margin:0 auto 20px;
     padding:20px 0;
     border: none;
@@ -111,11 +111,11 @@ select{
 }
 .form-panel .title {
     float:left;
-    padding-top:5px;
+    padding-top:4px;
     margin-right:10px;
-    width:130px;
+    width:185px;
     text-align:right;
-    color: #6E6A65;
+    color: #090001;
 }
 .form-panel .input {
     float: left;
@@ -131,7 +131,7 @@ input[type='text']{
     float: left;
     padding: 8px 13px;
     margin: -3px;
-    width: 240px;
+    width: 196px;
     height: 12px;
     line-height: 12px;
     font-size: 12px;
@@ -146,7 +146,7 @@ input[type='email']{
     float: left;
     padding: 8px 13px;
     margin: -3px;
-    width: 240px;
+    width: 196px;
     height: 12px;
     line-height: 12px;
     font-size: 12px;
@@ -227,20 +227,20 @@ input[type='email']{
 
 input[type='submit'].submit-button{
     float:right;
-    padding: 15px 20px 14px;
+    padding: 16px 20px 14px;
     margin-left: 30px;
-    color: #9ca1a2;
+    color: rgba(7, 1, 22, 0.96);;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
     border: 1px solid #fff;
-    background: #fff;
+    background: #B0B1C0;;
     border-radius: 25px;
     box-shadow: 0 1px 2px #787878;
-    height: 43px;
-    width: 92px;
+    height: 40px;
+    width: 95px;
     cursor: pointer;
-    margin-top: 2px;
+    margin-top: -18px;
 }
 
 .image{
@@ -252,9 +252,12 @@ input[type='submit'].submit-button{
     background: -webkit-radial-gradient(20% 13%, circle,white, black 124%);
 
 }
+.notice{
+    color: green;
+}
 
 #user-validation {
     padding-top: 25px;
     width: 228px;
-    padding-left: 79px;
+    padding-left: 100px;
 }

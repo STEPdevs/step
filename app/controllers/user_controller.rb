@@ -6,6 +6,7 @@ class UserController < ApplicationController
     @user = User.new(user_params)
     #UserMailer.welcome_email(@user).deliver
     @user.save
+    flash[:notice] = "Registered successfully"
     redirect_to root_path
   end
 
@@ -20,6 +21,6 @@ class UserController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :date_of_birth, :address, :mobile_number,:city,:course,:year_of_pass,:preferred_aptitude_center,:preferred_gd_center)
+    params.require(:user).permit(:name, :email, :date_of_birth,:gender, :address, :mobile_number,:city,:course,:year_of_pass,:preferred_aptitude_center,:preferred_gd_center)
   end
 end

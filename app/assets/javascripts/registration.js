@@ -1,22 +1,4 @@
 $(document).ready(function(){
-    $progress = $("#progress"), $amount = $("#amount"), panels = [], panels[0] = "panel1", panels[1] = "panel2", panels[3] = "thanks", i = 0, $formPanel = $(".form-panel");
-      //call progress bar constructor
-      $progress.progressbar({
-          change: function() {
-          $amount.text($progress.progressbar("option", "value") + "%");
-      }
-    });
-
-    function isAnyFieldEmpty(fields){
-        for(i=0;i<fields.length-1;i++){
-            if (fields[i]==="") return true;
-        }
-        return false;
-    }
-    function isComboSelected(fields){
-            return fields[i] === "Select";
-
-    }
 
     $('#dob').datepicker({
         dateFormat: "dd/mm/yy",
@@ -32,7 +14,6 @@ $(document).ready(function(){
         })
         .success(function(data){
                 emailExist = "<div id=user-validation>This User is already taken </div>";
-                emailNotExist = "<div id=user-validation> <img src='yes.jpeg' width='16' height='10' alt='Edit Entry' /></div>" ;
                 if(email != '')
                 {
                     if(data == "false") {
@@ -40,8 +21,8 @@ $(document).ready(function(){
                         $('#email').css('border-color','red');
                     }
                     else{
-                        $('#user-validation').html(emailNotExist)
-                        $('#email').css('border-color','grey');
+                        $('#user-validation').html('');
+                        $('#email').css('border-color','green');
                     }
                 }
         })
@@ -49,38 +30,21 @@ $(document).ready(function(){
             alert('Failure');
         })
     });
-
-    $('#next').click(function(e){
-        var allFields=[$('#name').val(),$('#email').val(),$('#city').val(),$('#number').val()];
-        if(!isAnyFieldEmpty(allFields)) {
-            progressBar()
-            e.preventDefault()
+    function fade(){
+        setTimeout($('.notice').fadeOut('slow'), 30000);
+    }
+    $('#submit').click(function(e){
+     var fields=[$('#name'),$('#email'),$('#dob'),$('#gender'),$('#city'),$('#number'),$("#user_course"),$('#user_year_of_pass'),$('#user_preferred_aptitude_center'),$('#user_preferred_gd_center')];
+        for(i=0;i<fields.length;i++){
+            if (fields[i].val()==="") {
+                fields[i].css('border-color','red');
+                e.preventDefault();
+            }
+            else {
+                fields[i].css('border-color','gray');
+            }
         }
+        fade();
     });
-//    $('#submit').click(function(e){
-//        var allFields=[$('#course').val(),$('#passedYear').val(),$('#preferAptitudeCenter').val(),$('#preferGDPCenter').val()];
-//        if(isComboSelected(allFields)) {
-//            e.preventDefault()
-//        }
-//    });
-
-    function progressBar(){
-            //next or back?
-            var n = ($(this).attr("id") != "back") ? 1 : -1;
-        changepanel(n);
-    }
-
-    function changepanel(n) {
-        //hide current item
-        $($formPanel[0]).fadeOut(500);
-        //selects next item
-        i = 1
-        //hide next item
-        $($formPanel[i]).delay(505).fadeIn();
-
-        (i != 0) ? $("#back").attr("disabled", null) : $("#back").attr("disabled", "disabled");
-        (i != 2) ? $("#next").attr("disabled", null) : $("#next").attr("disabled", "disabled");
-        $progress.progressbar("option", "value", (i * 50) );
-    }
 });
 
