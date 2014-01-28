@@ -30,13 +30,24 @@ $(document).ready(function(){
             alert('Failure');
         })
     });
-    function fade(){
-        setTimeout($('.notice').fadeOut('slow'), 30000);
-    }
+    $('#name').change(function(){
+        $('#name').css('border-color','gray');
+    });
+    $("#dob").change(function(){
+        $('#dob').css('border-color','gray');
+    });
+    $('#city').change(function(){
+        $('#city').css('border-color','gray');
+    });
+    $('#number').change(function(){
+        $('#number').css('border-color','gray');
+    });
+
     $('#submit').click(function(e){
      var fields=[$('#name'),$('#email'),$('#dob'),$('#gender'),$('#city'),$('#number'),$("#user_course"),$('#user_year_of_pass'),$('#user_preferred_aptitude_center'),$('#user_preferred_gd_center')];
         for(i=0;i<fields.length;i++){
             if (fields[i].val()==="") {
+
                 fields[i].css('border-color','red');
                 e.preventDefault();
             }
@@ -44,7 +55,6 @@ $(document).ready(function(){
                 fields[i].css('border-color','gray');
             }
         }
-        fade();
     });
 });
 

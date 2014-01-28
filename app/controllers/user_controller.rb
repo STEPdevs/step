@@ -5,8 +5,11 @@ class UserController < ApplicationController
   def create
     @user = User.new(user_params)
     #UserMailer.welcome_email(@user).deliver
-    @user.save
-    flash[:notice] = "Registered successfully"
+    if @user.save
+      flash[:notice] = "Registered successfully"
+    else
+        flash[:error] = "Registration fail"
+    end
     redirect_to root_path
   end
 

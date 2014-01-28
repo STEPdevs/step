@@ -168,8 +168,6 @@ input[type='email']{
 }
 .ex-form.ui-helper-clearfix.ui-corner-all{
     border-radius: 25px;
-    background: -webkit-radial-gradient(20% 13%, circle,white, black 124%);
-    background: -moz-radial-gradient(20% 13%, circle,white, black 124%);
 }
 .ex-form button {
     float:right;
@@ -182,12 +180,6 @@ input[type='email']{
     border: 1px solid #fff;
     background: #fff;
 
-    background: -moz-linear-gradient( top, #ffffff, #eaeced );
-    background: -webkit-linear-gradient( top, #ffffff, #eaeced );
-    background: -o-linear-gradient( top, #ffffff, #eaeced );
-    background: -khtml-linear-gradient( top, #ffffff, #eaeced );
-    background: linear-gradient( to bottom, #ffffff, #eaeced );
-
     border-radius: 25px;
     box-shadow: 0 1px 2px #787878;
 
@@ -195,7 +187,6 @@ input[type='email']{
 }
 .ex-form button:hover {
     opacity: 0.8;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
     filter: alpha(opacity=80);
 }
 .ex-form button:disabled {
@@ -248,7 +239,6 @@ input[type='submit'].submit-button{
     border-radius: 32px;
     padding-left: 32px;
     padding-bottom: 32px;
-    background: -moz-radial-gradient(103% 23%, circle,white, black 132%);
     background: -webkit-radial-gradient(20% 13%, circle,white, black 124%);
 
 }
