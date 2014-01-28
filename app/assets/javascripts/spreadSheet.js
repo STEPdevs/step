@@ -1,22 +1,33 @@
-$(document).ready(function(){
-    var users;
-    var columnsName=["S.No","Name","DOB","Email","Address","City","Mobile Number","Created At","Updated At"]
+allUsersDetails=[];
 
+var renderAdminPage = function () {
     $.ajax({
-        url:'/candidates_list',
+        url: '/candidates_list',
         type: "GET",
         dataType: "json"
-    }).success(function(users){
-            $('#users-list').handsontable({
-                data: users,
-                colHeaders: columnsName,
-                contextMenu: true
-            });
+    }).success(function (users) {
+            allUsersDetails=users;
+            renderHandsOnTable(users);
+        }).error(function () {
+            return [];
         });
+}();
+
+var renderHandsOnTable = function (users) {
+    var columnsName = ["S.No", "Name", "DOB", "Email", "Address", "City", "Mobile Number", "Created At", "Updated At"]
+    $('#users-list').handsontable({
+        data: users,
+        colHeaders: columnsName,
+        contextMenu: true
+    });
+};
 
 
+
+
+_.each([1,2,3],function(input){
+    console.log(input)
 });
-
 
 //
 //    function bindDumpButton() {
