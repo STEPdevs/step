@@ -1,23 +1,42 @@
 var adminPage = (function () {
+    var candidatesChanged=[];
+
+    var el={
+        "usersList":$('#users-list'),
+        "searchBox":$("#search-box")
+    }
+
+
+    var getChangedCandidate= function(changedData){
+        var changedRowNumber=changedData[0][0];
+        return el.usersList.data('handsontable').getDataAtRow(changedRowNumber);
+    }
 
     var renderHandsOnTable = function (users) {
         var columnsName = ["S.No", "Name", "DOB", "Email", "Address", "City", "Mobile Number", "Created At", "Updated At"]
-        $('#users-list').handsontable({
+           el.usersList.handsontable({
             data: users,
             colHeaders: columnsName,
-            contextMenu: true
+            contextMenu: true,
+            afterChange: function(change,source){
+                if(!(source==="loadData")){
+                     candidatesChanged.push(getChangedCandidate(change));
+                    console.log(candidatesChanged);
+                }
+
+            }
         });
     };
 
 
     var onClickClearTextFromSearchBox = function(){
-        $("#search-box").click(function(){
+        el.searchBox.click(function(){
              this.value="";
         })
     }();
 
     var populateStudentsEmailAddress = function(usersEmailAddress){
-        $("#search-box").autocomplete({
+        el.searchBox.autocomplete({
             source:usersEmailAddress
         })
     };
