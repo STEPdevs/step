@@ -1,6 +1,5 @@
 /*
 *= require jquery-ui
-*= require jquery-progressbar
 *= require date-picker
 */
 *{
@@ -245,6 +244,13 @@ input[type='submit'].submit-button{
 .notice{
     color: green;
 }
+.error{
+    color: red;
+}
+ .flash-message{
+     margin-left: 197px;
+     font-size: x-large;
+ }
 
 #user-validation {
     padding-top: 25px;

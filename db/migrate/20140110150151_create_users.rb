@@ -14,5 +14,14 @@ class CreateUsers < ActiveRecord::Migration
       t.string :preferred_gd_center
       t.timestamps
     end
+    create_table :gd_centers do |t|
+      t.string :place
+    end
+    create_table :aptitude_centers do |t|
+      t.string :place
+      end
+    create_table :courses do |t|
+      t.string :name
+    end
   end
 end

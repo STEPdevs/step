@@ -49,6 +49,18 @@ ActiveRecord::Schema.define(version: 20140110153515) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "aptitude_centers", force: true do |t|
+    t.string "place"
+  end
+
+  create_table "courses", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "gd_centers", force: true do |t|
+    t.string "place"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.date     "date_of_birth"

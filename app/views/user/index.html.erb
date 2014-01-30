@@ -14,15 +14,22 @@
 </head>
 <body>
 
-        <% if flash[:notice] %>
-            <div class="notice"><%= flash[:notice] %></div>
-        <%else flash[:error] %>
-             <div class="notice"><%= flash[:error] %></div>
-        <% end %>
+    <div class="upper-left">
+      <div class="ex-form ui-helper-clearfix ui-corner-all">
 
-<div class="upper-left">
-    <div class="ex-form ui-helper-clearfix ui-corner-all">
+
         <%= form_for :user, :url=>user_path, :method=>'post'  do |f| %>
+            <div class="flash-message">
+              <% if flash[:notice] %>
+                  <div class="notice"><%=f.label flash[:notice] ,:id=>"success"%></div>
+              <%elsif flash[:error] %>
+                  <div class="error"><%=f.label flash[:error],:id=>"error" %></div>
+              <% end %>
+              <script>
+
+
+           </script>
+            </div>
           <div id="panel1" class="form-panel">
             <h2>Personal Details</h2>
             <fieldset>
@@ -50,17 +57,17 @@
               </span>
 
                 <span class="title">Diploma in</span>
-                <span class="input"><%= f.select :course,[["--Select--",""],"Diploma in Computer Science","Diploma in Computer Engineering", "Diploma in Computer Technology","Diploma in Information Technology","Diploma in Information Systems"],:id=>"course"%>
+                <span class="input"><%= f.select :course,options_for_select(Courses.all.collect{|e| [e.name]}),:include_blank=>"--Select--",:id=>"course"%>
                 </span>
 
                 <span class="title">Year of Pass</span>
                 <span class="input"><%= f.select :year_of_pass, [["--Select--",""],["2012","2012"],["2013","2013"] ,["2014","2014"]],:id => "year_of_pass"%></span>
               <br>
                 <span class="title">Preferred Aptitude Test Centre</span>
-                <span class="input"><%= f.select :preferred_aptitude_center, [["--Select--",""],"Vijayawada", "Bangalore","Chennai"],:id=>"preferred_aptitude_center"%></span>
+                <span class="input"><%= f.select :preferred_aptitude_center, options_for_select(GdCenters.all.collect{|e| [e.place]}),:include_blank=>"--Select--",:id=>"preferred_aptitude_center"%></span>
 
                 <span class="title">Preferred GD/PI Centre</span>
-                <span class="input"><%= f.select :preferred_gd_center, [["--Select--",""],"Bangalore","Chennai","Gurgaon","Pune"],:id => "preferred_gd_center"%></span>
+                <span class="input"><%= f.select :preferred_gd_center,options_for_select(GdCenters.all.collect{|e| [e.place]}),:include_blank=>"--Select--",:id => "preferred_gd_center"%></span>
             </fieldset>
             <%=f.submit :submit, :id => "submit",:class=>"submit-button"%>
           </div>

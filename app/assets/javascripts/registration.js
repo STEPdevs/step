@@ -26,9 +26,6 @@ $(document).ready(function(){
                     }
                 }
         })
-        .fail(function() {
-            alert('Failure');
-        })
     });
     $('#name').change(function(){
         $('#name').css('border-color','gray');
@@ -41,6 +38,18 @@ $(document).ready(function(){
     });
     $('#number').change(function(){
         $('#number').css('border-color','gray');
+    });
+    $('#user_year_of_pass').change(function(){
+        $('#user_year_of_pass').css('border-color','gray');
+    });
+    $('#user_course').change(function(){
+        $('#user_course').css('border-color','gray');
+    });
+    $('#user_preferred_aptitude_center').change(function(){
+        $('#user_preferred_aptitude_center').css('border-color','gray');
+    });
+    $('#user_preferred_gd_center').change(function(){
+        $('#user_preferred_gd_center').css('border-color','gray');
     });
 
     $('#submit').click(function(e){
