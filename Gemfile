@@ -45,9 +45,10 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :test do
+group :test,:development do
   gem 'factory_girl_rails', :require => false
   gem 'rspec-rails'
+  gem 'rspec-jasmine'
   gem 'jasmine'
 end
 
