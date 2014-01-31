@@ -4,10 +4,27 @@
     z-index: 800;
     height: 22px;
     padding-left: 6px;
-    right: 36px;
+    right: 193px;
     top: 60px;
 }
 
 #title_bar{
     z-index: 0;
+}
+
+#save{
+    width: 75px;
+    background: #4d5256;
+    position: absolute;
+    top: 60px;
+    right: 83px;
+    height: 29px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#save:hover{
+    background: gray;
 }
