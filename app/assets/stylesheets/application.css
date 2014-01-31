@@ -41,15 +41,15 @@ h2{
 }
 
 select{
-    width: 218px;
+    width: 208px;
 }
 .ex-form {
     position:relative;
     width:461px;
-    height: 484px;
+    height: 520px;
     font-family:Arial, sans-serif;
     font-size:13px;
-    padding:40px;
+    /*padding:40px;*/
     background:none;
     background: rgba(150, 150, 150, 0.2);
     zoom: 1;
@@ -131,8 +131,8 @@ input[type='text']{
     float: left;
     padding: 8px 13px;
     margin: -3px;
-    width: 196px;
-    height: 12px;
+    width: 215px;
+    height: 29px;
     line-height: 12px;
     font-size: 12px;
     color: #9A9895;
@@ -146,8 +146,8 @@ input[type='email']{
     float: left;
     padding: 8px 13px;
     margin: -3px;
-    width: 196px;
-    height: 12px;
+    width: 215px;
+    height: 29px;
     line-height: 12px;
     font-size: 12px;
     color: #9A9895;
@@ -250,11 +250,11 @@ input[type='submit'].submit-button{
 }
  .flash-message{
      margin-left: 197px;
-     font-size: x-large;
+     font-size: large;
  }
 
-#user-validation {
-    padding-top: 25px;
+.user-validation {
     width: 228px;
-    padding-left: 100px;
+    padding-left: 200px;
+    color: red;
 }

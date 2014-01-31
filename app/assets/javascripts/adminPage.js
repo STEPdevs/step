@@ -13,7 +13,7 @@ var adminPage = (function () {
     }
 
     var renderHandsOnTable = function (users) {
-        var columnsName = ["S.No", "Name", "DOB", "Email", "Address", "City", "Mobile Number", "Created At", "Updated At"]
+        var columnsName = ["S.No", "Name","DOB","Gender","Email", "Address", "City", "Mobile Number","Course","Year of pass","Preferred Aptitude Test Centre","Preferred GD/PI Centre","Created At", "Updated At"]
            el.usersList.handsontable({
             data: users,
             colHeaders: columnsName,

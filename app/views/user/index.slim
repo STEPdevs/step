@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    /![if IE 9]
+      | <style type="text/css">
+      | \.form-panel .input, .form-panel input, .form-panel textarea {
+      | border-radius: 0;
+      | }
+      | </style>
+    header
+      h2 STEP - ThoughtWorks
+  body
+    .upper-left
+      .ex-form.ui-helper-clearfix.ui-corner-all
+        = form_for :user, :url=>user_path, :method=>'post'  do |f|
+          .flash-message
+            - if flash[:notice]
+              .notice= f.label flash[:notice] ,:id=>"success"
+            -elsif flash[:error]
+              .error= f.label flash[:error],:id=>"error"
+          #panel1.form-panel
+            h2 Personal Details
+            fieldset
+              span.title Name
+              span.input= f.text_field :name,:id=>"name", :required => true
+
+              span.title Email
+              span.input= f.email_field :email,:id => "email",:required => true
+              #email-error.user-validation
+
+              span.title Date Of Birth
+              span.input= f.text_field :date_of_birth, :size => "8",:id => "dob", :required => true
+
+              span.title City
+              span.input= f.text_field :city,:id => "city",:required => true
+
+              span.title Contact No.
+              span.input= f.text_field :mobile_number,:id => "number", :required => true
+              #number-error.user-validation
+
+              span.title Gender
+              span.input
+                = f.radio_button :gender,:Male, :required => true
+                | Male
+                = f.radio_button :gender,:FeMale,:required => true
+                |Female
+
+              span.title Diploma in
+              span.input
+                = f.select :course,options_for_select(Courses.all.collect{|e| [e.name]}),:include_blank=>"--Select--",:id=>"course"
+
+              span.title Year of Pass
+              span.input= f.select :year_of_pass, [["--Select--",""],["2012","2012"],["2013","2013"] ,["2014","2014"]],:id => "year_of_pass"
+
+              span.title Preferred Aptitude Test Centre
+              span.input= f.select :preferred_aptitude_center, options_for_select(GdCenters.all.collect{|e| [e.place]}),:include_blank=>"--Select--",:id=>"preferred_aptitude_center"
+
+              span.title Preferred GD/PI Centre
+              span.input= f.select :preferred_gd_center,options_for_select(GdCenters.all.collect{|e| [e.place]}),:include_blank=>"--Select--",:id=>"preferred_gd_center"
+
+            = f.submit :submit, :id => "submit",:class=>"submit-button"
+    .upper-right
+      .image
+        img alt="rss feed" src="/images/step-brochure.png"
+    script src="/assets/registration.js" type="text/javascript"
