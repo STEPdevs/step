@@ -1,3 +1,19 @@
+Courses.create!([
+  {name: "Diploma in Computer Science"},
+  {name: "Diploma in Computer Engineering"},
+  {name: "Diploma in Computer Technology"},
+  {name: "Diploma in Information Technology"},
+  {name: "Diploma in Information Systems"},
+])
+GdCenters.create!([
+  {place: "Bangalore"},
+  {place: "Chennai"},
+  {place: "Pune"},
+  {place: "Gurgaon"},
+  {place: "Vijayawada"},
+  {place: "Hyderabad"},
+  {place: "Delhi"},
+])
 User.create!([
   {name: "sandeep", date_of_birth: "1996-07-12", gender: "Male", email: "sinha.sandeep01@gmail.com", address: nil, city: "che", mobile_number: "8939200476", course: "Diploma in Computer Engineering", year_of_pass: "2013", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
   {name: "hello", date_of_birth: "1996-07-12", gender: "Male", email: "abc@gmail.com", address: nil, city: "sjdvhsd", mobile_number: "76986", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
