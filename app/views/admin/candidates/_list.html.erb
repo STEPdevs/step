@@ -4,6 +4,7 @@
   <link type="text/css" href="/assets/jquery-ui.css" rel="stylesheet"></link>
   <link type="text/css" href="/assets/jquery.handsontable.full.css" rel="stylesheet"></link>
   <link type="text/css" href="/assets/admin-cadidates.css" rel="stylesheet"></link>
+  <%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -13,10 +14,5 @@
   <div id="users-list" class="handsontable"></div>
 
 <script type="text/javascript" src="/assets/adminPage.js"></script>
-<script type="text/javascript">
-  $(function(){
-     adminPage.initialize();
-  });
-</script>
 </body>
 </html>

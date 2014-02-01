@@ -1,11 +1,12 @@
 var adminPage = (function () {
     var candidatesChanged=[];
+    var candidates;
 
     var el={
         "usersList":$('#users-list'),
-        "searchBox":$("#search-box")
+        "searchBox":$("#search-box"),
+        "save":$("#save")
     }
-
 
     var getChangedCandidate= function(changedData){
         var changedRowNumber=changedData[0][0];
@@ -21,33 +22,42 @@ var adminPage = (function () {
             afterChange: function(change,source){
                 if(!(source==="loadData")){
                      candidatesChanged.push(getChangedCandidate(change));
-                    console.log(candidatesChanged);
                 }
 
             }
         });
     };
 
+    var saveChanges= function(){
 
-    var onClickClearTextFromSearchBox = function(){
-        el.searchBox.click(function(){
-             this.value="";
+        el.save.click(function(){
+            console.log(candidatesChanged);
+            $.ajax('/admin/candidates/update',{
+               type:"PUT",
+//               contentType: 'application/json',
+               data: { query: candidatesChanged, authenticity_token: $('meta[name=csrf-token]').attr("content")},
+               success:function(){
+                   candidatesChanged=[];
+                   alert("saved");
+               },
+                error:function(){
+                    alert("!saved");
+                }
+            });
         })
     }();
 
-    var populateStudentsEmailAddress = function(usersEmailAddress){
-        el.searchBox.autocomplete({
-            source:usersEmailAddress
-        })
-    };
 
-    var getStudentsEmailAddress = function(users){
-        var studentsEmailAddress=[];
-        _.each(users, function (user) {
-            studentsEmailAddress.push(user.email);
-        });
-        return studentsEmailAddress;
-    }
+    var getSearchedStudents= function(){
+          el.searchBox.keyup(function(){
+              var searchValue = el.searchBox.val();
+              var filteredStudents = candidates.filter(function(candidate) {
+                    return candidate.email.indexOf(searchValue) == 0
+              });
+              renderHandsOnTable(filteredStudents);
+              el.searchBox.focus();
+          });
+    }();
 
     return{
         initialize: function () {
@@ -56,11 +66,11 @@ var adminPage = (function () {
                 type: "GET",
                 dataType: "json"
             }).success(function (users) {
+                    candidates = users;
                     renderHandsOnTable(users);
-                    populateStudentsEmailAddress(getStudentsEmailAddress(users))
                 }).error(function () {
                     return [];
                 });
         }
     };
-})();
+})().initialize();

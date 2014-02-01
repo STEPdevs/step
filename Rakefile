@@ -4,5 +4,3 @@
 require File.expand_path('../config/application', __FILE__)
 
 Step::Application.load_tasks
-require 'jasmine'
-load 'jasmine/tasks/jasmine.rake'

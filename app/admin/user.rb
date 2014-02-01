@@ -12,4 +12,5 @@ ActiveAdmin.register User do
     column 'GD Center',:preferred_gd_center
     default_actions
   end
+
 end
