@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
-
 gem 'seed_dump'
 
 # Use SCSS for stylesheets
@@ -50,6 +48,7 @@ group :test,:development do
   gem 'rspec-rails'
   gem 'rspec-jasmine'
   gem 'jasmine'
+  gem 'pg'
 end
 
 # Use ActiveModel has_secure_password
