@@ -13,11 +13,21 @@ var adminPage = (function () {
         return el.usersList.data('handsontable').getDataAtRow(changedRowNumber);
     }
 
-    var renderHandsOnTable = function (users) {
+
+    var renderHandsOnTable = function (candidates) {
+        candidates.sort(function(candidate1,candidate2) {return candidate1.id - candidate2.id})
         var columnsName = ["S.No", "Name","DOB","Gender","Email", "Address", "City", "Mobile Number","Course","Year of pass","Preferred Aptitude Test Centre","Preferred GD/PI Centre","Created At", "Updated At"]
            el.usersList.handsontable({
-            data: users,
+            data: candidates,
             colHeaders: columnsName,
+            columns: [
+                {
+                    data:"id",
+                    readOnly: true
+                },
+                {data:"name"},{data:"date_of_birth"},{data:"gender"},{data:"email"}, {data:"address"}, {data:"city"}, {data:"mobile_number"},{data:"course"},
+                {data:"year_of_pass"},{data:"preferred_aptitude_center"},{data:"preferred_gd_center"},{data:"created_at"},{data: "updated_at"}
+            ],
             contextMenu: true,
             afterChange: function(change,source){
                 if(!(source==="loadData")){
