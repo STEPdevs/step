@@ -12,7 +12,7 @@ html
   body
   	h2.text Basic Details
   	.line  	
-  	.main-container
+  	  .main-container
 	    .upper-left
 	      .ex-form.ui-helper-clearfix.ui-corner-all
 	        = form_for :user, :url=>user_path, :method=>'post'  do |f|
@@ -47,12 +47,12 @@ html
 	                = f.radio_button :gender,:FeMale,:required => true
 	                |Female
 
-	              span.title Dipnloma in
+	              span.title Diploma in
 	              span.input
 	                = f.select :course,options_for_select(Courses.all.collect{|e| [e.name]}),:include_blank=>"--Select--",:id=>"course"
 
 	              span.title Year of Pass
-	              span.input= f.select :year_of_pass, [["--Select--",""],["2012","2012"],["2013","2013"] ,["2014","2014"]],:id => "year_of_pass"
+	              span.input= f.select :year_of_pass,[[Time.new.year],[Time.new.year-1],[Time.new.year-2]],:include_blank=>"--Select--",:id => "year_of_pass"
 
 	              span.title Preferred Aptitude Centre
 	              span.input= f.select :preferred_aptitude_center, options_for_select(AptitudeCenters.all.collect{|e| [e.place]}),:include_blank=>"--Select--",:id=>"preferred_aptitude_center"
