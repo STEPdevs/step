@@ -19,6 +19,6 @@ module Step
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.assets.precompile += ['*.js']
+    config.assets.precompile += ['jquery-ui.css','registration.js','jquery.handsontable.full.css','admin-cadidates.css','jquery.handsontable.full.js']
   end
 end
