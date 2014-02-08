@@ -5,12 +5,11 @@ html
   header
   	h2 STEP - ThoughtWorks
   body
-  	h2.text Basic Details
-  	.line  	
+    .line
   	  .main-container
 	    .upper-left
 	      .ex-form.ui-helper-clearfix.ui-corner-all
-	        = form_for :user, :url=>user_path, :method=>'post'  do |f|
+	        = simple_form_for @user, :url=>user_path, :method=>'post'  do |f|
 	          .flash-message
 	            - if flash[:notice]
 	              .notice= f.label flash[:notice] ,:id=>"success"
@@ -19,39 +18,35 @@ html
 	          .form-panel
 	            fieldset
 	              span.title Contact No.
-	              span.input= f.text_field :mobile_number,:id => "number",:size=>10, :required => true,:placeholder=>'should be of 10 digit valid number'
+	              span.input= f.input :mobile_number,:label => false,:required => true,:id => "number",:size=>10
 	              span.title Name
-	              span.input= f.text_field :name,:id=>"name", :required => true
+	              span.input= f.input :name,:label => false,:required => true,:id=>"name"
 
 	              span.title Email
-	              span.input= f.email_field :email,:id => "email",:required => true
+	              span.input= f.input :email,:label => false,:required => true,:id => "email"
 	              #email-error.user-validation
 
 	              span.title Date Of Birth
-	              span.input= f.text_field :date_of_birth,:id => "dob", :required => true
+	              span.input= f.date_field :date_of_birth,:label => false,:required => true,:id => "dob"
+	              span.dob_error= @user.errors[:date_of_birth][0]||@user.errors[:date_of_birth][1] if @user.errors.any?
 
 	              span.title City
-	              span.input= f.text_field :city,:id => "city",:required => true
-	              
+	              span.input= f.input :city,:label => false,:required => true,:id => "city"
+
 	              span.title Gender
-	              span.input
-	                = f.radio_button :gender,:Male, :required => true
-	                |  Male   
-	                = f.radio_button :gender,:FeMale,:required => true
-	                | Female
+	              span.input== f.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false,:required => true,:id => "gender"
 
-	              span.title Diploma in
-	              span.input
-	                = f.select :course,options_for_select(Courses.all.collect{|e| [e.name]}),:include_blank=>"--Select--",:id=>"course"
+                  span.title Diploma in
+                  span.input= f.input :course,label: false,required: true,collection: Courses.all.map { |course| course.name },:include_blank=>"--Select--",:id=>"course"
 
-	              span.title Year of Pass
-	              span.input= f.select :year_of_pass,[[Time.new.year],[Time.new.year-1],[Time.new.year-2]],:include_blank=>"--Select--",:id => "year_of_pass"
+                  span.title Year of Pass
+                  span.input= f.input :year_of_pass,label: false,required: true,collection:[[(Date.current.year-2).to_s,(Date.current.year-2).to_s],[(Date.current.year-1).to_s,(Date.current.year-1).to_s],[Date.current.year,Date.current.year]],:include_blank=>"--Select--",:id => "year_of_pass"
 
-	              span.title Preferred Aptitude Centre
-	              span.input= f.select :preferred_aptitude_center, options_for_select(AptitudeCenters.all.collect{|e| [e.place]}),:include_blank=>"--Select--",:id=>"preferred_aptitude_center"
+                  span.title Preferred Aptitude Centre
+                  span.input= f.input :preferred_aptitude_center,label: false,required: true,collection: AptitudeCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_aptitude_center"
 
-	              span.title Preferred GD/PI Centre
-	              span.input= f.select :preferred_gd_center,options_for_select(GdCenters.all.collect{|e| [e.place]}),:include_blank=>"--Select--",:id=>"preferred_gd_center"
+                  span.title Preferred GD/PI Centre
+                  span.input= f.input :preferred_gd_center,label: false,required: true,collection: GdCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_gd_center"
 
 	            = f.submit :submit, :id => "submit",:class=>"submit-button"
 	    .upper-right

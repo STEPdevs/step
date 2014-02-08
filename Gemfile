@@ -10,6 +10,8 @@ gem 'slim', '1.3.8'
 gem 'haml2slim'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
+gem 'simple_form'
+gem 'validates_timeliness', '~> 3.0'
 
 group :doc do
   gem 'sdoc', require: false

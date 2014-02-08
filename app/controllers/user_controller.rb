@@ -1,25 +1,22 @@
 class UserController < ApplicationController
+
   def index
+    @user=User.new
     @users = User.order(:name)
   end
+
   def create
     @user = User.new(user_params)
-    #UserMailer.welcome_email(@user).deliver
     if @user.save
       flash[:notice] = "Registered successfully"
+      redirect_to root_path
     else
-        flash[:error] = "Registration fail"
+      render :action => 'index'
     end
-    redirect_to root_path
   end
 
   def validate
-    email = params[:email]
-    if  User.exists?(:email => email)
-      render :json =>  [false]
-    else
-      render :json =>  [true]
-    end
+    render :json => [User.exists?(:email => params[:email])]
   end
 
   private
