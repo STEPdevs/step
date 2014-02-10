@@ -11,6 +11,7 @@ gem 'haml2slim'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'simple_form'
+gem 'protected_attributes'
 gem 'validates_timeliness', '~> 3.0'
 
 group :doc do
