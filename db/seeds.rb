@@ -45,6 +45,7 @@ AptitudeCenters.create!([
   {place: "Vijayawada"},
   {place: "Vishakapatnam"},
 ])
+
 User.create!([
   {name: "sandeep", date_of_birth: "1996-06-12", gender: "Male", email: "sinha.sandeep01@gmail.com",city: "che", mobile_number: "8939200476", course: "Diploma in Computer Engineering", year_of_pass: "2013", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
   {name: "hello", date_of_birth: "1996-06-12", gender: "Male", email: "abc@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Bangalore"},
@@ -82,5 +83,4 @@ User.create!([
   {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "chghg@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
   {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "r7r7@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
   {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "vnbvn@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "cxzcv@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Bangalore"}
-])
+  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "cxzcv@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Bangalore"}])
