@@ -8,8 +8,7 @@ html xmlns="http://www.w3.org/1999/html"
         | Helo Dear #{@user.name}
     b Welcome to ThoughtWorks
     p
-      b
-        | You have successfully register STEP With details of,
+      | You have successfully register STEP With details of,
         p
           | Name: #{@user.name}.
           br/
@@ -17,15 +16,13 @@ html xmlns="http://www.w3.org/1999/html"
           br/
           | Date of Birth: #{@user.date_of_birth}.
           br/
-          | Address: #{@user.address}.
-          br/
           | City: #{@user.city}.
           br/
           | Mobile: #{@user.mobile_number}.
           br/
-      div
+        div
         | To know more about STEP #{@url}
-      p
+        p
         | Regards,
         div STEP Adviser.
     p Thanks for joining and have a great day!
