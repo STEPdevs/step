@@ -5,24 +5,26 @@
 
 
 var barChart = (function () {
+
+    var gender = [
+        {
+            key: "Gender",
+            values: [
+                {
+                    "label": "Male",
+                    "value": 0
+                },
+                {
+                    "label": "Female",
+                    "value": 0
+                }
+            ]}
+    ];
+
     return{
         getGenderRatioChart: function (genderRatio) {
-            var gender = [
-                {
-                    key: "Gender",
-                    values: [
-                        {
-                            "label": "Female",
-                            "value": genderRatio.female
-                        },
-                        {
-                            "label": "Male",
-                            "value": genderRatio.male
-                        }
-                    ]
-                }
-            ];
-
+            gender[0].values[0].value = genderRatio.femaleCount;
+            gender[0].values[1].value = genderRatio.maleCount;
 
             var chart;
             nv.addGraph(function () {
