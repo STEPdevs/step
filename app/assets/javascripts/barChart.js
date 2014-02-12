@@ -1,27 +1,38 @@
-var barChart=(function(){
+//= require nvD3common
+//= require nvD3/models/axis
+//= require nvD3/models/multiBarHorizontal
+//= require nvD3/models/multiBarHorizontalChart
+
+
+var barChart = (function () {
     return{
-        getGenderRatioChart:function(genderRatio){
-            var gender=[
+        getGenderRatioChart: function (genderRatio) {
+            var gender = [
                 {
-                    key:"Gender",
-                    color:'#666d72',
-                    values:[
+                    key: "Gender",
+                    values: [
                         {
-                            "label":"Female",
-                            "value":genderRatio.female
+                            "label": "Female",
+                            "value": genderRatio.female
                         },
                         {
-                            "label":"Male",
-                            "value":genderRatio.male
-                        }]
-                }];
+                            "label": "Male",
+                            "value": genderRatio.male
+                        }
+                    ]
+                }
+            ];
 
 
             var chart;
-            nv.addGraph(function() {
+            nv.addGraph(function () {
                 chart = nv.models.multiBarHorizontalChart()
-                    .x(function(d) { return d.label })
-                    .y(function(d) { return d.value })
+                    .x(function (d) {
+                        return d.label
+                    })
+                    .y(function (d) {
+                        return d.value
+                    })
                     .barColor(d3.scale.category20().range())
                     .transitionDuration(250)
                     .stacked(true)

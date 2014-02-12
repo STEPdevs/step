@@ -1,3 +1,5 @@
+//= require jquery.handsontable.full
+
 var adminPage = (function () {
     var candidatesChanged=[];
     var candidates;
@@ -28,7 +30,7 @@ var adminPage = (function () {
                 {data:"name"},{data:"date_of_birth"},{data:"gender"},{data:"email"}, {data:"city"}, {data:"mobile_number"},{data:"course"},
                 {data:"year_of_pass"},{data:"preferred_aptitude_center"},{data:"preferred_gd_center"}
             ],
-            contextMenu: true,
+            contextMenu: false,
             afterChange: function(change,source){
                 if(!(source==="loadData")){
                      candidatesChanged.push(getChangedCandidate(change));
@@ -44,7 +46,6 @@ var adminPage = (function () {
             console.log(candidatesChanged);
             $.ajax('/admin/candidates/update',{
                type:"PUT",
-//               contentType: 'application/json',
                data: { query: candidatesChanged, authenticity_token: $('meta[name=csrf-token]').attr("content")},
                success:function(){
                    candidatesChanged=[];
