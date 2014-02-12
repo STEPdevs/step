@@ -1,0 +1,22 @@
+#chart1 {
+    width: 700px;
+    height: 30px;
+    min-width: 100px;
+    min-height: 100px;
+    position: absolute;
+    top: 93px;
+    left: 29px;
+}
+
+#chart1 svg {
+    height: 100px;
+}
+
+.nv-legend-text{
+    display: none;
+}
+
+.nv-legend-symbol{
+    display: none;
+}
+

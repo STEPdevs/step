@@ -12,6 +12,14 @@
     z-index: 0;
 }
 
+.handsontable {
+    margin-top: 28px;
+}
+
+.flashes{
+    display: none;
+}
+
 #save{
     width: 75px;
     background: #4d5256;

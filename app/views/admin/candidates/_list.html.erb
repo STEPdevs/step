@@ -3,6 +3,8 @@
   <%= stylesheet_link_tag "jquery-ui" %>
   <%= stylesheet_link_tag "jquery.handsontable.full" %>
   <%= stylesheet_link_tag "admin-cadidates" %>
+  <%= stylesheet_link_tag "nvD3/nv.d3" %>
+  <%= stylesheet_link_tag "gender-ratio-chart" %>
   <%= javascript_include_tag "jquery.handsontable.full"%>
   <%= csrf_meta_tags %>
 </head>
@@ -11,8 +13,21 @@
    <input id="save" type="button" value="Save"></input>
   <input id="search-box" placeholder="Search .."></input>
 
-  <div id="users-list" class="handsontable"></div>
+   <div id="chart1" class='with-3d-shadow with-transitions'>
+     <svg></svg>
+   </div>
 
+  <div id="users-list" class="handsontable"></div>
+   <%= javascript_include_tag "nvD3/d3.v3"%>
+   <%= javascript_include_tag "nvD3/nv.d3"%>
+   <%= javascript_include_tag "nvD3/utils"%>
+   <%= javascript_include_tag "nvD3/tooltip"%>
+   <%= javascript_include_tag "nvD3/models/legend"%>
+   <%= javascript_include_tag "nvD3/models/axis"%>
+   <%= javascript_include_tag "nvD3/models/multiBarHorizontal"%>
+   <%= javascript_include_tag "nvD3/models/multiBarHorizontalChart"%>
+   <%= javascript_include_tag "barChart"%>
    <%= javascript_include_tag "adminPage"%>
+
 </body>
 </html>

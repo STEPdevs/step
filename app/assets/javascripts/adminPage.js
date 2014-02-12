@@ -26,7 +26,7 @@ var adminPage = (function () {
                     readOnly: true
                 },
                 {data:"name"},{data:"date_of_birth"},{data:"gender"},{data:"email"}, {data:"city"}, {data:"mobile_number"},{data:"course"},
-                {data:"year_of_pass"},{data:"preferred_aptitude_center"},{data:"preferred_gd_center"},{data:"created_at"},{data: "updated_at"}
+                {data:"year_of_pass"},{data:"preferred_aptitude_center"},{data:"preferred_gd_center"}
             ],
             contextMenu: true,
             afterChange: function(change,source){
@@ -57,6 +57,21 @@ var adminPage = (function () {
         })
     }();
 
+    //TODO:ravi/vikhyat refactor this code
+
+    var getGenderCount=function(){
+        var genderRatio={}
+        var maleCount=0
+        var femaleCount=0
+        _.each(candidates,function(candidate){
+            var gender = candidate.gender;
+            if(gender==="Male") maleCount++;
+            else femaleCount++;
+        });
+        genderRatio["male"]=maleCount;
+        genderRatio["female"]=femaleCount;
+        return genderRatio;
+    }
 
     var getSearchedStudents= function(){
           el.searchBox.keyup(function(){
@@ -77,6 +92,7 @@ var adminPage = (function () {
                 dataType: "json"
             }).success(function (users) {
                     candidates = users;
+                    barChart.getGenderRatioChart(getGenderCount());
                     renderHandsOnTable(users);
                 }).error(function () {
                     return [];
