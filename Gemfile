@@ -13,7 +13,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'protected_attributes'
 gem 'validates_timeliness', '~> 3.0'
-
+gem 'database_cleaner'
 group :doc do
   gem 'sdoc', require: false
 end

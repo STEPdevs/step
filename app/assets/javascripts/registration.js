@@ -13,11 +13,17 @@ $(document).ready(function(){
 	}
 	var successCallback = function (data){
 		console.log(data);
-		elements.confirm_number.css("background-color","#E5E4E2");
-		elements.phone_number.css("background-color","#E5E4E2");
-		elements.phone_number.attr("readOnly", true);
-		elements.confirm_number.attr("readOnly", true);
-		$(".done-image").show();
+		var error = data["phone_number"] instanceof Array
+		if(error){
+			elements.error_phone_number.text(data["phone_number"][0]);
+		}
+		else{
+			elements.confirm_number.css("background-color","#E5E4E2");
+			elements.phone_number.css("background-color","#E5E4E2");
+			elements.phone_number.attr("readOnly", true);
+			elements.confirm_number.attr("readOnly", true);
+			$(".done-image").show();
+		}
 	}
 	elements.confirm_number.change(function(){
 		elements.error_phone_number.text("");

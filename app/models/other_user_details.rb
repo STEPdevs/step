@@ -1,7 +1,7 @@
 class OtherUserDetails < ActiveRecord::Base
 	belongs_to :user,:foreign_key => "users_phone_number"
 
-  validates_presence_of :name,:date_of_birth,:gender,:city,:course,:year_of_pass,:preferred_aptitude_center,:preferred_gd_center
+  validates_presence_of :name,:date_of_birth,:gender,:city,:course,:year_of_pass,:preferred_aptitude_center,:preferred_gd_center,:users_phone_number
 	
 	validates :users_phone_number, uniqueness: true
   validates_date :date_of_birth,

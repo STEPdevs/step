@@ -12,6 +12,6 @@ courses = {
 	if i > 10
 		gender = "Female"
 	end
-	OtherUserDetails.create!({name: "sandeep", date_of_birth: "1996-06-12", gender: gender, email: "name#{i}@gmail.com",city: "che", users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass: "2013", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"})
 
+	OtherUserDetails.create!({name: "sandeep", date_of_birth: "1996-06-12", gender: gender, email: "name#{i}@gmail.com",city: "che", users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass: "2013", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"})
 end

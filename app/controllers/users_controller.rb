@@ -20,8 +20,12 @@ class UsersController < ApplicationController
 			respond_to do |format|
 				if @user.save
 	  	  	format.json {render :json=>@user}
+		    elsif OtherUserDetails.find_by_users_phone_number(params[:user][:phone_number]).present?
+					format.json {render :json=>@user.errors}
+		    elsif @user.errors[:phone_number] == ["has already been taken"]
+					format.json {render :json=>@user}
 		    else
-		      format.json {render :json=>@user.errors}
+					format.json {render :json=>@user.errors}
 		    end
 			end
 		end
@@ -29,10 +33,10 @@ class UsersController < ApplicationController
 		def create_user_with_other_information
 			@user = User.find_by_phone_number(params[:phone_number])
 			if @user
-				@user.other_user_details = OtherUserDetails.new(params[:other_user_details])
+				@user.other_user_details = OtherUserDetails.new(params[:other_user_details]) unless OtherUserDetails.find_by_users_phone_number(params[:phone_number])
 				respond_to do |format|
 					if @user.save
-						format.html {render :action=>"index",:flash=>{success:"registration successfull"}}
+						format.html {redirect_to root_path,:flash=>{success:"registration successfull"}}
 		  	  	format.json {render :json=>@user.other_user_details}
 			    else
 						format.html {render :action=>"index"}
