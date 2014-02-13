@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    = stylesheet_link_tag "nvD3/nv.d3"
+    = stylesheet_link_tag "admin-reports"
+
+  body
+    .with-3d-shadow.with-transitions
+        svg.piechart#course-chart
+  =javascript_include_tag "admin-reports"

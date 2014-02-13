@@ -1,4 +1,5 @@
 //= require jquery.handsontable.full
+//= require Candidates
 //= require barChart
 
 var adminPage = (function () {
@@ -91,17 +92,12 @@ var adminPage = (function () {
 
     return{
         initialize: function () {
-            $.ajax({
-                url: '/candidates_list',
-                type: "GET",
-                dataType: "json"
-            }).success(function (users) {
-                    candidates = users;
-                    barChart.getGenderRatioChart(getGenderCount());
-                    renderHandsOnTable(users);
-                }).error(function () {
-                    return [];
-                });
+            var callbackAfterGettingCandidates=function(data){
+                candidates = data;
+                barChart.getGenderRatioChart(getGenderCount());
+                renderHandsOnTable(data);
+            }
+            Candidates.getAll(callbackAfterGettingCandidates)
         }
     };
 })().initialize();
