@@ -10,10 +10,10 @@ var barChart = (function () {
     return{
         getGenderRatioChart: function (genderRatio) {
 
-            var genderCount=reportDataTemplate.genderRatio(genderRatio.maleCount,genderRatio.femaleCount);
+            var genderCount = reportDataTemplate.genderRatio(genderRatio.maleCount, genderRatio.femaleCount);
 
             nv.addGraph(function () {
-               var chart = nv.models.multiBarHorizontalChart()
+                var chart = nv.models.multiBarHorizontalChart()
                     .x(function (d) {
                         return d.label
                     })

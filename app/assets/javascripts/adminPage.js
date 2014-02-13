@@ -1,4 +1,5 @@
 //= require jquery.handsontable.full
+//= require barChart
 
 var adminPage = (function () {
     var candidatesChanged = [];
