@@ -1,4 +1,4 @@
-//= require candidates
+//= require Candidates
 //= require pieChart
 
 var reports=(function(){

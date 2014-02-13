@@ -1,4 +1,7 @@
 var Candidates = (function () {
+
+    var genderRatio = {maleCount: 0, femaleCount: 0};
+
     return{
         getAll: function (callback) {
             $.ajax({
@@ -11,6 +14,15 @@ var Candidates = (function () {
                 }).error(function () {
                     return [];
                 });
+        },
+
+        getGenderCountFrom: function (candidates) {
+            _.each(candidates, function (candidate) {
+                var gender = candidate.gender;
+                if (gender === "Male") genderRatio.maleCount++;
+                else genderRatio.femaleCount++
+            });
+            return genderRatio;
         }
     };
 })();

@@ -69,16 +69,6 @@ var adminPage = (function () {
         })
     }();
 
-    var getGenderCount = function () {
-        var genderRatio = {maleCount: 0, femaleCount: 0}
-        _.each(candidates, function (candidate) {
-            var gender = candidate.gender;
-            if (gender === "Male") genderRatio.maleCount++;
-            else genderRatio.femaleCount++
-        });
-        return genderRatio;
-    }
-
     var getSearchedStudents = function () {
         el.searchBox.keyup(function () {
             var searchValue = el.searchBox.val();
@@ -94,7 +84,7 @@ var adminPage = (function () {
         initialize: function () {
             var callbackAfterGettingCandidates=function(data){
                 candidates = data;
-                barChart.getGenderRatioChart(getGenderCount());
+                barChart.getGenderRatioChart(Candidates.getGenderCountFrom(candidates));
                 renderHandsOnTable(data);
             }
             Candidates.getAll(callbackAfterGettingCandidates)
