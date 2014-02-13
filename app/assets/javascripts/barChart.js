@@ -2,33 +2,18 @@
 //= require nvD3/models/axis
 //= require nvD3/models/multiBarHorizontal
 //= require nvD3/models/multiBarHorizontalChart
+//= require reportDataTemplate
 
 
 var barChart = (function () {
 
-    var gender = [
-        {
-            key: "Gender",
-            values: [
-                {
-                    "label": "Male",
-                    "value": 0
-                },
-                {
-                    "label": "Female",
-                    "value": 0
-                }
-            ]}
-    ];
-
     return{
         getGenderRatioChart: function (genderRatio) {
-            gender[0].values[0].value = genderRatio.femaleCount;
-            gender[0].values[1].value = genderRatio.maleCount;
 
-            var chart;
+            var genderCount=reportDataTemplate.genderRatio(genderRatio.maleCount,genderRatio.femaleCount);
+
             nv.addGraph(function () {
-                chart = nv.models.multiBarHorizontalChart()
+               var chart = nv.models.multiBarHorizontalChart()
                     .x(function (d) {
                         return d.label
                     })
@@ -44,7 +29,7 @@ var barChart = (function () {
                     .tickFormat(d3.format(',.0f'));
 
                 d3.select('#chart1 svg')
-                    .datum(gender)
+                    .datum(genderCount)
                     .call(chart);
 
                 nv.tooltip.calcTooltipPosition = function (pos, gravity, dist, container) {
