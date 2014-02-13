@@ -21,7 +21,4 @@ var reportDataTemplate = {
             return data;
         }
 
-
-
-
     }

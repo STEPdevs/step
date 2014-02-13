@@ -2,6 +2,7 @@
 //= require nvD3/models/legend
 //= require nvD3/models/pie
 //= require nvD3/models/pieChart
+//= require ReportDataTemplate
 
 var pieChart=(function(){
 
@@ -20,7 +21,7 @@ var pieChart=(function(){
                     .width(width)
                     .height(height);
 
-                d3.select("#test1")
+                d3.select(element)
                     .datum(data)
                     .transition().duration(1200)
                     .attr('width', width)

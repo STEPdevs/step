@@ -1,6 +1,7 @@
 var Candidates = (function () {
 
     var genderRatio = {maleCount: 0, femaleCount: 0};
+    var courseWiseStudentCount = {computerScience:10,Maths:30,Science:50};
 
     return{
         getAll: function (callback) {
@@ -23,6 +24,9 @@ var Candidates = (function () {
                 else genderRatio.femaleCount++
             });
             return genderRatio;
+        },
+        getCourseWiseStudentCount:function(candidates){
+            return courseWiseStudentCount;
         }
     };
 })();
