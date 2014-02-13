@@ -10,7 +10,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :year_of_pass
       t.string :preferred_aptitude_center
       t.string :preferred_gd_center
-      t.belongs_to :user
       t.timestamps
     end
   end

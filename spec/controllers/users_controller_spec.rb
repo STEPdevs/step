@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UsersController do
 	describe "create" do
-		it "should create user with calid phone number" do
+		it "should create user with valid phone number" do
 			phone_number="9089898989"
 			post :create,format: 'json',user: {phone_number: phone_number}
 			parseResponse = JSON.parse(response.body)
@@ -20,17 +20,15 @@ describe UsersController do
 			end
 		end
 
-		it "should not create user for" do
+		it "should create user for valid phonenumber" do
 			phone_number="1089898989"
 			post :create,format: 'json',user: {phone_number: phone_number}
 			parseResponse = JSON.parse(response.body)
 			expect(response.header['Content-Type'].include?('application/json')).to be_true
 			expect(parseResponse["phone_number"]).to eq(phone_number)
-
 			other_user_details = attributes_for(:other_user_details)
-			other_user_details.merge!({phone_number: phone_number})
 			
-			post :create,format: 'json',other_user_details: other_user_details
+			post :create,format: 'json',other_user_details: other_user_details,phone_number: phone_number
 			parseResponse = JSON.parse(response.body)
 			expect(response.header['Content-Type'].include?('application/json')).to be_true
 			expect(parseResponse["name"]).to eq("name1")
