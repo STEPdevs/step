@@ -1,16 +1,44 @@
 .course-piechart {
-    width: 850px;
-    border: 1px solid;
+    margin-top: 3px;
+    width: 800px;
+    border: 2px solid;
     height: 450px;
     position: relative;
-    right: -132px;
+    right: -181px;
+    border-color: slategrey;
+    background-color: #eceded;
+    padding-top: 11px;
 }
 
 .course-piechart .nv-label{
     display: none;
 }
 
+body{
+    background-color: silver;
+}
+
 
 .nvtooltip h3 {
     display: none;
+}
+
+.report-selection-option{
+    position: absolute;
+    top: 50px;
+    margin-left: 24.4em;
+    z-index: 800;
+    border: 2px solid;
+    padding-right: 54px;
+    padding-top: 12px;
+    height: 33px;
+    border-color: lightgrey;
+    box-shadow: 1px 0px 4px 1px;
+}
+
+.report-selection-option input{
+    height: 15px;
+    width: 25px;
+    margin-right: -7px;
+    margin-left: 61px;
 }

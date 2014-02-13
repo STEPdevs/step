@@ -17,7 +17,7 @@ var pieChart=(function(){
                 var chart = nv.models.pieChart()
                     .x(function(d) { return d.key })
                     .y(function(d) { return d.y })
-                    .margin({top: 0, right: 85, bottom: 0, left: 0})
+                    .margin({top: 0, right: 56, bottom: 0, left: 0})
                     .color(d3.scale.category10().range())
                     .width(width)
                     .height(height);

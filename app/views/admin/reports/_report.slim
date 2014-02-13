@@ -5,5 +5,11 @@ html
     = stylesheet_link_tag "admin-reports"
 
   body
+    .report-selection-option
+      input type="radio" name="option" value="course" Course
+      input type="radio" name="option" value="year-of-pass" YOP
+      input type="radio" name="option" value="prefered-apptitude-center" PAC
+      input type="radio" name="option" value="prefered-gd-center" PGC
+      input type="radio" name="option" value="state"  STATE
     svg.course-piechart#course-chart
   =javascript_include_tag "admin-reports"
