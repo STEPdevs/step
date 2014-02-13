@@ -1,86 +1,12 @@
-Courses.create!([
-  {name: "Diploma in Computer Science"},
-  {name: "Diploma in Computer Engineering"},
-  {name: "Diploma in Computer Technology"},
-  {name: "Diploma in Information Technology"},
-  {name: "Diploma in Information Systems"},
-])
-GdCenters.create!([
-  {place: "Bangalore"},
-  {place: "Chennai"},
-  {place: "Pune"},
-  {place: "Gurgaon"},
-])
-AptitudeCenters.create!([
-  {place: "Ahmedabad"},
-  {place: "Allahabad"},
-  {place: "Bangalore"},
-  {place: "Baroda"},
-  {place: "Belgaum"},
-  {place: "Bhopal"},
-  {place: "Bhubaneswar"},
-  {place: "Chandigarh"},
-  {place: "Chennai"},
-  {place: "Cochin"},
-  {place: "Coimbatore"},
-  {place: "Dehradun"},
-  {place: "Delhi"},
-  {place: "Gurgaon"},
-  {place: "Guwahati"},
-  {place: "Hyderabad"},
-  {place: "Indore"},
-  {place: "Jaipur"},
-  {place: "Jamshedpur"},
-  {place: "Kolkata"},
-  {place: "Lucknow"},
-  {place: "Mangalore"},
-  {place: "Mumbai"},
-  {place: "Nagpur"},
-  {place: "Patna"},
-  {place: "Pune"},
-  {place: "Raipur"},
-  {place: "Ranchi"},
-  {place: "Rourkela"},
-  {place: "Trivandrum"},
-  {place: "Vijayawada"},
-  {place: "Vishakapatnam"},
-])
+20.times do |i|
+	User.create!(phone_number:"893920047#{i}",count:0)
+	Courses.create!({name: "Diploma in course#{i}"})
+	GdCenters.create!({place: "GdCenters#{i}"})
+	AptitudeCenters.create!({place: "AptitudeCenter#{i}"})
+	gender = "Male"
+	if i > 10
+		gender = "Female"
+	end
+	OtherUserDetails.create!({name: "sandeep", date_of_birth: "1996-06-12", gender: gender, email: "name#{i}@gmail.com",city: "che", users_phone_number: "893920047#{i}", course: "Diploma in Computer Engineering",year_of_pass: "2013", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"})
 
-User.create!([
-  {name: "sandeep", date_of_birth: "1996-06-12", gender: "Male", email: "sinha.sandeep01@gmail.com",city: "che", mobile_number: "8939200476", course: "Diploma in Computer Engineering", year_of_pass: "2013", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
-  {name: "hello", date_of_birth: "1996-06-12", gender: "Male", email: "abc@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "123@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "ijk@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "lmk@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "poi@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "sample@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "wour@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "dupm@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "step@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "12345@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "890@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "456@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "7689@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "0898@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "56757@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "34535@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "96876@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Pune"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "7687576@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Pune"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "08908@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Pune"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "1414@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Pune", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "90@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Pune"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "243254@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Pune", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "kjhk@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Gurgaon", preferred_gd_center: "Gurgaon"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "ryti@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Gurgaon"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "cbvcn@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Gurgaon", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "6876@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "ljlkk@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Gurgaon", preferred_gd_center: "Gurgaon"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "werw@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Gurgaon"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "yuti@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "pipp@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "qreqr@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "poipo@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "chghg@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "r7r7@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Bangalore", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Female", email: "vnbvn@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Bangalore"},
-  {name: "san", date_of_birth: "1996-06-12", gender: "Male", email: "cxzcv@gmail.com",  city: "sjdvhsd", mobile_number: "8939200476", course: "Diploma in Computer Science", year_of_pass: "2012", preferred_aptitude_center: "Chennai", preferred_gd_center: "Bangalore"}])
+end

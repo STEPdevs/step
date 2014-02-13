@@ -36,7 +36,7 @@ var adminPage = (function () {
                 {data: "gender"},
                 {data: "email"},
                 {data: "city"},
-                {data: "mobile_number"},
+                {data: "users_phone_number"},
                 {data: "course"},
                 {data: "year_of_pass"},
                 {data: "preferred_aptitude_center"},

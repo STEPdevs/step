@@ -1,6 +1,6 @@
 class CandidateController < ApplicationController
   def listCandidates
-    @users_list=User.all
+    @users_list=OtherUserDetails.all
 
     render :json => @users_list
   end

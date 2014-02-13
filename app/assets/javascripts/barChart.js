@@ -2,7 +2,7 @@
 //= require nvD3/models/axis
 //= require nvD3/models/multiBarHorizontal
 //= require nvD3/models/multiBarHorizontalChart
-//= require reportDataTemplate
+//= require ReportDataTemplate
 
 
 var barChart = (function () {

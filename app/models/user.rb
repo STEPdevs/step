@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 	validates_confirmation_of :phone_number,message: "password mismatch"
 	validates_presence_of :phone_number
 	validates_uniqueness_of :phone_number
-	validates_length_of :phone_number, :minimum => 10
+	validates_length_of :phone_number, :minimum => 10,:maximum=>12
   validates_format_of :phone_number, {
       :with => /\A[0-9]*\z/
   }
