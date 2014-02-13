@@ -4,10 +4,6 @@
 var reports=(function(){
     var candidates;
 
-//    var getCourseWiseStudentCount=function(){
-//
-//    }
-
     var coursePieChart=function(courseWiseStudentCount){
         var width=180;
         var height=180;
@@ -19,7 +15,7 @@ var reports=(function(){
         initialize:function(){
             var callbackAfterGettingCandidates=function(data){
                 candidates = data;
-                coursePieChart(Candidates.getCourseWiseStudentCount(candidates));
+                coursePieChart(Candidates.getCourseWiseStudentCountFrom(candidates));
 
             }
             Candidates.getAll(callbackAfterGettingCandidates);

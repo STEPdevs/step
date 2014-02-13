@@ -33,7 +33,7 @@ var Candidates = (function () {
             });
             return genderRatio;
         },
-        getCourseWiseStudentCount:function(candidates){
+        getCourseWiseStudentCountFrom:function(candidates){
             initializeAllCoursesCount(candidates);
             _.each(candidates, function (candidate) {
                 courseWiseStudentCount[candidate.course]++;
