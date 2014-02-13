@@ -7,16 +7,17 @@
 var pieChart=(function(){
 
     return {
-        plot:function(element,values){
+        plot:function(element,values,width,height){
               var data = reportDataTemplate.pieChart(values);
 
             nv.addGraph(function() {
-                var width = 500,
-                    height = 500;
+                var width = width,
+                    height = height;
 
                 var chart = nv.models.pieChart()
                     .x(function(d) { return d.key })
                     .y(function(d) { return d.y })
+                    .margin({top: 0, right: 85, bottom: 0, left: 0})
                     .color(d3.scale.category10().range())
                     .width(width)
                     .height(height);
@@ -27,9 +28,6 @@ var pieChart=(function(){
                     .attr('width', width)
                     .attr('height', height)
                     .call(chart);
-
-                chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
-
                 return chart;
             });
         }

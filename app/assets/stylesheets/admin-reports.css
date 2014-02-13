@@ -1,4 +1,16 @@
-.piechart {
-    width: 500px;
-    border: 2px;
+.course-piechart {
+    width: 850px;
+    border: 1px solid;
+    height: 450px;
+    position: relative;
+    right: -132px;
+}
+
+.course-piechart .nv-label{
+    display: none;
+}
+
+
+.nvtooltip h3 {
+    display: none;
 }

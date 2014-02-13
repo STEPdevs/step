@@ -9,7 +9,9 @@ var reports=(function(){
 //    }
 
     var coursePieChart=function(courseWiseStudentCount){
-        pieChart.plot("#course-chart",courseWiseStudentCount);
+        var width=180;
+        var height=180;
+        pieChart.plot("#course-chart",courseWiseStudentCount,width,height);
     };
 
 
@@ -18,6 +20,7 @@ var reports=(function(){
             var callbackAfterGettingCandidates=function(data){
                 candidates = data;
                 coursePieChart(Candidates.getCourseWiseStudentCount(candidates));
+
             }
             Candidates.getAll(callbackAfterGettingCandidates);
         }
