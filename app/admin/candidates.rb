@@ -7,9 +7,9 @@ ActiveAdmin.register_page "Candidates" do
 
   page_action :update, :method => :put do
     update_count=0
-    User.transaction do
+    OtherUserDetails.transaction do
       params[:query].values.each do |candidate|
-        user=User.find(candidate[:id])
+        user=OtherUserDetails.find(candidate[:id])
         user.update_attributes(candidate)
         update_count=+1
       end
