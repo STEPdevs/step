@@ -41,4 +41,10 @@ body{
     width: 25px;
     margin-right: -7px;
     margin-left: 61px;
+    cursor :pointer;
+}
+
+.report-selection-option label{
+    color: #6a7176;
+    cursor :pointer;
 }

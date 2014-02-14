@@ -6,10 +6,15 @@ html
 
   body
     .report-selection-option
-      input type="radio" name="option" value="course" course wise
-      input type="radio" name="option" value="year-of-pass" passing year
-      input type="radio" name="option" value="prefered-apptitude-center" preferred aptitude center
-      input type="radio" name="option" value="prefered-gd-center" preferred G.D center
-      input type="radio" name="option" value="state" state
+      input type="radio" id="course" name="option" value="course"
+      label for="course" Course Wise
+      input type="radio" id="year-of-pass" name="option" value="year-of-pass"
+      label for="year-of-pass" Passing Year
+      input type="radio" id="prefered-apptitude-center" name="option" value="prefered-apptitude-center"
+      label for="prefered-apptitude-center" Preferred Aptitude Center
+      input type="radio" id="prefered-gd-center" name="option" value="prefered-gd-center"
+      label for="prefered-gd-center" Preferred G.D Center
+      input type="radio" id="state" name="option" value="state"
+      label for="state" State
     svg.course-piechart#course-chart
   =javascript_include_tag "admin-reports"
