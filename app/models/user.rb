@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
 
 	has_one :other_user_details,:foreign_key => "users_phone_number"
 
-	attr_accessible :phone_number,:phone_number_confirmation,:complete,:count
+	attr_accessible :phone_number,:phone_number_confirmation,:status,:count
 end

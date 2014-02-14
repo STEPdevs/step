@@ -70,8 +70,8 @@ preferred_gd_center = {
 		gender = "Female"
 	end
 
-	OtherUserDetails.create!({name: "sandeep", date_of_birth: "1996-06-12", gender: gender, email: "name#{i}@gmail.com",city: "che", users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass: year_of_passing[i%4], preferred_aptitude_center: preferred_aptitude_center[i%32], preferred_gd_center: preferred_gd_center[i%4]})
-	User.find_by_phone_number("893920047#{i}").update_attributes(complete:"COMPLTE");
+	OtherUserDetails.create!({name: "sandeep", date_of_birth: "1996-06-12", gender: gender, email: "name#{i}@gmail.com",city: "che", users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass: "2013", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"})
+	User.find_by_phone_number("893920047#{i}").update_attributes(status:"COMPLETE");
 	user = User.find_by_phone_number("893920047#{i}")
 	user.update_attributes(count:user.count+1);
 end
