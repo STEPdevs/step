@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 				@user.other_user_details = OtherUserDetails.new(params[:other_user_details]) unless OtherUserDetails.find_by_users_phone_number(params[:phone_number])				
 				respond_to do |format|
 					if @user.save
+						@user.update_attributes(complete: "COMPLETE")
 						format.html {redirect_to root_path,:flash=>{success:"registration successful"}}
 		  	  	format.json {render :json=>@user.other_user_details}
 			    else
