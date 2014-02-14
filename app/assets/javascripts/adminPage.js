@@ -20,7 +20,7 @@ var adminPage = (function () {
 
     var renderHandsOnTable = function (candidates) {
         candidates.sort(function (candidate1, candidate2) {
-            return candidate1.id - candidate2.id
+            return candidate2.id - candidate1.id
         })
         var columnsName = ["S.No", "Name", "DOB", "Gender", "Email", "City", "Mobile Number", "Course", "Year of pass", "Preferred Aptitude Test Centre", "Preferred GD/PI Centre", "Created At", "Updated At"]
         el.usersList.handsontable({
@@ -36,7 +36,7 @@ var adminPage = (function () {
                 {data: "gender"},
                 {data: "email"},
                 {data: "city"},
-                {data: "users_phone_number"},
+                {data: "users_phone_number",readOnly: true},
                 {data: "course"},
                 {data: "year_of_pass"},
                 {data: "preferred_aptitude_center"},
