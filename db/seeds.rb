@@ -11,12 +11,38 @@ year_of_passing = {
 
 
 preferred_aptitude_center = {
-    0=>"Chennai",
-    1=>"Delhi",
-    2=>"Pune",
-    3=>"Gurgaon",
-    4=>"Bangalore",
-    5=>"Chandigarh"}
+    0=>"Ahmedabad",
+    1=>"Allahabad",
+    2=>"Bangalore",
+    3=>"Baroda",
+    4=>"Belgaum",
+    5=>"Bhopal",
+    6=>"Bhubaneswar",
+    7=>"Chandigarh",
+    8=>"Chennai",
+    9=>"Cochin",
+    10=>"Coimbatore",
+    11=>"Dehradun",
+    12=>"Delhi",
+    13=>"Gurgaon",
+    14=>"Guwahati",
+    15=>"Hyderabad",
+    16=>"Indore",
+    17=>"Jaipur",
+    18=>"Jamshedpur",
+    19=>"Kolkata",
+    20=>"Lucknow",
+    21=>"Mangalore",
+    22=>"Mumbai",
+    23=>"Nagpur",
+    24=>"Patna",
+    25=>"Pune",
+    26=>"Raipur",
+    27=>"Ranchi",
+    28=>"Rourkela",
+    29=>"Trivandrum",
+    30=>"Vijayawada",
+    31=>"Vishakapatnam"}
 
 
 preferred_gd_center = {
@@ -27,7 +53,7 @@ preferred_gd_center = {
 
 
 
-22.times do |i|
+40.times do |i|
 	User.create!(phone_number:"893920047#{i}")
 	if i<3
     Courses.create!({name: courses[i]})
@@ -35,16 +61,16 @@ preferred_gd_center = {
   if i<4
     GdCenters.create!({place: preferred_gd_center[i]})
   end
-  if i<6
+  if i<32
     AptitudeCenters.create!({place: preferred_aptitude_center[i]})
   end
 
 	gender = "Male"
-	if i > 13
+	if i > 23
 		gender = "Female"
 	end
 
-	OtherUserDetails.create!({name: "sandeep", date_of_birth: "1996-06-12", gender: gender, email: "name#{i}@gmail.com",city: "che", users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass: year_of_passing[i%4], preferred_aptitude_center: preferred_aptitude_center[i%6], preferred_gd_center: preferred_gd_center[i%4]})
+	OtherUserDetails.create!({name: "sandeep", date_of_birth: "1996-06-12", gender: gender, email: "name#{i}@gmail.com",city: "che", users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass: year_of_passing[i%4], preferred_aptitude_center: preferred_aptitude_center[i%32], preferred_gd_center: preferred_gd_center[i%4]})
 	User.find_by_phone_number("893920047#{i}").update_attributes(complete:"COMPLTE");
 	user = User.find_by_phone_number("893920047#{i}")
 	user.update_attributes(count:user.count+1);
