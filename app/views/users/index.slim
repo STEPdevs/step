@@ -3,7 +3,7 @@ html
   header
   	img.logo src="tw-logo.png"
   body
-  	.bannertop1=flash[:success]
+  	.bannertop1.flash-msg=flash[:success]
   	.bannertop2.color.formtitle= "Apply here for Interview.!"
   	.bannertop2.info= "Please type your phone number carefully, it will be saved automatically.!"
   	.main-container
@@ -13,11 +13,9 @@ html
 		  			.row
 			  			span.title Contact No.
 			  			input name="phone_number" size="10" class="bold" type="text" id="user_phone_number"
-			  			span.ferror =@user.errors[:mobile_number].join(', ') if @user.errors.any?
 		  			.row
 			  			span.title Confirm Contact No.
-			  			input name="phone_number_confirmation" size="10" class="bold" type="text" id="user_phone_number_confirmation"
-			  			span.ferror.phonenumber =@user.errors[:mobile_number].join(', ') if @user.errors.any?
+			  			input name="phone_number_confirmation" size="10" class="bold" type="text" id="user_phone_number_confirmation"			  			
 		  			img.done-image src="done-icon.gif"
 		  			.row
 			  			span.title Email
