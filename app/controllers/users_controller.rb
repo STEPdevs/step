@@ -17,8 +17,11 @@ class UsersController < ApplicationController
 	private
 		def create_user_with_phone_number
 			@user = User.new(params[:user])
+			user =  User.find_by_phone_number(params[:user][:phone_number])			
+			user.update_attributes(count: user.count+1) if user
 			respond_to do |format|
 				if @user.save
+					@user.update_attributes(count: @user.count+1)
 	  	  	format.json {render :json=>@user}
 		    elsif OtherUserDetails.find_by_users_phone_number(params[:user][:phone_number]).present?
 					format.json {render :json=>@user.errors}
