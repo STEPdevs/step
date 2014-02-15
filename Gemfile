@@ -8,7 +8,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'slim', '1.3.8'
 gem 'haml2slim'
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', :git => "git://github.com/gregbell/active_admin.git"
 gem 'devise'
 gem 'simple_form'
 gem 'protected_attributes'
