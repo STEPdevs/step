@@ -19,6 +19,7 @@ describe UsersController do
 			expect(response.header['Content-Type'].include?('application/json')).to be_true
 			expect(parseResponse["phone_number"]).to eq(phone_number)
 		end
+		
 
 		it "should create user and fill other user details for valid phonenumber" do
 			phone_number="9089898989"

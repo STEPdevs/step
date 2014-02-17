@@ -14,12 +14,15 @@ gem 'simple_form'
 gem 'protected_attributes'
 gem 'validates_timeliness', '~> 3.0'
 gem 'database_cleaner'
+gem 'puma'
+
 group :doc do
   gem 'sdoc', require: false
 end
 
 
 group :production do
+	gem 'rails_12factor'
   gem 'pg'
   gem 'rails_12factor'
 end
