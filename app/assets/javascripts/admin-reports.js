@@ -27,7 +27,7 @@ var reports = (function () {
         var aptitudeCenterCount = Candidates.getAptitudeCenterCountFrom(candidates);
         var width = 180;
         var height = 180;
-        pieChart.plot("#chart",aptitudeCenterCount, width, height);
+        pieChart.plot("#chart", aptitudeCenterCount, width, height);
     }
 
     var preferredGDCenterChart = function () {

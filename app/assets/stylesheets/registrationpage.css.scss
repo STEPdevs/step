@@ -162,7 +162,6 @@ header h2{
 	display: inline-block;
 }
 input[type='text'],[type="date"],[type='email']{
-		/*float: left;*/
     width: 50%;
     padding-left: 10px;
     height: 27px;
@@ -182,12 +181,6 @@ img{
     margin-top: 0px;
 }
 
-/*input[type="date"]{
-    margin-left: 1%;
-    margin-top: 3%;
-    margin-bottom: -3%;
-}*/
-
 input[type='submit'].submit-button{
     text-transform: uppercase;
     font-size: 11px;
@@ -198,25 +191,19 @@ input[type='submit'].submit-button{
     width: 100px;
     cursor: pointer;
     float: right;
-    /*margin-left: 50%;*/
 }
 
 select {
     width: 50%;
     color:#888;
     height: 25px;
-    /*background: #f8f8f8;*/
     border: 1px solid lightgrey;
     outline:none;
-    /*appearance:none;*/
     cursor:pointer;
-    /*box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;*/
     border-radius:4px;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
-    /*-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;*/
     -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    /*-webkit-appearance:none;*/
     -moz-appearance:none;
     color: black;
 }

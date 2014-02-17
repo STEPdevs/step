@@ -22,20 +22,18 @@ var adminPage = (function () {
         candidates.sort(function (candidate1, candidate2) {
             return candidate2.id - candidate1.id
         })
-        var columnsName = ["S.No", "Mobile Number", "Name", "DOB", "Gender", "Email", "State", "Course", "Year of pass", "Preferred Aptitude Test Centre", "Preferred GD/PI Centre", "Created At", "Updated At"]
+        var columnsName = ["S.No", "Mobile Number", "Name", "DOB", "Gender", "Email", "Alternate Mobile Number", "State", "Course", "Year of pass", "Preferred Aptitude Test Centre", "Preferred GD/PI Centre"]
         el.usersList.handsontable({
             data: candidates,
             colHeaders: columnsName,
             columns: [
-                {
-                    data: "id",
-                    readOnly: true
-                },
-                {data: "users_phone_number",readOnly: true},
+                {data: "id", readOnly: true},
+                {data: "users_phone_number", readOnly: true},
                 {data: "name"},
                 {data: "date_of_birth"},
                 {data: "gender"},
                 {data: "email"},
+                {data: "alt_phone_number"},
                 {data: "state"},
                 {data: "course"},
                 {data: "year_of_pass"},
@@ -55,17 +53,20 @@ var adminPage = (function () {
     var saveChanges = function () {
 
         el.save.click(function () {
-            $.ajax('/admin/candidates/update', {
-                type: "PUT",
-                data: { query: candidatesChanged, authenticity_token: $('meta[name=csrf-token]').attr("content")},
-                success: function () {
-                    candidatesChanged = [];
-                    alert("saved");
-                },
-                error: function () {
-                    alert("!saved");
-                }
-            });
+            if (candidatesChanged.length > 0) {
+                $.ajax('/admin/candidates/update', {
+                    type: "PUT",
+                    dataType: "json",
+                    data: { query: candidatesChanged, authenticity_token: $('meta[name=csrf-token]').attr("content")},
+                    success: function (updateCount) {
+                        candidatesChanged = [];
+                        alert("Saved: " + updateCount + " Records");
+                    },
+                    error: function () {
+                        alert("!saved");
+                    }
+                });
+            }
         })
     }();
 
@@ -82,7 +83,7 @@ var adminPage = (function () {
 
     return{
         initialize: function () {
-            var callbackAfterGettingCandidates=function(data){
+            var callbackAfterGettingCandidates = function (data) {
                 candidates = data;
                 barChart.getGenderRatioChart(Candidates.getGenderCountFrom(candidates));
                 renderHandsOnTable(data);
