@@ -6,70 +6,29 @@ var reports = (function () {
     var candidates;
     var selectedOption;
 
+    var PIE_CHART_WIDTH=180;
+    var PIE_CHART_HEIGHT=180;
+
     var el = {
         "options": $("input[name='option']")
     };
 
-    var coursePieChart = function () {
-        var courseWiseStudentCount = Candidates.getCourseWiseStudentCountFrom(candidates);
-        var width = 180;
-        var height = 180;
-        pieChart.plot("#chart", courseWiseStudentCount, width, height);
-    };
 
-    var yearOfPassingPieChart = function () {
-        var yearWiseStudentCount = Candidates.getYearWiseStudentCountFrom(candidates);
-        var width = 180;
-        var height = 180;
-        pieChart.plot("#chart", yearWiseStudentCount, width, height);
-    }
 
-    var preferredAptitudeCenterChart = function () {
-        var aptitudeCenterCount = Candidates.getAptitudeCenterCountFrom(candidates);
-        var width = 180;
-        var height = 180;
-        pieChart.plot("#chart", aptitudeCenterCount, width, height);
-    }
-
-    var preferredGDCenterChart = function () {
-        var GDPICount = Candidates.getGDPICountFrom(candidates);
-        var width = 180;
-        var height = 180;
-        pieChart.plot("#chart", GDPICount, width, height);
+    var optionToCount = {
+        "course": Candidates.getCourseWiseStudentCountFrom,
+        "year-of-pass": Candidates.getYearWiseStudentCountFrom,
+        "prefered-gd-center": Candidates.getGDPICountFrom,
+        "state": Candidates.getStateCount,
+        "age": Candidates.getAgeWiseStudentCountFrom
     }
 
 
-
-    var ageWiseChart = function () {
-        var ageCount = Candidates.getAgeWiseStudentCountFrom(candidates);
-        var width = 180;
-        var height = 180;
-        pieChart.plot("#chart", ageCount, width, height);
-    }
-
-
-    var stateWiseChart = function () {
-        var stateCount=Candidates.getStateCount(candidates);
-        var width = 180;
-        var height = 180;
-        pieChart.plot("#chart", stateCount, width, height);
-    }
-
-
-    var optionToChartMapping = {
-        "course": coursePieChart,
-        "year-of-pass": yearOfPassingPieChart,
-        "prefered-apptitude-center": preferredAptitudeCenterChart,
-        "prefered-gd-center": preferredGDCenterChart,
-        "state": stateWiseChart,
-        "age": ageWiseChart
-    }
-
-
-    var optionSelectorListener = function () {
+    var plotChart = function () {
         el.options.click(function () {
             selectedOption = el.options.filter(":checked").val();
-            optionToChartMapping[selectedOption]();
+            var count=optionToCount[selectedOption](candidates);
+            pieChart.plot("#chart", count, PIE_CHART_WIDTH,PIE_CHART_HEIGHT);
         })
     }();
 
