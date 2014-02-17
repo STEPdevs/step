@@ -5,6 +5,9 @@ html
     = stylesheet_link_tag "admin-reports"
 
   body
+    .dob-selection-option
+      input type="button" id="set-dob" value="Set DOB"
+      input type="date" id="dob" name="option"
     .report-selection-option
       input type="radio" id="age" name="option" value="age"
       label for="age" Age
@@ -18,8 +21,6 @@ html
       label for="state" State
       input type="radio" id="course" name="option" value="course"
       label for="course" Course Wise
-    input type="button" id="set-dob" value="Set DOB"
-    input type="date" id="dob" name="option"
     svg.piechart#chart
 
   =javascript_include_tag "admin-reports"
