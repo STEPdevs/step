@@ -1,16 +1,17 @@
 var reportDataTemplate = {
 
-        genderRatio: function (maleCount,femaleCount) {
-            return  [{
-                    key: "Gender",
-                    values: [{"label": "Female",
-                            "value": femaleCount},
-                            {"label": "Male",
-                            "value": maleCount}
-                    ]}
-            ];
-        },
-
+    barChart:function(_for,values){
+        var data=[];
+        var value=[];
+        data.push({key:_for})
+        for (var key in values) {
+            if (values.hasOwnProperty(key)) {
+                value.push({"label":key,"value":values[key]});
+            }
+        }
+        data[0]["values"]=value;
+        return data;
+    },
         pieChart:function(values){
             var data=[];
             for (var key in values) {

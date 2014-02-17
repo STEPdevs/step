@@ -85,7 +85,7 @@ var adminPage = (function () {
         initialize: function () {
             var callbackAfterGettingCandidates = function (data) {
                 candidates = data;
-                barChart.getGenderRatioChart(Candidates.getGenderCountFrom(candidates));
+                barChart.plot("Gender",'#chart1 svg',Candidates.getGenderCountFrom(candidates));
                 renderHandsOnTable(data);
             }
             Candidates.getAll(callbackAfterGettingCandidates)

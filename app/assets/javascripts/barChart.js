@@ -8,9 +8,8 @@
 var barChart = (function () {
 
     return{
-        getGenderRatioChart: function (genderRatio) {
-
-            var genderCount = reportDataTemplate.genderRatio(genderRatio.maleCount, genderRatio.femaleCount);
+        plot: function (_for,element,values) {
+            var genderCount = reportDataTemplate.barChart(_for,values);
 
             nv.addGraph(function () {
                 var chart = nv.models.multiBarHorizontalChart()
@@ -28,7 +27,7 @@ var barChart = (function () {
                 chart.yAxis
                     .tickFormat(d3.format(',.0f'));
 
-                d3.select('#chart1 svg')
+                d3.select(element)
                     .datum(genderCount)
                     .call(chart);
 

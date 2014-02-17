@@ -1,11 +1,24 @@
 var Candidates = (function () {
 
-    var genderRatio = {maleCount: 0, femaleCount: 0};
+    var genderRatio = {female: 0,male: 0};
     var courseWiseStudentCount = {};
     var yearWiseStudentCount = {};
+    var ageWiseStudentCount = {};
     var aptitudeCenterCount = {};
     var stateCount = {};
     var GDPICount = {};
+
+
+    var calculateAge=function(dateString){
+        var today = new Date();
+        var birthDate = new Date(dateString);
+        var yearDifference = today.getFullYear() - birthDate.getFullYear();
+        var monthDifference = today.getMonth() - birthDate.getMonth();
+        if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+            yearDifference--;
+        }
+        return yearDifference;
+    }
 
     var initializeAllCoursesCount=function(candidates){
         _.each(candidates, function (candidate) {
@@ -25,6 +38,15 @@ var Candidates = (function () {
                 yearWiseStudentCount[yearOfPassing]=0;
             });
         }
+
+
+    var initializeAgeCount=function(candidates){
+        _.each(candidates, function (candidate) {
+            var dob = candidate.date_of_birth;
+            var age=calculateAge(dob)+" years";
+            ageWiseStudentCount[age]=0;
+        });
+    }
 
     var initializeGDPICount=function(candidates){
             _.each(candidates, function (candidate) {
@@ -57,8 +79,8 @@ var Candidates = (function () {
         getGenderCountFrom: function (candidates) {
             _.each(candidates, function (candidate) {
                 var gender = candidate.gender;
-                if (gender === "Male") genderRatio.maleCount++;
-                else genderRatio.femaleCount++
+                if (gender === "Male") genderRatio.male++;
+                else genderRatio.female++
             });
             return genderRatio;
         },
@@ -85,6 +107,16 @@ var Candidates = (function () {
                 yearWiseStudentCount[candidate.year_of_pass]++;
             });
             return yearWiseStudentCount;
+        },
+
+        getAgeWiseStudentCountFrom:function(candidates){
+            initializeAgeCount(candidates);
+            _.each(candidates, function (candidate) {
+                var dob = candidate.date_of_birth;
+                var age=calculateAge(dob)+" years"
+                ageWiseStudentCount[age]++;
+            });
+            return ageWiseStudentCount;
         },
 
         getAptitudeCenterCountFrom:function(candidates){

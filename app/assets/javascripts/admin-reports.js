@@ -1,5 +1,6 @@
 //= require Candidates
 //= require pieChart
+//= require barChart
 
 var reports = (function () {
     var candidates;
@@ -38,6 +39,15 @@ var reports = (function () {
     }
 
 
+
+    var ageWiseChart = function () {
+        var ageCount = Candidates.getAgeWiseStudentCountFrom(candidates);
+        var width = 180;
+        var height = 180;
+        pieChart.plot("#chart", ageCount, width, height);
+    }
+
+
     var stateWiseChart = function () {
         var stateCount=Candidates.getStateCount(candidates);
         var width = 180;
@@ -51,7 +61,8 @@ var reports = (function () {
         "year-of-pass": yearOfPassingPieChart,
         "prefered-apptitude-center": preferredAptitudeCenterChart,
         "prefered-gd-center": preferredGDCenterChart,
-        "state": stateWiseChart
+        "state": stateWiseChart,
+        "age": ageWiseChart
     }
 
 
