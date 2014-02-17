@@ -4,7 +4,7 @@ html
   	img.logo src="tw-logo.png"
   body
   	.bannertop1.flash-msg=flash[:success]
-  	.bannertop2.color.formtitle= "Apply here for Interview.!"
+  	.bannertop2.color.formtitle= "Apply here for STEP.!"
   	.bannertop2.info= "Please type your phone number carefully, it will be saved automatically.!"
   	.main-container
 		  .upper-left
@@ -27,17 +27,18 @@ html
 			  			=o.text_field :name,:size=>10
 			  			span.ferror =@user.errors[:name].join(', ') if @user.errors.any?
 		  			.row
+			  			span.title Gender
+			  			=o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
+			  			span.ferror =@user.errors[:gender].join(', ') if @user.errors.any?
+		  			.row
 			  			span.title  Date Of Birth
 			  			=o.date_field :date_of_birth,:size=>10
 		  				span.ferror =@user.errors[:date_of_birth].join(', ') if @user.errors.any?
 		  			.row
-			  			span.title City
-			  			=o.text_field :city,:size=>10
-			  			span.ferror =@user.errors[:city].join(', ') if @user.errors.any?
-		  			.row
-			  			span.title Gender
-			  			=o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
-			  			span.ferror =@user.errors[:gender].join(', ') if @user.errors.any?
+			  			span.title State
+                        span.input= o.input :state,label: false,collection:State.all.map{|state|state.name },:include_blank=>"--Select--",:id => "state"
+
+			  			span.ferror =@user.errors[:state].join(', ') if @user.errors.any?
 		  			.row
 			  			span.title Diploma in
 			  			= o.input :course,label: false,collection: Courses.all.map { |course| course.name },:include_blank=>"--Select--"

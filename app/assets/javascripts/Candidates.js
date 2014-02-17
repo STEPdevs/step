@@ -4,6 +4,7 @@ var Candidates = (function () {
     var courseWiseStudentCount = {};
     var yearWiseStudentCount = {};
     var aptitudeCenterCount = {};
+    var stateCount = {};
     var GDPICount = {};
 
     var initializeAllCoursesCount=function(candidates){
@@ -12,7 +13,12 @@ var Candidates = (function () {
             courseWiseStudentCount[courseName]=0;
         });
     }
-
+    var initializeAllStateCount=function(candidates){
+        _.each(candidates,function(candidate){
+           var state=candidate.state
+            stateCount[state]=0;
+        });
+    }
     var initializeYearCount=function(candidates){
             _.each(candidates, function (candidate) {
                 var yearOfPassing = candidate.year_of_pass;
@@ -24,7 +30,6 @@ var Candidates = (function () {
             _.each(candidates, function (candidate) {
                 var GDPICenter = candidate.preferred_gd_center;
                 GDPICount[GDPICenter]=0;
-                console.log()
             });
         }
 
@@ -58,6 +63,14 @@ var Candidates = (function () {
             return genderRatio;
         },
 
+        getStateCount:function(candidates){
+            initializeAllStateCount(candidates);
+            _.each(candidates,function(candidate){
+                stateCount[candidate.state]++;
+            });
+            return stateCount;
+        },
+
         getCourseWiseStudentCountFrom:function(candidates){
             initializeAllCoursesCount(candidates);
             _.each(candidates, function (candidate) {
@@ -86,7 +99,6 @@ var Candidates = (function () {
             initializeGDPICount(candidates);
             _.each(candidates, function (candidate) {
                 GDPICount[candidate.preferred_gd_center]++;
-                console.log(GDPICount)
             });
             return GDPICount;
         }

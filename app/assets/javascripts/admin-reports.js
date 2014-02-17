@@ -39,7 +39,12 @@ var reports = (function () {
 
 
     var stateWiseChart = function () {
-        alert("Work In Progress")
+        var stateCount=Candidates.getStateCount(candidates);
+        var width = 180;
+        var height = 180;
+        alert("ok");
+        pieChart.plot("#state", stateCount, width, height);
+        alert("! ok");
     }
 
 
