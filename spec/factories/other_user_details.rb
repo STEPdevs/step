@@ -4,7 +4,7 @@ FactoryGirl.define do
 		email "a@bn.com"
 		date_of_birth Time.now
 		gender "male"
-		city "city1"
+		state "city1"
 		course "some course"
 		year_of_pass Time.now
 		users_phone_number "1234567890"

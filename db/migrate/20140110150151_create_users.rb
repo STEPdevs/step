@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.date 	:date_of_birth
       t.string :gender
       t.string :email
-      t.string :city
+      t.string :state
       t.string :course
       t.string :year_of_pass
       t.string :preferred_aptitude_center

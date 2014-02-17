@@ -7,7 +7,8 @@ year_of_passing = {
     0=>"2010",
     1=>"2011",
     2=>"2012",
-    3=>"2013"}
+    3=>"2013"
+}
 
 
 preferred_aptitude_center = {
@@ -44,7 +45,44 @@ preferred_aptitude_center = {
     30=>"Vijayawada",
     31=>"Vishakapatnam"}
 
+state = {
+    0=>"Andaman and Nicobar Islands",
+    1=>"Andra Pradesh",
+    2=>"Arunachal Pradesh",
+    3=>"Assam",
+    4=>"Bihar",
+    5=>"Chhattisgarh",
+    6=>"Chandigarh",
+    7=>"Dadar and Nagar Haveli",
+    8=>"Daman and Diu",
+    9=>"Delhi",
+    10=>"Goa",
+    11=>"Gujarat",
+    12=>"Haryana",
+    13=>"Himachal Pradesh",
+    14=>"Jammu and Kashmir",
+    15=>"Jharkhand",
+    16=>"Karnataka",
+    17=>"Kerala",
+    18=>"Lakshadeep" ,
+    19=>"Madya Pradesh",
+    20=>"Maharashtra",
+    21=>"Manipur",
+    22=>"Meghalaya",
+    23=>"Mizoram",
+    24=>"Nagaland",
+    25=>"Orissa",
+    26=>"Punjab",
+    27=>"Pondicherry",
+    28=>"Rajasthan",
+    29=>"Sikkim",
+    30=>"Tamil Nadu",
+    31=>"Tripura",
+    32=>"Uttaranchal",
+    33=>"Uttar Pradesh",
+    34=>"West Bengal"
 
+}
 preferred_gd_center = {
     0=>"Chennai",
     1=>"Pune",
@@ -64,13 +102,15 @@ preferred_gd_center = {
   if i<32
     AptitudeCenters.create!({place: preferred_aptitude_center[i]})
   end
-
+  if i<35
+    State.create!(name:state[i])
+  end
 	gender = "Male"
 	if i > 23
 		gender = "Female"
 	end
 
-	OtherUserDetails.create!({name: "sandeep", date_of_birth: "1996-06-12", gender: gender, email: "name#{i}@gmail.com",city: "che", users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass: "2013", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"})
+	OtherUserDetails.create!({name: "sandeep", date_of_birth: "1996-06-12", gender: gender, email: "name#{i}@gmail.com",state: "che", users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass: "2013", preferred_aptitude_center: "Chennai", preferred_gd_center: "Chennai"})
 	User.find_by_phone_number("893920047#{i}").update_attributes(status:"COMPLETE");
 	user = User.find_by_phone_number("893920047#{i}")
 	user.update_attributes(count:user.count+1);
