@@ -1,1 +1,0 @@
-heroku config:set RACK_ENV=production RAILS_ENV=production --account personal --app step-tw && git push heroku master && heroku run rake db:migrate --account personal --app step-tw && heroku run rake db:seed --account personal --app step-tw && heroku ps:scale web=1 --account personal --app step-tw
