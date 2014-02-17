@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20140217080249) do
     t.integer  "count",        default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status",       default: "INCOMPLETE"
+    t.string   "complete",     default: "INCOMPLETE"
   end
 
 end

@@ -20,7 +20,7 @@ var reports = (function () {
         "state": Candidates.getStateCount,
         "age": Candidates.getAgeWiseStudentCountFrom
 		}
-    
+
     var plotChart = function () {
         el.options.click(function () {
             selectedOption = el.options.filter(":checked").val();
