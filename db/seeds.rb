@@ -10,7 +10,6 @@ year_of_passing = {
     3=>"2013"
 }
 
-
 date_of_births={
     0=>"1996-01-21",
     1=>"1997-12-10",
@@ -123,6 +122,7 @@ preferred_gd_center = {
 	if i > 23
 		gender = "Female"
 	end
+
 
 	OtherUserDetails.create!({name: "sandeep", date_of_birth: date_of_births[i%10], gender: gender, email: "name#{i}@gmail.com",state: state[i%35], users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass:year_of_passing[i%4], preferred_aptitude_center: "Chennai", preferred_gd_center: preferred_gd_center[i%4]})
 	User.find_by_phone_number("893920047#{i}").update_attributes(status:"COMPLETE");

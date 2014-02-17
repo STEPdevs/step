@@ -12,9 +12,7 @@ var reports = (function () {
     var el = {
         "options": $("input[name='option']")
     };
-
-
-
+    
     var optionToCount = {
         "course": Candidates.getCourseWiseStudentCountFrom,
         "year-of-pass": Candidates.getYearWiseStudentCountFrom,
