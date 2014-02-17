@@ -22,9 +22,7 @@ var adminPage = (function () {
         candidates.sort(function (candidate1, candidate2) {
             return candidate2.id - candidate1.id
         })
-
-        var columnsName = ["S.No", "Mobile Number", "Name", "DOB", "Gender", "Email", "Alternate Mobile Number", "State", "Course", "Year of pass", "Preferred Aptitude Test Centre", "Preferred GD/PI Centre"]
-
+        var columnsName = ["S.No", "Mobile Number", "Name", "DOB", "Gender", "Email", "State", "Course", "Year of pass", "Preferred Aptitude Test Centre", "Preferred GD/PI Centre", "Alternate Mobile Number"]
         el.usersList.handsontable({
             data: candidates,
             colHeaders: columnsName,
@@ -35,12 +33,12 @@ var adminPage = (function () {
                 {data: "date_of_birth"},
                 {data: "gender"},
                 {data: "email"},
-                {data: "alt_phone_number"},
                 {data: "state"},
                 {data: "course"},
                 {data: "year_of_pass"},
                 {data: "preferred_aptitude_center"},
-                {data: "preferred_gd_center"}
+                {data: "preferred_gd_center"},
+                {data: "alt_phone_number"}
             ],
             contextMenu: false,
             afterChange: function (change, source) {
