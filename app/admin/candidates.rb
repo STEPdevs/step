@@ -15,8 +15,8 @@ ActiveAdmin.register_page "Candidates" do
       end
     end
     respond_to do |format|
-      format.html{render :partial=>'list',:status=>200}
-      format.json{render :json=> update_count}
+      format.html { render :partial => 'list', :status => 200 }
+      format.json { render :json => update_count }
     end
   end
 end
