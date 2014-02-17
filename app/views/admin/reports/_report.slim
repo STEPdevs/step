@@ -6,8 +6,8 @@ html
 
   body
     .report-selection-option
-      input type="radio" id="course" name="option" value="course"
-      label for="course" Course Wise
+      input type="radio" id="age" name="option" value="age"
+      label for="age" Age
       input type="radio" id="year-of-pass" name="option" value="year-of-pass"
       label for="year-of-pass" Passing Year
       input type="radio" id="prefered-apptitude-center" name="option" value="prefered-apptitude-center"
@@ -16,5 +16,7 @@ html
       label for="prefered-gd-center" Preferred G.D Center
       input type="radio" id="state" name="option" value="state"
       label for="state" State
+      input type="radio" id="course" name="option" value="course"
+      label for="course" Course Wise
     svg.piechart#chart
   =javascript_include_tag "admin-reports"
