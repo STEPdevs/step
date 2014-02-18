@@ -5,58 +5,56 @@ html
   body
   	.bannertop1.flash-msg=flash[:success]
   	.bannertop2.color.formtitle= "Apply here for STEP.!"
-  	.bannertop2.info= "Please type your phone number carefully, it will be saved automatically.!"
   	.main-container
 		  .upper-left
 		  	= simple_form_for @other_user_details, :url=>user_path, :method=>'post'  do |o|
 		  		.fieldset
 		  			.row
-			  			span.title Contact No.
-			  			input name="phone_number" size="10" class="bold" type="text" id="user_phone_number"
+                      span.title Contact No.
+                      input name="phone_number" size="10" class="bold" type="text" id="user_phone_number"
 		  			.row
-			  			span.title Confirm Contact No.
-			  			input name="phone_number_confirmation" size="10" class="bold" type="text" id="user_phone_number_confirmation"
-			  			.phonenumber.ferror
+                      span.title Confirm Contact No.
+                      input name="phone_number_confirmation" size="10" class="bold" type="text" id="user_phone_number_confirmation"
+                      .phonenumber.ferror
 		  			img.done-image src="done-icon.gif"
 		  			.row
-			  			span.title Email
-			  			=o.text_field :email,:size=>10
-			  			span.ferror =@user.errors[:email].join(', ') if @user.errors.any?
+                      span.title Email
+                      =o.input :email,label:false
+                      span.ferror =@other_user_details.errors[:email].join(', ') if @user.errors.any?
 		  			.row
-			  			span.title  Name
-			  			=o.text_field :name,:size=>10
-			  			span.ferror =@user.errors[:name].join(', ') if @user.errors.any?
+                      span.title  Name
+                      =o.input :name,:size=>10,label:false
+                      span.ferror =@other_user_details.errors[:name].join(', ') if @user.errors.any?
 		  			.row
-			  			span.title Gender
-			  			=o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
-			  			span.ferror =@user.errors[:gender].join(', ') if @user.errors.any?
+                      span.title Gender
+                      =o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
+                      span.ferror =@other_user_details.errors[:gender].join(', ') if @user.errors.any?
 		  			.row
-			  			span.title  Date Of Birth
-			  			=o.date_field :date_of_birth,:size=>10
-		  				span.ferror =@user.errors[:date_of_birth].join(', ') if @user.errors.any?
+                      span.title  Date Of Birth
+                      =o.date_field :date_of_birth,:size=>10,label:false
+                      span.ferror =@other_user_details.errors[:date_of_birth].join(', ') if @user.errors.any?
 		  			.row
-			  			span.title State
-                        span.input= o.input :state,label: false,collection:State.all.map{|state|state.name },:include_blank=>"--Select--",:id => "state"
-
-			  			span.ferror =@user.errors[:state].join(', ') if @user.errors.any?
+                      span.title State
+                      span.input= o.input :state,label: false,collection:State.all.map{|state|state.name },:include_blank=>"--Select--",:id => "state"
+                      span.ferror =@other_user_details.errors[:state].join(', ') if @user.errors.any?
 		  			.row
-			  			span.title Diploma in
-			  			= o.input :course,label: false,collection: Courses.all.map { |course| course.name },:include_blank=>"--Select--"
-			  			span.ferror =@user.errors[:course].join(', ') if @user.errors.any?
+                      span.title Diploma in
+                      = o.input :course,label: false,collection: Courses.all.map { |course| course.name },:include_blank=>"--Select--"
+                      span.ferror =@other_user_details.errors[:course].join(', ') if @user.errors.any?
 		  			.row
-			  			span.title Year of Pass
-			  			span.input= o.input :year_of_pass,label: false,collection:[[(Date.current.year-2).to_s,(Date.current.year-2).to_s],[(Date.current.year-1).to_s,(Date.current.year-1).to_s],[Date.current.year,Date.current.year]],:include_blank=>"--Select--",:id => "year_of_pass"
-			  			span.ferror =@user.errors[:year_of_pass].join(', ') if @user.errors.any?
+                      span.title Year of Pass
+                      span.input= o.input :year_of_pass,label: false,collection:[[(Date.current.year-2).to_s,(Date.current.year-2).to_s],[(Date.current.year-1).to_s,(Date.current.year-1).to_s],[Date.current.year,Date.current.year]],:include_blank=>"--Select--",:id => "year_of_pass"
+                      span.ferror =@other_user_details.errors[:year_of_pass].join(', ') if @user.errors.any?
 		  			.row
-			  			span.title Preferred Aptitude Centre
-			  			span.input= o.input :preferred_aptitude_center,label: false,collection:AptitudeCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_aptitude_center"
-			  			span.ferror =@user.errors[:preferred_aptitude_center].join(', ') if @user.errors.any?
-		  			.row		  			
-			  			span.title Preferred GD/PI Centre
-			  			span.input= o.input :preferred_gd_center,label: false,collection: GdCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_gd_center"
-			  			span.ferror =@user.errors[:preferred_gd_center].join(', ') if @user.errors.any?
+                      span.title Preferred Aptitude Centre
+                      span.input= o.input :preferred_aptitude_center,label: false,collection:AptitudeCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_aptitude_center"
+                      span.ferror =@other_user_details.errors[:preferred_aptitude_center].join(', ') if @user.errors.any?
 		  			.row
-		  				= o.submit :submit, :id => "submit",:class=>"submit-button"
+                      span.title Preferred GD/PI Centre
+                      span.input= o.input :preferred_gd_center,label: false,collection: GdCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_gd_center"
+                      span.ferror =@other_user_details.errors[:preferred_gd_center].join(', ') if @user.errors.any?
+		  			.row
+		  			  = o.submit :submit, :id => "submit",:class=>"submit-button"
 		  .upper-right
 	    	img.image src="step-image.png"
   	.bannerbottom
