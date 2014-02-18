@@ -69,6 +69,9 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dragonfly (0.9.15)
+      multi_json (~> 1.0)
+      rack
     erubis (2.7.0)
     execjs (2.0.2)
     factory_girl (4.3.0)
@@ -242,6 +245,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  dragonfly
   factory_girl_rails
   haml2slim
   jasmine
