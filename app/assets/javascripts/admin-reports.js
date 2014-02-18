@@ -1,6 +1,6 @@
 //= require Candidates
 //= require pieChart
-//= require barChart
+//= require verticalBarChart
 
 var reports = (function () {
     var candidates;
@@ -18,7 +18,15 @@ var reports = (function () {
         el.options.click(function () {
             selectedOption = el.options.filter(":checked").val();
             var count = optionToCountMapping[selectedOption];
-            pieChart.plot("#chart", count, PIE_CHART_WIDTH, PIE_CHART_HEIGHT);
+            if(selectedOption!="age"){
+                pieChart.plot("#pieChart", count, PIE_CHART_WIDTH, PIE_CHART_HEIGHT);
+                $("#barChart").hide();
+                $("#pieChart").css('display','inline');
+            }else{
+                $("#pieChart").hide();
+                verticalBarChart.plot("#barChart svg",count);
+                $("#barChart").css('display','inherit');
+            }
         })
     }();
 
@@ -36,7 +44,6 @@ var reports = (function () {
                     "state": candidatesMetrics.stateCount,
                     "age": candidatesMetrics.ageWiseStudentCount
                 }
-
             }
             Candidates.getAll(callbackAfterGettingCandidates);
         }

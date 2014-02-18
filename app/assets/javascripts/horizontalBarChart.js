@@ -1,15 +1,14 @@
 //= require nvD3common
 //= require nvD3/models/axis
 //= require nvD3/models/multiBarHorizontal
-//= require nvD3/models/multiBarHorizontalChart
 //= require ReportDataTemplate
 
 
-var barChart = (function () {
+var horizontalBarChart = (function () {
 
     return{
         plot: function (_for,element,values) {
-            var genderCount = reportDataTemplate.barChart(_for,values);
+            var genderCount = reportDataTemplate.horizontalBarChart(_for,values);
 
             nv.addGraph(function () {
                 var chart = nv.models.multiBarHorizontalChart()

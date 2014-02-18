@@ -28,6 +28,9 @@ var pieChart=(function(){
                     .attr('width', width)
                     .attr('height', height)
                     .call(chart);
+
+
+                chart.tempDisabled=true;
                 return chart;
             });
         }

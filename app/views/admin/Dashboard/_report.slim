@@ -21,6 +21,8 @@ html
       label for="state" State
       input type="radio" id="course" name="option" value="course"
       label for="course" Course Wise
-    svg.piechart#chart
-
+    .container
+      svg.piechart#pieChart
+      .with-3d-shadow.with-transitions#barChart
+        svg
   =javascript_include_tag "admin-reports"

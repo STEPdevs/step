@@ -1,6 +1,6 @@
 //= require jquery.handsontable.full
 //= require Candidates
-//= require barChart
+//= require horizontalBarChart
 
 var adminPage = (function () {
     var candidatesChanged = [];
@@ -85,7 +85,7 @@ var adminPage = (function () {
         initialize: function () {
             var callbackAfterGettingCandidates = function (data) {
                 candidates = data;
-                barChart.plot("Gender",'#chart1 svg',Candidates.getStudentMetrics(candidates).genderRatio);
+                horizontalBarChart.plot("Gender",'#chart1 svg',Candidates.getStudentMetrics(candidates).genderRatio);
                 renderHandsOnTable(data);
             }
             Candidates.getAll(callbackAfterGettingCandidates)

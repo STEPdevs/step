@@ -1,4 +1,4 @@
-.piechart {
+.container{
     margin-top: 3px;
     width: 800px;
     border: 2px solid;
@@ -6,7 +6,6 @@
     position: relative;
     right: -250px;
     border-color: slategrey;
-    background-color: #eceded;
     padding-top: 11px;
 }
 
@@ -14,14 +13,6 @@
     display: none;
 }
 
-body{
-    background-color: silver;
-}
-
-
-.nvtooltip h3 {
-    display: none;
-}
 
 .dob-selection-option{
     top: 50px;
@@ -57,6 +48,7 @@ body{
     cursor :pointer;
 }
 
+
 input[type="date"],[type="button"]{
     float: right;
     height: 27px;
@@ -64,4 +56,20 @@ input[type="date"],[type="button"]{
     width: auto;
     background-color: snow;
     outline: none;
+}
+
+#barChart{
+    height:450px;
+    width: 400px;
+    min-width: 100px;
+    min-height: 100px;
+    margin: auto;
+}
+
+#barChart .nv-legend-text{
+    display: none;
+}
+
+#barChart .nv-legend-symbol{
+    display: none;
 }
