@@ -15,6 +15,7 @@ gem 'protected_attributes'
 gem 'validates_timeliness', '~> 3.0'
 gem 'database_cleaner'
 gem 'puma'
+gem 'pry'
 
 group :doc do
   gem 'sdoc', require: false
@@ -28,6 +29,9 @@ group :production do
 end
 
 group :test,:development do
+  gem  'cucumber' ,:require => false
+  gem 'watir-webdriver', :require => false
+  gem "page-object", :require => false
   gem 'factory_girl_rails', :require => false
   gem 'rspec-rails'
   gem 'rspec-jasmine'
