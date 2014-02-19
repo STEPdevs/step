@@ -1,3 +1,30 @@
+.for-IE{
+	width: 100%;
+}
+.headerForIE{
+	background:black;
+  color:#fff;
+  height:auto;
+  position:relative;
+}
+.header{
+		background:black;
+    background-color:#212121;
+    box-shadow: 0 -1px 2px #111111;
+    color:#fff;
+    height:auto;
+    position:relative;
+    width: 100%;
+    zoom:1;
+}
+.logo{
+	  display: block;
+    max-width:184px;
+    max-height:95px;
+    width: auto;
+    height: 50px;
+    margin-top: 0px;
+}
 .flash-msg{
 	color: red;
 	font-weight: bold;
@@ -10,6 +37,7 @@
 }
 .bold{
 	font-weight: bold;
+	width: 100%;
 }
 .done-image{
 	width: 20px;
@@ -20,36 +48,6 @@
 	position: absolute;
 	display: none;
 }
-.logo{
-	  display: block;
-    max-width:184px;
-    max-height:95px;
-    width: auto;
-    height: auto;
-    margin-top: 0px;
-}
-header {
-    background-color:#212121;
-    box-shadow: 0 -1px 2px #111111;
-    color:#fff;
-    height:50px;
-    position:relative;
-    width: 100%;
-}
-h2.text{
-	margin-left: 7.5%;
-	padding-bottom: 10px;
-	margin-top: 3%;
-}
-header h2{
-    font-size:22px;
-    font-weight:normal;
-    left:10%;
-    padding:15px 0;
-    position:absolute;
-    width:540px;
-    padding-top: 17px;
-}
 .main-container{
 	width: 100%;
 	height: 412px;
@@ -58,100 +56,22 @@ header h2{
     width:40%;
     float:left;
     height: inherit;
-    /*background-color: green;*/
 }
-
 .upper-right{
     width:60%;
     float:right;
     height: inherit;
-    /*background-color: green;*/
 }
 .fieldset {
     width:90%;
     height:inherit;
     border: none;
-    margin: 0px auto;
+    margin: 0px 20px auto;
     background:none;
-}
-
-.line{
-	margin-left: 7%;
-	width: 83%;
-	height: 1px;
-	background-color: lightgrey;
-}
-.logo-line1{
-	width: 8%;
-	height: 1px;
-	top: 40px;
-	left: 72%;
-	position: absolute;
-	background-color: lightgrey;
-}
-.logo-line2{
-	top: 5%;
-	left: 77%;
-	position: absolute;
-	width: 1px;
-	height: 69px;
-	background-color: lightgrey;
-}
-.logo-line3{
-	top: 77%;
-	left: 45%;
-	position: absolute;
-	width: 15%;
-	height: 1px;
-	background-color: lightgrey;
-}
-.logo-line4{
-	top: 67%;
-	left: 50%;
-	width: 1px;
-	height: 100px;
-	position: absolute;
-	background-color: lightgrey;
-}
-.bottomup{
-	opacity: 0.2;
-	position: absolute;
-	left: 50%;
-	bottom: 124px;
-}
-.bottomdown{
-	opacity: 0.2;
-	position: absolute;
-	left: 50%;
-	bottom: 143px;
-}
-.bottomright{
-	opacity: 0.2;
-	position: absolute;
-	left: 715px;
-	bottom: 124px;
-}
-.topup{
-	opacity: 0.2;
-	position: absolute;
-	right: 320px;
-	top: 41px;
-}
-.topdown{
-	opacity: 0.2;
-	position: absolute;
-	right: 320px;
-	top: 61px;
-}
-.topleft{
-	opacity: 0.2;
-	position: absolute;
-	right: 340px;
-	top: 41px;
 }
 .fieldset .title {
     float:left;
-    width:50%;
+    width:49%;
     height: 30px;
     line-height: 0.9;
     color: #090001;
@@ -175,13 +95,12 @@ img{
 
 .image{
 		display: block;
-    width: auto;
+    width: 350px;
     margin: 0px 194px auto;
     height: inherit;
     margin-top: 0px;
 }
-
-input[type='submit'].submit-button{
+.submit-button{
     text-transform: uppercase;
     font-size: 11px;
     font-weight: bold;
@@ -192,7 +111,6 @@ input[type='submit'].submit-button{
     cursor: pointer;
     float: right;
 }
-
 select {
     width: 50%;
     color:#888;
@@ -207,7 +125,6 @@ select {
     -moz-appearance:none;
     color: black;
 }
-
 .radio{
     margin-left: 5%;
 }
@@ -262,10 +179,11 @@ label {
 	padding-top: 5px;
 	width: 100%;
 	height: 30px;
+
 }
 .bannertop2{
 	width: 100%;
-	height: 55px;
+	height: 55px;	
 	margin-bottom: 8px;
 }
 .color{

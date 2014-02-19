@@ -26,6 +26,13 @@ var registration = (function(){
 		}
 	};
 	return {
+		forIE: function(){
+			if(navigator.userAgent.match(/IE/)){
+				var some = document.getElementById("_header");
+				$(some).removeClass("header");
+				$(some).addClass("headerForIE");
+			}
+		},
 		savePhoneNumber: function(){
 			elements.confirm_number.change(function(){
 			elements.error_phone_number.text("");
@@ -43,4 +50,6 @@ var registration = (function(){
 			});
 		}
 	}
-})().savePhoneNumber();
+})();
+registration.savePhoneNumber();
+registration.forIE();

@@ -1,6 +1,5 @@
-doctype html
 html
-  header
+  #_header.header
   	img.logo src="tw-logo.png"
   body
   	.bannertop1.flash-msg=flash[:success]
@@ -19,11 +18,11 @@ html
 		  			img.done-image src="done-icon.gif"
 		  			.row
                       span.title Email
-                      =o.input :email,label:false
+                      =o.text_field :email,class:"for-IE"
                       span.ferror =@other_user_details.errors[:email].join(', ') if @user.errors.any?
 		  			.row
                       span.title  Name
-                      =o.input :name,:size=>10,label:false
+                      =o.text_field :name,:size=>10,class:"for-IE"
                       span.ferror =@other_user_details.errors[:name].join(', ') if @user.errors.any?
 		  			.row
                       span.title Gender
@@ -31,7 +30,7 @@ html
                       span.ferror =@other_user_details.errors[:gender].join(', ') if @user.errors.any?
 		  			.row
                       span.title  Date Of Birth
-                      =o.date_field :date_of_birth,:size=>10,label:false
+                      =o.date_field :date_of_birth,:size=>10,label:false,class:"for-IE"
                       span.ferror =@other_user_details.errors[:date_of_birth].join(', ') if @user.errors.any?
 		  			.row
                       span.title State
