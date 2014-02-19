@@ -33,6 +33,7 @@ end
 
 When(/^I hover over the chart$/) do
   browser.div(:id=>"barChart").element(:css=>"rect.nv-bar").hover
+  sleep 1
 end
 
 Then(/^I should see popUp box$/) do
