@@ -61,3 +61,7 @@
     height:430px;
     width: 700px;
 }
+
+#pieChart .nv-pieLabels{
+    display: none;
+}

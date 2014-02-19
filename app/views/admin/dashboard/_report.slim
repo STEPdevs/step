@@ -19,7 +19,8 @@ html
       input type="radio" id="course" name="option" value="course"
       label for="course" Course Wise
     .container
-      svg.piechart#pieChart
+      .pieChart
+        svg id="pieChart"
       .with-3d-shadow.with-transitions#barChart
-        svg
+        svg id="barChart"
   =javascript_include_tag "adminReports"
