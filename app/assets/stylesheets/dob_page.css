@@ -1,0 +1,13 @@
+.dob-selection-option{
+    top: 50px;
+    z-index: 800;
+    padding-top: 12px;
+    height: 33px;
+}
+
+input[type="date"],[type="button"]{
+    float: left;
+    height: 27px;
+    border-radius: 9px;
+    width: auto;
+}

@@ -1,5 +1,8 @@
 doctype html
 html
   head
+    = stylesheet_link_tag "dob_page"
   body
-    input type="date"
+   .dob-selection-option
+         input type="date" id="dob" name="option"
+         input type="button" id="set_dob" value="Set DOB"

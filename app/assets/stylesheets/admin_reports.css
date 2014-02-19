@@ -13,15 +13,6 @@
     display: none;
 }
 
-
-.dob-selection-option{
-    top: 50px;
-    margin-left: 100em;
-    z-index: 800;
-    padding-top: 12px;
-    height: 33px;
-}
-
 .report-selection-option{
     position: absolute;
     top: 50px;
@@ -46,16 +37,6 @@
 .report-selection-option label{
     color: #6a7176;
     cursor :pointer;
-}
-
-
-input[type="date"],[type="button"]{
-    float: right;
-    height: 27px;
-    border-radius: 9px;
-    width: auto;
-    background-color: snow;
-    outline: none;
 }
 
 #barChart{
