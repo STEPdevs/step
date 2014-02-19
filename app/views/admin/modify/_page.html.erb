@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <%= stylesheet_link_tag "modify" %>
+  <%= javascript_include_tag "modify" %>
+</head>
+<body>
+<div class="container">
+  <div class="menu">
+    <h1>menu</h1>
+    <ul>
+      <li id="courses"><a href="#" onclick="modifyPage('<%= admin_courses_path %>')">Course</a></li>
+      <li id="aptitude_centers"><a href="#" onclick="modifyPage('<%= admin_aptitude_centers_path %>')">Aptitude Center</a></li>
+      <li id="gd_centers"><a href="#" onclick="modifyPage('<%= admin_gd_centers_path %>')">GD Center</a></li>
+      <li id="dob"><a href="#" onclick="modifyPage('<%= admin_dob_path %>')">DOB</a></li>
+    </ul>
+    </div>
+  <div class="content"></div>
+</div>
+</body>
+</html>
