@@ -32,4 +32,3 @@ Feature: Candidate Charts
     And  I hover over the pie chart
     Then I should see popUp box
     Then I Logout from the app
-    And I close the browser

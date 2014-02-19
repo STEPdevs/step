@@ -31,8 +31,8 @@ var horizontalBarChart = (function () {
                     .call(chart);
 
                 nv.tooltip.calcTooltipPosition = function (pos, gravity, dist, container) {
-                    container.style.left = '690px';
-                    container.style.top = '17px';
+                    container.style.left = '720px';
+                    container.style.top = '110px';
                     container.style.opacity = 1;
                     container.style.position = 'absolute';
                     return container;

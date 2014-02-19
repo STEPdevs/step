@@ -47,3 +47,6 @@ end
 Then(/^I close the browser$/) do
   browser.close
 end
+When(/^I hover over the "([^"]*)"$/) do |chart|
+  browser.element(:id=>chart).element(:css=>"g.nv-bar").hover
+end
