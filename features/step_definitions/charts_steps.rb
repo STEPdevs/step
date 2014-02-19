@@ -4,6 +4,12 @@ require 'pry'
 browser= Watir::Browser.new
 browser.driver.manage.window.maximize
 
+chart_to_element_mapping={
+    'barChart' =>"rect.nv-bar",
+    'pieChart'=> "g.nv-slice",
+    'gender_bar_chart'=>"g.nv-bar"
+}
+
 Given(/^I login into app with username "([^"]*)" and password "([^"]*)"$/) do |username, password|
   browser.text_field(:id => 'admin_user_email').set username
   browser.text_field(:id => 'admin_user_password').set password
@@ -16,7 +22,6 @@ end
 
 When(/^I Logout from the app$/) do
   browser.li(:id=>"logout").link.click
-  #browser.close
 end
 
 When(/^I navigate to "([^"]*)" tab$/) do |tab_name|
@@ -31,16 +36,6 @@ When(/^the "([^"]*)" should be visible$/) do |chart_type|
   browser.element(:id=>chart_type).element(:tag_name=>"g").exists?.should be_true
 end
 
-When(/^I hover over the chart$/) do
-  browser.div(:id=>"barChart").element(:css=>"rect.nv-bar").hover
-  sleep 1
-end
-
-When(/^I hover over the pie chart$/) do
-  browser.element(:id=>"pieChart").element(:css=>"g.nv-slice").hover
-  sleep 1
-end
-
 Then(/^I should see popUp box$/) do
   browser.div(:class=>"nvtooltip").exists?.should be_true
 end
@@ -48,5 +43,6 @@ Then(/^I close the browser$/) do
   browser.close
 end
 When(/^I hover over the "([^"]*)"$/) do |chart|
-  browser.element(:id=>chart).element(:css=>"g.nv-bar").hover
+  browser.element(:id=>chart).element(:css=>chart_to_element_mapping[chart]).hover
+  sleep 1
 end
