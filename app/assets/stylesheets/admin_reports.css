@@ -54,3 +54,10 @@
 #barChart .nv-legend-symbol{
     display: none;
 }
+
+#pieChart{
+    margin-left: 73px;
+    margin-top: 5px;
+    height:430px;
+    width: 700px;
+}
