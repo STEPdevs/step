@@ -16,5 +16,5 @@
 /log/*
 /tmp
 .idea/*
-public/
+public/assets
 *.DS_Store
