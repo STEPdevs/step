@@ -25,7 +25,6 @@ end
 group :production do
 	gem 'rails_12factor'
   gem 'pg'
-  gem 'rails_12factor'
 end
 
 group :test,:development do
