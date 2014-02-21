@@ -11,7 +11,7 @@ Given(/^I login into app with username "([^"]*)" and password "([^"]*)"$/) do |u
 end
 
 Given(/^I am on the admin page of the app$/) do
-  browser.goto 'http://localhost:3000/admin'
+  browser.goto 'http://step-tw.herokuapp.comadmin'
 end
 
 When(/^I Logout from the app$/) do

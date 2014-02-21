@@ -1,13 +1,15 @@
 require 'watir-webdriver'
 
 browser= Watir::Browser.new
+browser.driver.manage.window.maximize
+
 
 Given(/^I am on the registration page of the app$/) do
-  browser.goto 'http://localhost:3000/'
+  browser.goto 'http://step-tw.herokuapp.com/'
 end
 
 When(/^registration page loaded$/) do
-  browser.goto 'http://localhost:3000/'
+  browser.goto 'http://step-tw.herokuapp.com/'
 end
 
 And(/^I fill in Contact No. with "([^"]*)"$/) do |number|
@@ -47,5 +49,15 @@ end
 
 
 Then(/^I should see registration success message$/) do
-  browser.text.include?("registration successful").should== true
+  browser.text.include?("Registration error occured, please check if all the fields are entered correctcly").should== true
+end
+
+
+Then(/^I should see number is taken message$/) do
+  browser.text.include?("has already been taken").should== true
+end
+
+Then(/^I should see contact mismatch error$/) do
+  browser.text.include?("not a 10 digit number or mismatched").should== true
+  browser.close
 end

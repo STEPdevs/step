@@ -1,5 +1,5 @@
 Feature: Registration page
-Scenario Outline: User views registration page
+Scenario Outline: User views registration page and given all valid scenarios
   Given I am on the registration page of the app
   When registration page loaded
   And I fill in Contact No. with "<number>"
@@ -17,4 +17,28 @@ Scenario Outline: User views registration page
   Then I should see registration success message
   Examples:
   | number     | conform_number | email            | name  | male                           | dob        | state_value | field                    | diploma_value                   | diploma_field             | year_of_pass_value | year_of_pass_field              | prefer_ac_value | prefer_ac_field                              | prefer_gd_value | prefer_gd_field                       | submit |
-  | 1234567891 | 1234567891     | dmin@example.com | Admin | other_user_details_gender_male | 13/10/1991 | Delhi       | other_user_details_state | Diploma in computer engennering | other_user_details_course | 2014               | other_user_details_year_of_pass |    Bangalore    | other_user_details_preferred_aptitude_center |Chennai          | other_user_details_preferred_gd_center|submit |
+  | 1234567891 | 1234567891     | admin@example.com | Admin | other_user_details_gender_male | 13/10/1991 | Delhi       | other_user_details_state | Diploma in computer engennering | other_user_details_course | 2014               | other_user_details_year_of_pass |    Bangalore    | other_user_details_preferred_aptitude_center |Chennai          | other_user_details_preferred_gd_center|submit |
+
+  Scenario Outline: User already taken contact number
+  Given I am on the registration page of the app
+  When registration page loaded
+  And I fill in Contact No. with "<number>"
+  And I fill in Confirm Contact No. with "<conform_number>"
+  And I fill in Email with "<email>"
+    Then I should see number is taken message
+  Examples:
+  | number     | conform_number|email            |
+  | 1234567891 | 1234567891    |admin@example.com|
+
+
+
+ Scenario Outline: User given mismatch contact number
+  Given I am on the registration page of the app
+  When registration page loaded
+  And I fill in Contact No. with "<number>"
+  And I fill in Confirm Contact No. with "<conform_number>"
+  And I fill in Email with "<email>"
+    Then I should see contact mismatch error
+  Examples:
+  | number     | conform_number|email            |
+  | 1234567891 | 1234567890    |admin@example.com|

@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 							format.html {redirect_to root_path,:flash=>{success:"registration successful"}}
 							format.json {render :json=>@user.other_user_details}
 				    else
-							format.html {render action:"index",:flash=>{success:"registration error occured, please check if all the fields are entered correctcly"}}
+							format.html {render action:"index",:flash=>{success:"Registration error occured, please check if all the fields are entered correctcly"}}
 				      format.json {render :json=>@user.other_user_details.errors}
 				    end
 					end
