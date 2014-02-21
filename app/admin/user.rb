@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-	menu :label =>"Incomplete profiles"
+	menu :label =>" Incomplete Profiles"
 	config.sort_order = "count_desc"
 	config.filters = false
 	index do

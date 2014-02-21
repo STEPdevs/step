@@ -1,6 +1,5 @@
 ActiveAdmin.register_page "Candidates" do
-
-
+  menu :priority => 3
   content do
     render "list"
   end

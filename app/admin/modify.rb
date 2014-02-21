@@ -1,5 +1,5 @@
-ActiveAdmin.register_page "modify" do
-  menu :priority => 11
+ActiveAdmin.register_page "Modify" do
+  menu :priority => 4
   content do
     render "page"
   end
