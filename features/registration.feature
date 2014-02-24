@@ -2,12 +2,12 @@ Feature: Registration page
 Scenario Outline: User views registration page and given all valid scenarios
   Given I am on the registration page of the app
   When registration page loaded
-  And I fill in Contact No. with "<number>"
-  And I fill in Confirm Contact No. with "<conform_number>"
-  And I fill in Email with "<email>"
-  And I fill in Name with "<name>"
+  And I fill in "Contact No." with "<number>"
+  And I fill in "Confirm Contact No." with "<conform_number>"
+  And I fill in "Email" with "<email>"
+  And I fill in "Name" with "<name>"
   And I click on "<male>"
-  And I fill in DOB  with "<dob>"
+  And I fill in "DOB" with "<dob>"
   And I select "<state_value>" from "<field>"
   And I select "<diploma_value>" from "<diploma_field>"
   And I select "<year_of_pass_value>" from "<year_of_pass_field>"
@@ -22,9 +22,9 @@ Scenario Outline: User views registration page and given all valid scenarios
   Scenario Outline: User already taken contact number
   Given I am on the registration page of the app
   When registration page loaded
-  And I fill in Contact No. with "<number>"
-  And I fill in Confirm Contact No. with "<conform_number>"
-  And I fill in Email with "<email>"
+  And I fill in "Contact No." with "<number>"
+  And I fill in "Confirm Contact No." with "<conform_number>"
+  And I fill in "Email" with "<email>"
     Then I should see number is taken message
   Examples:
   | number     | conform_number|email            |
@@ -35,9 +35,9 @@ Scenario Outline: User views registration page and given all valid scenarios
 Scenario Outline: User given mismatch contact number
   Given I am on the registration page of the app
   When registration page loaded
-  And I fill in Contact No. with "<number>"
-  And I fill in Confirm Contact No. with "<conform_number>"
-  And I fill in Email with "<email>"
+  And I fill in "Contact No." with "<number>"
+  And I fill in "Confirm Contact No." with "<conform_number>"
+  And I fill in "Email" with "<email>"
     Then I should see contact mismatch error
   Examples:
   | number     | conform_number|email            |
