@@ -16,7 +16,7 @@ var reports = (function () {
 
     var plotChart = function () {
         el.options.click(function () {
-            selectedOption = el.options.filter(":checked").val();
+            selectedOption = el.options.filter(":checked").attr('id');
             var count = optionToCountMapping[selectedOption];
             if(selectedOption!="age"){
                 pieChart.plot("#pieChart", count, PIE_CHART_WIDTH, PIE_CHART_HEIGHT);
@@ -39,8 +39,8 @@ var reports = (function () {
 
                 optionToCountMapping = {
                     "course": candidatesMetrics.courseWiseStudentCount,
-                    "year-of-pass": candidatesMetrics.yearWiseStudentCount,
-                    "prefered-gd-center": candidatesMetrics.GDPICount,
+                    "year_of_pass": candidatesMetrics.yearWiseStudentCount,
+                    "prefered_gd_center": candidatesMetrics.GDPICount,
                     "state": candidatesMetrics.stateCount,
                     "age": candidatesMetrics.ageWiseStudentCount
                 }

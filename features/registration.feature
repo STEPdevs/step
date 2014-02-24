@@ -32,7 +32,7 @@ Scenario Outline: User views registration page and given all valid scenarios
 
 
 
- Scenario Outline: User given mismatch contact number
+Scenario Outline: User given mismatch contact number
   Given I am on the registration page of the app
   When registration page loaded
   And I fill in Contact No. with "<number>"

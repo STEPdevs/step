@@ -6,3 +6,10 @@ Feature: Search and Edit Candidates Information
     Then the "gender_bar_chart" should be visible
     And I hover over the "gender_bar_chart"
     Then I should see popUp box
+
+  Scenario: edit candidates email-address
+    When I edit candidate email
+      | s_no | email                     |
+      | 22   | feature_test.01@gamil.com |
+      | 40   | feature_test_02@yahoo.com |
+      | 1    | featureTest03@rediff.co.in|
