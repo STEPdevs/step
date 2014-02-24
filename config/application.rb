@@ -7,7 +7,6 @@ Bundler.require(:default, Rails.env)
 module Step
   class Application < Rails::Application
   	config.assets.initialize_on_precompile = false
-
     config.i18n.enforce_available_locales = true
     config.active_record.whitelist_attributes = true
     I18n.enforce_available_locales = false
