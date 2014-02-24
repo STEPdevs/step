@@ -8,8 +8,15 @@ Feature: Search and Edit Candidates Information
     Then I should see popUp box
 
   Scenario: edit candidates email-address
-    When I edit candidate email
+    When I edit candidate
       | s_no | email                     |
-      | 22   | feature_test.01@gamil.com |
-      | 40   | feature_test_02@yahoo.com |
-      | 1    | featureTest03@rediff.co.in|
+      | 40   | feature_test.01@gamil.com |
+      | 32   | feature_test_02@yahoo.com |
+      | 24   | featureTest03@rediff.co.in|
+
+    Then I click on "save" button
+    And I verify candidates are updated with below details
+      | s_no | changed_data              |
+      | 40   | feature_test.01@gamil.com |
+      | 32   | feature_test_02@yahoo.com |
+      | 24   | featureTest03@rediff.co.in|

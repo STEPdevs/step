@@ -21,3 +21,6 @@ end
 Then(/^I close the $browser$/) do
   $browser.close
 end
+Then(/^I click on "([^"]*)" button$/) do |button_id|
+  $browser.button(:id => button_id).click
+end
