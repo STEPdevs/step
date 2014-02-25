@@ -20,11 +20,11 @@ html
                       span.title Email
                       =o.text_field :email,class:"for-IE"
                       #email-error.user-validation
-                      span.ferror =@user.errors[:email].join(', ') if @user.errors.any?
+                      span.ferror =@other_user_details.errors[:email].join(', ') if @user.errors.any?
 		  			.row
                       span.title  Name
                       =o.text_field :name,:size=>10,class:"for-IE"
-                      span.ferror =@user.errors[:name].join(', ') if @user.errors.any?
+                      span.ferror =@other_user_details.errors[:name].join(', ') if @user.errors.any?
 		  			.row
                       span.title Gender
                       =o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
@@ -32,7 +32,7 @@ html
 		  			.row
                       span.title  Date Of Birth
                       =o.date_field :date_of_birth,:size=>10,label:false,class:"for-IE"
-                      span.ferror =@user.errors[:date_of_birth].join(', ') if @user.errors.any?
+                      span.ferror =@other_user_details.errors[:date_of_birth].join(', ') if @user.errors.any?
 		  			.row
                       span.title State
                       span.input= o.input :state,label: false,collection:State.all.map{|state|state.name },:include_blank=>"--Select--",:id => "state"

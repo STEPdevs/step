@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	validates_presence_of :phone_number
-	validates_confirmation_of :phone_number,message: "password mismatch"
+	validates_confirmation_of :phone_number,message: 'Number mismatch'
 
 	validates_numericality_of :phone_number
 	validates_format_of :phone_number, {

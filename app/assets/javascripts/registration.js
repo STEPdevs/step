@@ -20,8 +20,6 @@ var registration = (function(){
 		else{
 			elements.confirm_number.css("background-color","#E5E4E2");
 			elements.phone_number.css("background-color","#E5E4E2");
-			elements.phone_number.attr("readOnly", true);
-			elements.confirm_number.attr("readOnly", true);
 			$(".done-image").show();
 		}
 	};
@@ -34,7 +32,6 @@ var registration = (function(){
 			}
 		},
 		savePhoneNumber: function(){
-			elements.confirm_number.change(function(){
 			elements.error_phone_number.text("");
 				if(validatePhoneNumber(elements.phone_number.val(), elements.confirm_number.val())){
 						var userData = {
@@ -47,7 +44,6 @@ var registration = (function(){
 							success: successCallback
 						});
 				}
-			});
 		},
 
         emailValidation: function(){
@@ -65,11 +61,9 @@ var registration = (function(){
                         {
                             if(data == "true") {
                                 $('#email-error').html(emailExist);
-                                $('#user_email');
                             }
                             else{
                                 $('#email-error').html('');
-                                $('#user_email');
                             }
                         }
                     })
@@ -77,7 +71,15 @@ var registration = (function(){
             }
         }
 })();
-registration.savePhoneNumber();
+$("#user_phone_number").change(function(){
+    if($("#user_phone_number_confirmation").val()!==""){
+        registration.savePhoneNumber();
+    }
+});
+$("#user_phone_number_confirmation").change(function(){
+    registration.savePhoneNumber();
+});
+
 registration.forIE();
 registration.emailValidation();
 
