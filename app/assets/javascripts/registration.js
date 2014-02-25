@@ -9,7 +9,7 @@ var registration = (function(){
 		if(p1.length,p2.length==10 &&  p1===p2){
 			return true;
 		}
-		elements.error_phone_number.text("not a 10 digit number or mismatched");
+		elements.error_phone_number.text("Not a 10 digit number OR Mismatched");
 		return false;
 	};
 	var successCallback= function (data){
@@ -48,8 +48,44 @@ var registration = (function(){
 						});
 				}
 			});
-		}
-	}
+		},
+
+        emailValidation: function(){
+            $("#other_user_details_email").change(function(){
+                var email= $(this).val();
+                var data= {email: email};
+                $.ajax({
+                    url: '/validate',
+                    data: data
+                })
+                    .success(function(data){
+
+                        emailExist = "<span class=\"user_validation\">Email already taken</span>";
+                        if(email != '')
+                        {
+                            if(data == "true") {
+                                $('#email-error').html(emailExist);
+                                $('#user_email');
+                            }
+                            else{
+                                $('#email-error').html('');
+                                $('#user_email');
+                            }
+                        }
+                    })
+                });
+            }
+        }
 })();
 registration.savePhoneNumber();
 registration.forIE();
+registration.emailValidation();
+
+$('#submit').click(function(e){
+    var fields=[$('#user_phone_number'),$('#user_phone_number_confirmation'),$('#other_user_details_email'),$('#other_user_details_name'),$('#other_user_details_date_of_birth'),$('#other_user_details_state'),$("#other_user_details_course"),$('#other_user_details_year_of_pass'),$('#other_user_details_preferred_aptitude_center'),$('#other_user_details_preferred_gd_center')];
+    for(i=0;i<fields.length;i++){
+        if (fields[i].val()==="") {
+            e.preventDefault();
+        }
+    }
+});

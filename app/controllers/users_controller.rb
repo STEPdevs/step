@@ -14,6 +14,10 @@ class UsersController < ApplicationController
 		create_user_with_other_information
 	end
 
+  def validate
+    render :json => [OtherUserDetails.exists?(:email => params[:email])]
+  end
+
 	private
 		def create_user_with_phone_number
 			@user = User.new(params[:user])
@@ -52,7 +56,4 @@ class UsersController < ApplicationController
 				end
 		end
 
-  def validate
-    render :json => [User.exists?(:email => params[:email])]
-  end
 end
