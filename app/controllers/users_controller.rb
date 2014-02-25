@@ -40,15 +40,15 @@ class UsersController < ApplicationController
 					respond_to do |format|
 						if @user.save
 							@user.update_attributes(status: "COMPLETE")
-							format.html {redirect_to root_path,:flash=>{success:"registration successful"}}
+							format.html {redirect_to root_path,:flash=>{success:"Registration Successful"}}
 							format.json {render :json=>@user.other_user_details}
 				    else
-							format.html {render action:"index",:flash=>{success:"Registration error occured, please check if all the fields are entered correctcly"}}
+							format.html {render action:"index",:flash=>{success:"Registration error , please check if all the fields are entered correctly"}}
 				      format.json {render :json=>@user.other_user_details.errors}
 				    end
 					end
 				else
-					redirect_to root_path,:flash=>{success:"Registration error occured, please check if all the fields are entered correctcly"}
+					redirect_to root_path,:flash=>{success:"Registration error, please check if all the fields are entered correctly"}
 				end
 		end
 

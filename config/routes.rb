@@ -4,6 +4,7 @@ Step::Application.routes.draw do
   resources :posts
   root to: "users#index"
   post 'user' => "users#create"  
+  post 'admin/dob' => "modify#set"
   put 'user'=>"users#update"
   get 'validate' => "users#validate"
   get 'candidates_list' => "candidate#listCandidates"

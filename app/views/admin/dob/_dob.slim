@@ -2,7 +2,9 @@ doctype html
 html
   head
     = stylesheet_link_tag "dob_page"
+
   body
-   .dob-selection-option
-         input type="date" id="dob" name="option"
-         input type="button" id="set_dob" value="Set DOB"
+    = form_tag @modify  do
+      .dob-selection-option
+        input type="date" id="dob" name="dob" required="true"
+        input type="submit" id="set_dob" value="Set DOB"
