@@ -13,6 +13,6 @@ class ModifyController < ApplicationController
     File.open(Dir.pwd+"/app/assets/objects/modify.json", "w") do |f|
       f.write(JSON.pretty_generate(new_dob))
     end
-    redirect_to 'admin/dob'
+    redirect_to "admin/dob_path"
   end
 end
