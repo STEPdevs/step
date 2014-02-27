@@ -30,7 +30,8 @@ end
 group :test,:development do
   gem  'cucumber' ,:require => false
   gem 'watir-webdriver', :require => false
-  gem "page-object", :require => false
+  gem 'cucumber-rails', '1.3.0', :require => false
+  gem 'database_cleaner' ,:require =>false
   gem 'factory_girl_rails', :require => false
   gem 'rspec-rails'
   gem 'rspec-jasmine'

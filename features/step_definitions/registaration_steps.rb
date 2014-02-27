@@ -10,11 +10,11 @@ get_id_for={
 }
 
 Given(/^I am on the registration page of the app$/) do
-  $browser.goto 'http://step-tw.herokuapp.com/'
+  $browser.goto 'http://localhost:3000/'
 end
 
 When(/^registration page loaded$/) do
-  $browser.goto 'http://step-tw.herokuapp.com/'
+  $browser.goto 'http://localhost:3000/'
 end
 
 
@@ -38,7 +38,7 @@ end
 
 
 Then(/^I should see registration success message$/) do
-  $browser.text.include?("Registration error occured, please check if all the fields are entered correctcly").should== true
+  $browser.text.include?("Registration Successful").should== true
 end
 
 
@@ -47,6 +47,6 @@ Then(/^I should see number is taken message$/) do
 end
 
 Then(/^I should see contact mismatch error$/) do
-  $browser.text.include?("not a 10 digit number or mismatched").should== true
+  $browser.text.include?("Not a 10 digit number OR Mismatched").should== true
   $browser.close
 end

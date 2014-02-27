@@ -82,12 +82,3 @@ $("#user_phone_number_confirmation").change(function(){
 
 registration.forIE();
 registration.emailValidation();
-
-$('#submit').click(function(e){
-    var fields=[$('#user_phone_number'),$('#user_phone_number_confirmation'),$('#other_user_details_email'),$('#other_user_details_name'),$('#other_user_details_date_of_birth'),$('#other_user_details_state'),$("#other_user_details_course"),$('#other_user_details_year_of_pass'),$('#other_user_details_preferred_aptitude_center'),$('#other_user_details_preferred_gd_center')];
-    for(i=0;i<fields.length;i++){
-        if (fields[i].val()==="") {
-            e.preventDefault();
-        }
-    }
-});
