@@ -6,10 +6,10 @@ var registration = (function () {
     };
 
     var validatePhoneNumber = function (p1, p2) {
-        if (p1.length, p2.length == 10 && p1 === p2) {
+        if ((p1.length, p2.length >= 10 || p1.length, p2.length <= 14) && p1 === p2) {
             return true;
         }
-        elements.error_phone_number.text("Not a 10 digit number OR Mismatched");
+        elements.error_phone_number.text("Not a valid number OR Number Mismatched");
         return false;
     };
     var successCallback = function (data) {
@@ -80,7 +80,6 @@ $("#user_phone_number_confirmation").change(function () {
 });
 
 registration.forIE();
-registration.emailValidation();
 
 $(document).ready(function () {
     var saved_phone_number = $("#user_other_user_details_users_phone_number").val();
