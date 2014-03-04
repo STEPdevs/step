@@ -11,8 +11,12 @@ class UsersController < ApplicationController
       create_user_with_other_information
     rescue => e
       @other_user_details ||= OtherUserDetails.new params[:user][:other_user_details]
-      flash[:success] = "Registration Successful" if @other_user_details.valid?
-      render "users/index"
+      if @other_user_details.valid?
+        flash[:success] = "Registration Successful"
+        redirect_to root_path
+      else
+        render "users/index"
+      end
     end
   end
 
