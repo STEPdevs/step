@@ -1,51 +1,55 @@
 html
   #_header.header
-  	img.logo src="tw-logo.png"
+    img.logo src="tw-logo.png"
   body
   	.bannertop1.flash-msg=flash[:success]
   	.bannertop2.color.formtitle= "Apply here for STEP.!"
   	.main-container
       .upper-left
-        = simple_form_for @other_user_details, :url=>user_path, :method=>'post'  do |o|
+        = simple_form_for @user, :url=>user_path, :method=>'post'  do |user|
           .fieldset
             .row
               span.title Contact No.
-              input name="phone_number" maxlength="10" class="bold" type="text" id="user_phone_number"
+              input name="phone_number" minlength="10" maxlength="14" class="bold" type="text" id="user_phone_number"
             .row
               span.title Confirm Contact No.
-              input name="phone_number_confirmation" maxlength="10" class="bold" type="text" id="user_phone_number_confirmation"
+              input name="phone_number_confirmation" minlength="10" maxlength="14"  class="bold" type="text" id="user_phone_number_confirmation"
               .phonenumber.ferror
             img.done-image src="done-icon.gif"
-            .row
-              span.title Email
-              =o.input :email,class:"for-IE", :label => false,:require=>true
-            .row
-              span.title  Name
-              =o.input :name,:size=>10,class:"for-IE",:required=>true, :label => false
-            .row
-              span.title Gender
-              =o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
-            .row
-              span.title  Date Of Birth
-              =o.date_field :date_of_birth,:size=>10,label:false,class:"for-IE"
-            .row
-              span.title State
-              span.input= o.input :state,label: false,collection:State.all.map{|state|state.name },:include_blank=>"--Select--",:id => "state"
-            .row
-              span.title Diploma in
-              = o.input :course,label: false,collection: Courses.all.map { |course| course.name },:include_blank=>"--Select--",:id=>'course'
-            .row
-              span.title Year of Pass
-              span.input= o.input :year_of_pass,label: false,collection:[[(Date.current.year-2).to_s,(Date.current.year-2).to_s],[(Date.current.year-1).to_s,(Date.current.year-1).to_s],[Date.current.year,Date.current.year]],:include_blank=>"--Select--",:id => "year_of_pass"
-            .row
-              span.title Preferred Aptitude Centre
-              span.input= o.input :preferred_aptitude_center,label: false,collection:AptitudeCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_aptitude_center"
-            .row
-              span.title Preferred GD/PI Centre
-              span.input= o.input :preferred_gd_center,label: false,collection: GdCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_gd_center"
-            .row
-              = o.submit :submit, :id => "submit",:class=>"submit-button"
+            = user.simple_fields_for @other_user_details, :url=>user_path, :method=>'post'  do |o|
+              .row
+                =o.input :users_phone_number, :as => :hidden, label: false
+              .row
+                span.title  Name
+                =o.input :name,class:"for-IE", label: false
+              .row
+                span.title Email
+                =o.input :email,class:"for-IE", label: false,required: true
+                #email-error.user-validation
+              .row
+                span.title Gender
+                =o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
+              .row
+                span.title  Date Of Birth
+                =o.date_field :date_of_birth,label:false,class:"for-IE"
+              .row
+                span.title State
+                span.input= o.input :state,label: false,collection:State.all.map{|state|state.name },:include_blank=>"--Select--",:id => "state"
+              .row
+                span.title Diploma in
+                = o.input :course,label: false,collection: Courses.all.map { |course| course.name },:include_blank=>"--Select--",:id=>'course'
+              .row
+                span.title Year of Pass
+                span.input= o.input :year_of_pass,label: false,collection:[[(Date.current.year-2).to_s,(Date.current.year-2).to_s],[(Date.current.year-1).to_s,(Date.current.year-1).to_s],[Date.current.year,Date.current.year]],:include_blank=>"--Select--",:id => "year_of_pass"
+              .row
+                span.title Preferred Aptitude Centre
+                span.input= o.input :preferred_aptitude_center,label: false,collection:AptitudeCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_aptitude_center"
+              .row
+                span.title Preferred GD/PI Centre
+                span.input= o.input :preferred_gd_center,label: false,collection: GdCenters.all.map { |center| center.place },:include_blank=>"--Select--",:id=>"preferred_gd_center"
+              .row
+                = o.submit :submit, :id => "submit",:class=>"submit-button"
       .upper-right
         img.image src="step-image.png"
 .bannerbottom
-=javascript_include_tag "registration"
+    =javascript_include_tag "registration"
