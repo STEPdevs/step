@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def validate
-    OtherUserDetails.exists?(:email => params[:user][:other_user_details][:email])
+    render :json => OtherUserDetails.exists?(:email => params[:email])
   end
 
   private

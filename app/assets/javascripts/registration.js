@@ -47,7 +47,7 @@ var registration = (function () {
         },
 
         emailValidation: function () {
-            $("#other_user_details_email").change(function () {
+            $("#user_other_user_details_email").change(function () {
                 var email = $(this).val();
                 var data = {email: email};
                 $.ajax({
@@ -55,10 +55,9 @@ var registration = (function () {
                     data: data
                 })
                     .success(function (data) {
-
                         emailExist = "<span class=\"user_validation\">Email already taken</span>";
                         if (email != '') {
-                            if (data == "true") {
+                            if (data == true) {
                                 $('#email-error').html(emailExist);
                             }
                             else {

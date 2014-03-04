@@ -31,7 +31,7 @@ html
                 =o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
               .row
                 span.title  Date Of Birth
-                =o.date_field :date_of_birth,label:false,class:"for-IE"
+                =o.date_field :date_of_birth,label:false,class:"for-IE", required: true
               .row
                 span.title State
                 span.input= o.input :state,label: false,collection:State.all.map{|state|state.name },:include_blank=>"--Select--",:id => "state"
