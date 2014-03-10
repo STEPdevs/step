@@ -14,7 +14,7 @@ html
             .row
               span.title Confirm Contact No.
               input name="phone_number_confirmation" minlength="10" maxlength="14"  class="bold" type="text" id="user_phone_number_confirmation"
-              .phonenumber.ferror
+              .phonenumber.error
             img.done-image src="done-icon.gif"
             = user.simple_fields_for @other_user_details, :url=>user_path, :method=>'post'  do |o|
               .row
@@ -25,7 +25,7 @@ html
               .row
                 span.title Email
                 =o.input :email,class:"for-IE", label: false
-                #email-error.user-validation
+                #email-error
               .row
                 span.title Gender
                 =o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false

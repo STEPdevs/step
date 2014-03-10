@@ -44,45 +44,45 @@ var registration = (function () {
                     success: successCallback
                 });
             }
-        },
-
-        emailValidation: function () {
-            $("#user_other_user_details_email").change(function () {
-                var email = $(this).val();
-                var data = {email: email};
-                $.ajax({
-                    url: '/validate',
-                    data: data
-                })
-                    .success(function (data) {
-                        emailExist = "<span class=\"user_validation\">Email already taken</span>";
-                        if (email != '') {
-                            if (data == true) {
-                                $('#email-error').html(emailExist);
-                            }
-                            else {
-                                $('#email-error').html('');
-                            }
-                        }
-                    })
-            });
         }
     }
 })();
+
 $("#user_phone_number").change(function () {
     if ($("#user_phone_number_confirmation").val() !== "") {
         registration.savePhoneNumber();
     }
 });
+
 $("#user_phone_number_confirmation").change(function () {
     registration.savePhoneNumber();
     $("#user_other_user_details_users_phone_number").val($("#user_phone_number").val());
 });
 
-registration.forIE();
+$("#user_other_user_details_email").change(function () {
+    var email = $(this).val();
+    var data = {email: email};
+    $.ajax({
+        url: '/validate',
+        data: data
+    })
+        .success(function (data) {
+            emailExist = "<span class=\"error\">Email already taken</span>";
+            if (email != '') {
+                if (data == true) {
+                    $('#email-error').html(emailExist);
+                }
+                else {
+                    $('#email-error').html('');
+                }
+            }
+        })
+});
 
 $(document).ready(function () {
     var saved_phone_number = $("#user_other_user_details_users_phone_number").val();
     $("#user_phone_number").val(saved_phone_number)
     $("#user_phone_number_confirmation").val(saved_phone_number)
 })
+
+registration.forIE();
