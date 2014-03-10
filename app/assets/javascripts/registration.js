@@ -6,16 +6,14 @@ var registration = (function () {
     };
 
     var validatePhoneNumber = function (p1, p2) {
-        if ((p1.length, p2.length >= 10 || p1.length, p2.length <= 14) && p1 === p2) {
-            return true;
-        }
-        elements.error_phone_number.text("Not a valid number OR Number Mismatched");
+        if ((p1.length, p2.length >= 10) && (p1.length, p2.length <= 14) && p1 === p2) return true;
+        elements.error_phone_number.append("<span class=\"error\">Not a valid number OR Number Mismatched</span>");
         return false;
     };
     var successCallback = function (data) {
         var error = data["phone_number"] instanceof Array
         if (error) {
-            elements.error_phone_number.text(data["phone_number"][0]);
+            elements.error_phone_number.append("<span class=\"error\">" + data["phone_number"][0] + "</span>");
         }
         else {
             elements.confirm_number.css("background-color", "#E5E4E2");
@@ -38,7 +36,7 @@ var registration = (function () {
                     "phone_number": elements.phone_number.val(),
                     "phone_number_confirmation": elements.confirm_number.val()
                 };
-                $.ajax("/user", {
+                $.ajax("/validate", {
                     method: 'POST',
                     data: { user: userData, authenticity_token: $('meta[name=csrf-token]').attr("content")},
                     success: successCallback

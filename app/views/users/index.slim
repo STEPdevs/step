@@ -10,11 +10,11 @@ html
           .fieldset
             .row
               span.title Contact No.
-              input name="phone_number" minlength="10" maxlength="14" class="bold" type="text" id="user_phone_number"
+              =user.input :phone_number, label: false,minlength: "10", maxlength: "14", class: "bold for-IE"
             .row
               span.title Confirm Contact No.
               input name="phone_number_confirmation" minlength="10" maxlength="14"  class="bold" type="text" id="user_phone_number_confirmation"
-              .phonenumber.error
+              .phonenumber.ferror
             img.done-image src="done-icon.gif"
             = user.simple_fields_for @other_user_details, :url=>user_path, :method=>'post'  do |o|
               .row

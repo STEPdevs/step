@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   validates :phone_number, :length => {:minimum => 10, :maximum => 14, too_short: "Number is too short (minimum is 10 characters)"}
   validates :phone_number, :numericality => {:only_integer => true, :message => "Number should be between 0-9"}
-  validates_uniqueness_of :phone_number
+  validates_uniqueness_of :phone_number, :message => "Already taken"
 
   validates_associated :other_user_details
 

@@ -12,29 +12,15 @@ year_of_passing = {
 
 date_of_births={
     0=>"1996-01-21",
-    1=>"1997-12-10",
+    1=>"1993-12-10",
     2=>"1995-03-03",
-    3=>"1996-08-24",
+    3=>"1996-06-24",
     4=>"1995-11-02",
     5=>"1994-06-15",
     6=>"1996-04-27",
     7=>"1994-08-25",
     8=>"1995-05-17",
-    9=>"1997-10-13"
-}
-
-
-date_of_births={
-    0=>"1996-01-21",
-    1=>"1997-12-10",
-    2=>"1995-03-03",
-    3=>"1996-08-24",
-    4=>"1995-11-02",
-    5=>"1994-06-15",
-    6=>"1996-04-27",
-    7=>"1994-08-25",
-    8=>"1995-05-17",
-    9=>"1997-10-13"
+    9=>"1995-10-13"
 }
 
 
@@ -139,6 +125,4 @@ preferred_gd_center = {
 
 	OtherUserDetails.create!({name: "sandeep", date_of_birth: date_of_births[i%10], gender: gender, email: "name#{i}@gmail.com",state: state[i%35], users_phone_number: "893920047#{i}", course: courses[i%3],year_of_pass:year_of_passing[i%4], preferred_aptitude_center: "Chennai", preferred_gd_center: preferred_gd_center[i%4]})
 	User.find_by_phone_number("893920047#{i}").update_attributes(status:"COMPLETE");
-	user = User.find_by_phone_number("893920047#{i}")
-	user.update_attributes(count:user.count+1);
 end
