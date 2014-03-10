@@ -32,6 +32,7 @@ html
               .row
                 span.title  Date Of Birth
                 =o.date_field :date_of_birth,label:false,class:"for-IE", required: true
+                span.error =@other_user_details.errors[:date_of_birth][0]||@other_user_details.errors[:date_of_birth][1]  if @other_user_details.errors[:date_of_birth].any?
               .row
                 span.title State
                 span.input= o.input :state,label: false,collection:State.all.map{|state|state.name },:include_blank=>"--Select--",:id => "state"

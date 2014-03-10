@@ -94,7 +94,7 @@ img{
 }
 
 .image{
-		display: block;
+    display: block;
     width: 350px;
     margin: 0px 194px auto;
     height: inherit;
@@ -143,11 +143,9 @@ label {
 .error{
     color: #000000;
     background-color: lightcoral;
-    padding-top: 13%;
+    margin-left: 49%;
     display: block;
     text-align: center;
-    border-bottom:2px double orangered;
-    margin-bottom: -15%;
     -webkit-border-radius: 40px;
 }
 
