@@ -10,6 +10,6 @@ module Step
     config.i18n.enforce_available_locales = true
     config.active_record.whitelist_attributes = true
     I18n.enforce_available_locales = false
-    config.assets.precompile += ['jquery-ui.css','registration.js','jquery.handsontable.full.css','admin_cadidates.css','adminPage.js']
+    config.assets.precompile += ['jquery-ui.css','registration.js','jquery.handsontable.full.css','admin_cadidates.css','adminPage.js','modify.json']
   end
 end

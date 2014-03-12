@@ -10,7 +10,7 @@ Step::Application.configure do
   config.assets.digest = true
   config.assets.version = '1.0'
   config.log_level = :info
-  config.assets.precompile = ['*.js', '*.css', '*.css.erb','modify.json']
+  config.assets.precompile += %w(application.js jquery.handsontable.full)
   config.action_mailer.raise_delivery_errors = false
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
