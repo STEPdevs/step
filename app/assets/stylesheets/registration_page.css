@@ -26,7 +26,7 @@
     margin-top: 0px;
 }
 .flash-msg{
-	color: red;
+	color: Green;
 	font-weight: bold;
 	font-size: 16px;
 	margin-left: 5px;
@@ -175,6 +175,7 @@ label {
 }
 .bannertop1{
 	padding-top: 5px;
+	padding-left: 25px;
 	width: 100%;
 	height: 30px;
 

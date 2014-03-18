@@ -3,14 +3,14 @@ html
     img.logo src="tw-logo.png"
   body
   	.bannertop1.flash-msg=flash[:success]
-  	.bannertop2.color.formtitle= "Apply here for STEP.!"
+  	.bannertop2.color.formtitle= "Apply here for STEP"
   	.main-container
       .upper-left
         = simple_form_for @user, :url=>user_path, :method=>'post'  do |user|
           .fieldset
             .row
               span.title Contact No.
-              =user.input :phone_number, label: false,minlength: "10", maxlength: "14", class: "bold for-IE"
+              =user.input :phone_number, label: false,minlength: "10", maxlength: "14", input_html:{class: 'bold for-IE'}
             .row
               span.title Confirm Contact No.
               input name="phone_number_confirmation" minlength="10" maxlength="14"  class="bold" type="text" id="user_phone_number_confirmation"
@@ -21,17 +21,17 @@ html
                 =o.input :users_phone_number, :as => :hidden, label: false
               .row
                 span.title  Name
-                =o.input :name,class:"for-IE", label: false
+                =o.input :name,input_html:{class:"for-IE"}, label: false
               .row
                 span.title Email
-                =o.input :email,class:"for-IE", label: false
+                =o.input :email,input_html:{class:"for-IE"}, label: false
                 #email-error
               .row
                 span.title Gender
                 =o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
               .row
                 span.title  Date Of Birth
-                =o.date_field :date_of_birth,label:false,class:"for-IE", required: true
+                =o.date_field :date_of_birth,label:false,input_html:{class:"for-IE"}, required: true
                 span.error =@other_user_details.errors[:date_of_birth][0]||@other_user_details.errors[:date_of_birth][1]  if @other_user_details.errors[:date_of_birth].any?
               .row
                 span.title State

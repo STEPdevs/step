@@ -77,10 +77,43 @@ $("#user_other_user_details_email").change(function () {
         })
 });
 
+function loadJSON(path, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                if (success)
+                    success(JSON.parse(xhr.responseText));
+            } else {
+                if (error)
+                    error(xhr);
+            }
+        }
+    };
+    xhr.open("GET", path, true);
+    return xhr.send();
+}
+
 $(document).ready(function () {
     var saved_phone_number = $("#user_other_user_details_users_phone_number").val();
     $("#user_phone_number").val(saved_phone_number)
     $("#user_phone_number_confirmation").val(saved_phone_number)
-})
 
+    loadJSON('/assets/modify.json',
+        function (data) {
+            var date_field = $('#user_other_user_details_date_of_birth');
+            var dob = new Date(data["modify"]["dob"]);
+            var dd = dob.getDate();
+            var mm = "0"+(dob.getMonth()+1);
+            var YYYY = dob.getFullYear();
+            var max_dob = YYYY + '-' + mm + '-' + dd;
+            var min_dob = (YYYY - 10) + '-' + mm + '-' + dd;
+            date_field.attr("max", max_dob);
+            date_field.attr("min", min_dob);
+        },
+        function (xhr) {
+            console.error(xhr);
+        }
+    );
+})
 registration.forIE();
