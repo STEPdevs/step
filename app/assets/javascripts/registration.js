@@ -1,3 +1,5 @@
+//= require json2
+
 var registration = (function () {
     var elements = {
         confirm_number: $("#user_phone_number_confirmation"),
@@ -94,6 +96,8 @@ function loadJSON(path, success, error) {
     return xhr.send();
 }
 
+var min_dob, max_dob;
+
 $(document).ready(function () {
     var saved_phone_number = $("#user_other_user_details_users_phone_number").val();
     $("#user_phone_number").val(saved_phone_number)
@@ -104,16 +108,21 @@ $(document).ready(function () {
             var date_field = $('#user_other_user_details_date_of_birth');
             var dob = new Date(data["modify"]["dob"]);
             var dd = dob.getDate();
-            var mm = "0"+(dob.getMonth()+1);
+            var mm = "0" + (dob.getMonth() + 1);
             var YYYY = dob.getFullYear();
-            var max_dob = YYYY + '-' + mm + '-' + dd;
-            var min_dob = (YYYY - 10) + '-' + mm + '-' + dd;
-            date_field.attr("max", max_dob);
-            date_field.attr("min", min_dob);
+            max_dob = dd + '/' + mm + '/' + YYYY;
+            min_dob = dd + '/' + mm + '/' + (YYYY - 10);
+            date_field.datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true,
+                minDate: min_dob, maxDate: max_dob
+            });
         },
         function (xhr) {
             console.error(xhr);
         }
     );
 })
+
 registration.forIE();

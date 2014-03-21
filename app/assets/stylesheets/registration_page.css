@@ -1,132 +1,153 @@
-.for-IE{
-	width: 100%;
+.for-IE {
+    width: 100%
 }
-.headerForIE{
-	background:black;
-  color:#fff;
-  height:auto;
-  position:relative;
+
+.headerForIE {
+    background: black;
+    color: #fff;
+    height: auto;
+    position: relative
 }
-.header{
-		background:black;
-    background-color:#212121;
-    box-shadow: 0 -1px 2px #111111;
-    color:#fff;
-    height:auto;
-    position:relative;
+
+.header {
+    background: #212121;
+    -moz-box-shadow: 0 -1px 2px #111;
+    -webkit-box-shadow: 0 -1px 2px #111;
+    box-shadow: 0 -1px 2px #111;
+    color: #fff;
+    height: auto;
+    position: relative;
     width: 100%;
-    zoom:1;
+    zoom: 1
 }
-.logo{
-	  display: block;
-    max-width:184px;
-    max-height:95px;
+
+.logo {
+    display: block;
+    max-width: 184px;
+    max-height: 95px;
     width: auto;
     height: 50px;
-    margin-top: 0px;
+    margin-top: 0
 }
-.flash-msg{
-	color: Green;
-	font-weight: bold;
-	font-size: 16px;
-	margin-left: 5px;
+
+.flash-msg {
+    color: Green;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 5px
 }
-.ferror{
-	font-size: 14px;
-	color: red;
+
+.ferror {
+    font-size: 14px;
+    color: red
 }
-.bold{
-	font-weight: bold;
-	width: 100%;
+
+.bold {
+    font-weight: bold;
+    width: 100%
 }
-.done-image{
-	width: 20px;
-	height: 20px;
-	top: 151px;
-	left: 500px;
-	display: inline-block;
-	position: absolute;
-	display: none;
+
+.done-image {
+    width: 20px;
+    height: 20px;
+    top: 151px;
+    left: 500px;
+    display: inline-block;
+    position: absolute;
+    display: none
 }
-.main-container{
-	width: 100%;
-	height: 412px;
+
+.main-container {
+    width: 100%;
+    height: 412px
 }
+
 .upper-left {
-    width:40%;
-    float:left;
-    height: inherit;
+    width: 40%;
+    float: left;
+    height: inherit
 }
-.upper-right{
-    width:60%;
-    float:right;
-    height: inherit;
+
+.upper-right {
+    width: 60%;
+    float: right;
+    height: inherit
 }
+
 .fieldset {
-    width:90%;
-    height:inherit;
+    width: 90%;
+    height: inherit;
     border: none;
-    margin: 0px 20px auto;
-    background:none;
+    margin: 0 20px auto;
+    background: none
 }
+
 .fieldset .title {
-    float:left;
-    width:49%;
+    float: left;
+    width: 49%;
     height: 30px;
     line-height: 0.9;
-    color: #090001;
+    color: #090001
 }
-.row{
-	width: 100%;
-	margin: 4px 4px 4px 4px;
-	display: inline-block;
+
+.row {
+    width: 100%;
+    margin: 4px 4px 4px 4px;
+    display: inline-block
 }
-input[type='text'],[type="date"],[type='email'],[type='tel']{
+
+input[type="text"], [type="date"], [type="email"], [type="tel"] {
     width: 50%;
     padding-left: 10px;
     height: 27px;
     border: 1px solid lightgrey;
     border-radius: 9px;
     outline: none;
-}
-img{
-	margin: 55px;
+    box-shadow: none;
 }
 
-.image{
+img {
+    margin: 55px
+}
+
+.image {
     display: block;
     width: 350px;
-    margin: 0px 194px auto;
+    margin: 0 194px auto;
     height: inherit;
-    margin-top: 0px;
+    margin-top: 0
 }
-.submit-button{
+
+.submit-button {
     text-transform: uppercase;
     font-size: 11px;
     font-weight: bold;
     border: 1px solid #fff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     border-radius: 10px;
     height: 30px;
     width: 100px;
     cursor: pointer;
-    float: right;
+    float: right
 }
+
 select {
     width: 50%;
-    color:#888;
     height: 25px;
     border: 1px solid lightgrey;
-    outline:none;
-    cursor:pointer;
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-    -moz-appearance:none;
-    color: black;
+    outline: none;
+    cursor: pointer;
+    box-shadow: none;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    appearance: none;
+    color: black
 }
-.radio{
-    margin-left: 5%;
+
+.radio {
+    margin-left: 5%
 }
 
 label {
@@ -134,76 +155,94 @@ label {
     position: relative;
     padding-right: 10px;
     padding-left: 7px;
-    font-size: 15px;
-}
-.notice{
-    color: green;
+    font-size: 15px
 }
 
-.error{
-    color: #000000;
+.notice {
+    color: green
+}
+
+.error {
+    color: #000;
     background-color: lightcoral;
     margin-left: 49%;
     display: block;
     text-align: center;
+    -moz-border-radius: 40px;
     -webkit-border-radius: 40px;
+    border-radius: 40px
 }
 
-.dob_error{
-    color: #000000;
-    background-color: lightcoral;
-    border-bottom:3px double orangered;
-    display: inline-block;
-    text-align: center;
-    margin-top: -3%;
-    margin-left: 2%;
-    -webkit-border-top-left-radius: none;
-    -webkit-border-top-right-radius: none;
-    -webkit-border-bottom-left-radius: 9px;
-    -webkit-border-bottom-right-radius: 9px;
+.flash-message {
+    margin-left: 197px;
+    font-size: large
 }
 
-.flash-message{
-   margin-left: 197px;
-   font-size: large;
-}
 .user-validation {
-  width: 228px;
-  padding-left: 200px;
-  margin-left: 10%;
-  color: red;
+    width: 228px;
+    padding-left: 200px;
+    margin-left: 10%;
+    color: red
 }
-.bannertop1{
-	padding-top: 5px;
-	padding-left: 25px;
-	width: 100%;
-	height: 30px;
 
+.bannertop1 {
+    padding-top: 5px;
+    padding-left: 25px;
+    width: 100%;
+    height: 30px
 }
-.bannertop2{
-	width: 100%;
-	height: 55px;	
-	margin-bottom: 8px;
+
+.bannertop2 {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 8px
 }
-.color{
-	padding-left: 28px;
-	font-weight: bold;
+
+.color {
+    padding-left: 28px;
+    font-weight: bold
 }
-.bannerbottom{
-	width: 100%;
-	height: 50px;
-	margin-top: 6%;
+
+.bannerbottom {
+    width: 100%;
+    height: 50px;
+    margin-top: 6%
 }
-.formtitle{
-	font-family: bold;
-	font-size: 20px;
+
+.formtitle {
+    font-family: bold;
+    font-size: 20px
 }
-.info{
-	width: 95%;
-	color: green;
-	border-top: 1px solid lightgrey;
-	border-bottom: 1px solid lightgrey;
-	margin-left: 28px;
-	margin-bottom: 5px;
-	line-height: 1.6;
+
+.info {
+    width: 95%;
+    color: green;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    margin-left: 28px;
+    margin-bottom: 5px;
+    line-height: 1.6
 }
+
+.ui-datepicker {
+    width: 12em ! important;
+    height: 199px;
+    padding: .2em .2em 0;
+    display: none;
+    margin-left: 12em;
+    margin-top: -25;
+}
+
+.ui-state-default {
+    font-size: 12px;
+}
+
+.ui-datepicker th {
+    font-size: 11px;
+}
+
+.ui-datepicker-title {
+    font-size: 13px;
+}
+
+

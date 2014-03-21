@@ -31,8 +31,7 @@ html
                 =o.input :gender, :as => :radio_buttons, :collection => [["Male","Male"],["Female","Female"]],:label => false
               .row
                 span.title  Date Of Birth
-                =o.date_field :date_of_birth,label:false,input_html:{class:"for-IE"}, required: true
-                span.error =@other_user_details.errors[:date_of_birth][0]||@other_user_details.errors[:date_of_birth][1]  if @other_user_details.errors[:date_of_birth].any?
+                =o.input :date_of_birth,:as=> 'string',label:false,input_html:{class:"for-IE datepicker"}, required: true,placeholder: "dd/mm/yyyy"
               .row
                 span.title State
                 span.input= o.input :state,label: false,collection:State.all.map{|state|state.name },:include_blank=>"--Select--",:id => "state"
